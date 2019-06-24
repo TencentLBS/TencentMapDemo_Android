@@ -1235,3 +1235,122 @@ heatOverlay.updateData(nodes2);
 heatOverlay.remove();
 ```
 
+# 室内图 #
+腾讯地图 SDK 支持室内图功能，包括室内图的展示、带有室内属性的 marker、polyline 等地图元素</br>
+<span style="color:red">室内图功能为付费功能，用户可以访问[腾讯地图室内图官网](https://lbs.qq.com/lbsindoor/home/index.html)了解详情。</span>
+
+- 展示室内图
+
+1. 将带有室内图权限的 key 填入 Manifest
+
+```
+<meta-data
+    android:name="TencentMapSDK"
+    android:value="有室内图权限的 key"/>
+```
+
+2. 室内图默认不展示，需要手动调用开关
+
+```
+tencentMap.setIndoorEnabled(true);
+```
+以北京南站为例，如下图所示：
+
+<img src="./image/indoor01.png" width="300">
+
+当室内图打开时，默认控件会展示，用户也可以按照需求展示/隐藏
+
+```
+uisettings.setIndoorLevelPickerEnabled(false);
+```
+<img src="./image/indoor02.png" width="300">
+
+
+3. 设置展示室内图的建筑的楼层，此接口只会对一个建筑生效，如果多次设置只有最后设置的会生效
+
+```
+Tencentmap:
+/**
+ * 将buildingId对应的室内图建筑物设置到指定楼层展示。
+ *
+ * @param buildingId
+ *         要设置楼层的 buildingId
+ * @param floorName
+ *         楼层名称，参见 {@link IndoorLevel#getName()}
+ */
+public void setIndoorFloor(String buildingId, String floorName)
+```
+
+目前 buildingId 和 floorName 可以从室内图的相关回调获取
+
+- 室内图回调
+
+用户可以通过腾讯地图 sdk 提供的室内图变化回调获取当前展示的室内图的相关信息
+
+```
+Tencentmap:
+/**
+ * 室内图回调
+ com.tencent.tencentmap.mapsdk.maps.TencentMap#setOnIndoorStateChangeListener(OnIndoorStateChangeListener listener)}
+ */
+public static interface OnIndoorStateChangeListener {
+    /**
+     * 室内图场景激活回调，当前视野已经显示出室内图
+     * @return
+     */
+    boolean onIndoorBuildingFocused();
+    /**
+     * 室内图楼层状态激活和变化回调
+     * @param building，室内图对象
+     * @return
+     */
+    boolean onIndoorLevelActivated(IndoorBuilding building);
+    /**
+     * 当前室内图处于无效状态
+     */
+    boolean onIndoorBuildingDeactivated();
+}
+```
+
+如果需要修改当前展示的建筑楼层可以通过以下接口设置：
+
+```
+Tencentmap:
+/**
+ * 设置当前激活状态室内图Building的选中的楼层
+ */
+public void setIndoorFloor(int floorId)
+```
+
+- 带室内属性的地图元素
+
+腾讯地图提供了带室内属性的元素，目前包括 marker、polyline。以 marker 为例说明设置室内属性的方法和展示效果：
+
+```
+tencentMap.setIndoorEnabled(true);
+tencentMap.moveCamera(CameraUpdateFactory.newLatLngZoo(new LatLng(39.865105,116.378345), 18));
+tencentMap.addMarker(new MarkerOptions(new LatLn(39.865105,116.378345))
+        .indoorInfo(new IndoorInfo("110000212166", "B1")));
+```
+<img src="./image/indoor02.png" width="300">
+<img src="./image/indoor03.png" width="300">
+
+如图所示，添加的 marker 只在北京南站的 B1 层展示
+
+- 获取室内 poi 的属性
+
+腾讯地图的室内图 poi 带有其所属的室内图信息，获取 poi 室内属性的方法：
+
+```
+tencentMap.setOnMapPoiClickListener(newTencentMap.OnMapPoiClickListener() {
+    @Override
+    public void onClicked(MapPoi poi) {
+        if (poi instanceof IndoorMapPoi) {
+            IndoorMapPoi indoorMapPoi = (IndoorMapPoi) poi;
+            Log.e("", "building id:" + indoorMapPoi.buildingId
+                    + ", building name:" + indoorMapPoi.buildingName
+                    + ", floor name:" + indoorMapPoi.floorName);
+        }
+    }
+});
+```
