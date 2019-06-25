@@ -1278,6 +1278,7 @@ uisettings.setIndoorLevelPickerEnabled(false);
 - 室内图回调
 
 用户可以通过腾讯地图 sdk 提供的室内图变化回调获取当前展示的室内图的相关信息，包括当前激活的建筑物，建筑物的详细信息，以及当前不再激活的建筑物。当前屏幕内有可能有多个室内图，但仅会有一栋处于屏幕中心区域的建筑物处于“激活”态。
+
 | 方法 | 说明 |
 | :-- | :-- |
 | TencentMap.setOnIndoorStateChangeListener(OnIndoorStateChangeListener listener) | 设置室内图状态回调 |
