@@ -1330,7 +1330,7 @@ public void setIndoorFloor(int floorId)
 tencentMap.setIndoorEnabled(true);
 tencentMap.moveCamera(CameraUpdateFactory.newLatLngZoo(new LatLng(39.865105,116.378345), 18));
 tencentMap.addMarker(new MarkerOptions(new LatLn(39.865105,116.378345))
-        .indoorInfo(new IndoorInfo("**********", "B1")));
+        .indoorInfo(new IndoorInfo("**********", "B1")));//*******需要更换为当前建筑的builidingid
 ```
 <img src="./image/indoor02.png" width="300">
 <img src="./image/indoor03.png" width="300">
