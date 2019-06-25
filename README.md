@@ -1357,7 +1357,7 @@ tencentMap.setOnMapPoiClickListener(newTencentMap.OnMapPoiClickListener() {
 
 - 自定义楼层控件
 
-开发者可以通过室内图状态的回调信息定制自己的楼层控件，定制前，先隐藏默认的楼层控件：
+开发者可以通过室内图状态的回调信息定制自己的楼层控件，包括UI样式和位置都可以灵活定义。定制前，先隐藏默认的楼层控件：
 
 ```
 uisettings.setIndoorLevelPickerEnabled(false);
