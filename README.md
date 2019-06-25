@@ -1363,6 +1363,35 @@ tencentMap.setOnMapPoiClickListener(newTencentMap.OnMapPoiClickListener() {
 uisettings.setIndoorLevelPickerEnabled(false);
 ```
 
-然后通过OnIndoorStateChangeListener回调中获取的信息，来自定义楼层控件，以及楼层的实时切换。
+然后通过OnIndoorStateChangeListener回调中获取的信息，来实现建筑物的状态展示，和楼层信息的实时切换。
+
+```
+Tencentmap:
+/**
+ * 室内图回调
+ com.tencent.tencentmap.mapsdk.maps.TencentMap#setOnIndoorStateChangeListener(OnIndoorStateChangeListener listener)}
+ */
+public TestOnIndoorStateChangeListener implements OnIndoorStateChangeListener{
+    /**
+     * 室内图场景激活回调，当前视野已经显示出室内图
+     * @return
+     */
+    boolean onIndoorBuildingFocused(){
+    	//TODO：在此处显示开发者自定义的楼层控件
+    }
+    /**
+     * 室内图楼层状态激活和变化回调
+     * @param building，室内图对象
+     * @return
+     */
+    boolean onIndoorLevelActivated(IndoorBuilding building){
+    	//TODO：在此处获取到当前激活的建筑物的楼层列表，如（B4，B3... F1，F2，F3）以及
+    }
+    /**
+     * 当前室内图处于无效状态
+     */
+    boolean onIndoorBuildingDeactivated();
+}
+```
 
 
