@@ -1237,11 +1237,11 @@ heatOverlay.remove();
 
 # 室内图 #
 腾讯地图 SDK 支持室内图功能，包括室内图的展示、带有室内属性的 marker、polyline 等地图元素</br>
-<span style="color:red">室内图功能为付费功能，用户可以访问[腾讯地图室内图官网](https://lbs.qq.com/lbsindoor/home/index.html)了解详情。</span>
+<span style="color:red">室内图功能为付费功能，用户可以参考[腾讯地图室内图官网](https://lbs.qq.com/lbsindoor/home/index.html)了解详情。</span>
 
 - 展示室内图
 
-1. 将带有室内图权限的 key 填入 Manifest
+1. 已经申请key的用户需要确认是否已申请室内图权限，如果没有权限，请联系[腾讯地图商务](https://lbs.qq.com/contractus.html)并确保已经将带有室内图权限的 key 填入 Manifest
 
 ```
 <meta-data
@@ -1258,7 +1258,7 @@ tencentMap.setIndoorEnabled(true);
 
 <img src="./image/indoor01.png" width="300">
 
-当室内图打开时，默认控件会展示，用户也可以按照需求展示/隐藏
+当室内图打开时，默认会展示室内图楼层控件，用户也可以按照自己的需求展示/隐藏室内图楼层控件：
 
 ```
 uisettings.setIndoorLevelPickerEnabled(false);
@@ -1266,61 +1266,31 @@ uisettings.setIndoorLevelPickerEnabled(false);
 <img src="./image/indoor02.png" width="300">
 
 
-3. 设置展示室内图的建筑的楼层，此接口只会对一个建筑生效，如果多次设置只有最后设置的会生效
+3. 设置展示室内图的建筑的楼层
 
-```
-Tencentmap:
-/**
- * 将buildingId对应的室内图建筑物设置到指定楼层展示。
- *
- * @param buildingId
- *         要设置楼层的 buildingId
- * @param floorName
- *         楼层名称，参见 {@link IndoorLevel#getName()}
- */
-public void setIndoorFloor(String buildingId, String floorName)
-```
+| 方法 | 说明 |
+| :-- | :-- |
+| TencentMap.setIndoorFloor(String buildingId, String floorName) | 将buildingId对应的室内图建筑物设置到指定楼层展示。此接口一般用于初始化地图时使用，当用户已知地图初始化视野中含有室内图并知道当前室内图 buildingId 及 floorName 时可以调用此接口初始化地图的展示状态。需注意的是，此接口只会对一个建筑生效，如果多次设置只有最后一次的设置会生效。 |
+| Tencentmap.setIndoorFloor(int floorId) | 设置当前激活状态室内图Building的选中的楼层 |
 
 目前 buildingId 和 floorName 可以从室内图的相关回调获取
 
 - 室内图回调
 
 用户可以通过腾讯地图 sdk 提供的室内图变化回调获取当前展示的室内图的相关信息，包括当前激活的建筑物，建筑物的详细信息，以及当前不再激活的建筑物。当前屏幕内有可能有多个室内图，但仅会有一栋处于屏幕中心区域的建筑物处于“激活”态。
+| 方法 | 说明 |
+| :-- | :-- |
+| TencentMap.setOnIndoorStateChangeListener(OnIndoorStateChangeListener listener) | 设置室内图状态回调 |
+| OnIndoorStateChangeListener.onIndoorBuildingFocused() | 室内图场景激活回调，当前视野已经显示出室内图 |
+| OnIndoorStateChangeListener.onIndoorLevelActivated(IndoorBuilding building) | 室内图楼层状态激活和变化回调 |
+| OnIndoorStateChangeListener.onIndoorBuildingDeactivated() | 当前室内图处于无效状态 |
 
-```
-Tencentmap:
-/**
- * 室内图回调
- com.tencent.tencentmap.mapsdk.maps.TencentMap#setOnIndoorStateChangeListener(OnIndoorStateChangeListener listener)}
- */
-public static interface OnIndoorStateChangeListener {
-    /**
-     * 室内图场景激活回调，当前视野已经显示出室内图
-     * @return
-     */
-    boolean onIndoorBuildingFocused();
-    /**
-     * 室内图楼层状态激活和变化回调
-     * @param building，室内图对象
-     * @return
-     */
-    boolean onIndoorLevelActivated(IndoorBuilding building);
-    /**
-     * 当前室内图处于无效状态
-     */
-    boolean onIndoorBuildingDeactivated();
-}
-```
 
 如果需要修改当前激活的建筑楼层可以通过以下接口设置：
 
-```
-Tencentmap:
-/**
- * 设置当前激活状态室内图Building的选中的楼层
- */
-public void setIndoorFloor(int floorId)
-```
+| 方法 | 说明 |
+| :-- | :-- |
+| TencentMap.setIndoorFloor(int floorId) | 设置当前激活的室内图楼层 |
 
 - 带室内属性的地图元素
 
@@ -1332,8 +1302,8 @@ tencentMap.moveCamera(CameraUpdateFactory.newLatLngZoo(new LatLng(39.865105,116.
 tencentMap.addMarker(new MarkerOptions(new LatLn(39.865105,116.378345))
         .indoorInfo(new IndoorInfo("**********", "B1")));//*******需要更换为当前建筑的builidingid
 ```
-<img src="./image/indoor02.png" width="300">
 <img src="./image/indoor03.png" width="300">
+<img src="./image/indoor04.png" width="300">
 
 如图所示，添加的 marker 只在北京南站的 B1 层展示
 
@@ -1396,5 +1366,3 @@ public TestOnIndoorStateChangeListener implements OnIndoorStateChangeListener{
     }
 }
 ```
-
-
