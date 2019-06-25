@@ -1285,7 +1285,7 @@ public void setIndoorFloor(String buildingId, String floorName)
 
 - 室内图回调
 
-用户可以通过腾讯地图 sdk 提供的室内图变化回调获取当前展示的室内图的相关信息
+用户可以通过腾讯地图 sdk 提供的室内图变化回调获取当前展示的室内图的相关信息，包括当前激活的建筑物，建筑物的详细信息，以及当前不再激活的建筑物。当前屏幕内有可能有多个室内图，但仅会有一栋处于屏幕中心区域的建筑物处于“激活”态。
 
 ```
 Tencentmap:
@@ -1312,7 +1312,7 @@ public static interface OnIndoorStateChangeListener {
 }
 ```
 
-如果需要修改当前展示的建筑楼层可以通过以下接口设置：
+如果需要修改当前激活的建筑楼层可以通过以下接口设置：
 
 ```
 Tencentmap:
@@ -1324,7 +1324,7 @@ public void setIndoorFloor(int floorId)
 
 - 带室内属性的地图元素
 
-腾讯地图提供了带室内属性的元素，目前包括 marker、polyline。以 marker 为例说明设置室内属性的方法和展示效果：
+腾讯地图提供了带室内楼层属性的元素，目前包括 marker、polyline。在增加室内属性以后，该marker或polyline仅在该建筑物的该楼层展示，以 marker 为例说明设置室内属性的方法和展示效果：
 
 ```
 tencentMap.setIndoorEnabled(true);
@@ -1339,7 +1339,7 @@ tencentMap.addMarker(new MarkerOptions(new LatLn(39.865105,116.378345))
 
 - 获取室内 poi 的属性
 
-腾讯地图的室内图 poi 带有其所属的室内图信息，获取 poi 室内属性的方法：
+腾讯地图的室内图 poi 带有其所属的室内图信息，获取 poi 室内属性（包括poi的名称以及poi的楼层信息等）的方法：
 
 ```
 tencentMap.setOnMapPoiClickListener(newTencentMap.OnMapPoiClickListener() {
