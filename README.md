@@ -1359,8 +1359,6 @@ tencentMap.setOnMapPoiClickListener(newTencentMap.OnMapPoiClickListener() {
 
 开发者可以通过室内图状态的回调信息定制自己的楼层控件，定制前，先隐藏默认的楼层控件：
 
-当室内图打开时，默认控件会展示，用户也可以按照需求展示/隐藏
-
 ```
 uisettings.setIndoorLevelPickerEnabled(false);
 ```
