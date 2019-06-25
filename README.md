@@ -1385,12 +1385,15 @@ public TestOnIndoorStateChangeListener implements OnIndoorStateChangeListener{
      * @return
      */
     boolean onIndoorLevelActivated(IndoorBuilding building){
-    	//TODO：在此处获取到当前激活的建筑物的楼层列表，如（B4，B3... F1，F2，F3）以及
+    	//TODO：在此处获取到当前激活的建筑物的楼层列表，如（B4，B3... F1，F2，F3）以及当前激活的楼层,根据以上信息填充楼层控件的数据
+
     }
     /**
      * 当前室内图处于无效状态
      */
-    boolean onIndoorBuildingDeactivated();
+    boolean onIndoorBuildingDeactivated(){
+    	//TODO：隐藏自定义的楼层控件
+    }
 }
 ```
 
