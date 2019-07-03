@@ -71,6 +71,7 @@ public class LocationLayerActivity extends SupportMapFragmentActivity implements
         locationRequest = TencentLocationRequest.create();
         //设置定位周期（位置监听器回调周期）为10s
         locationRequest.setInterval(10000);
+        Log.v("location period", "100000");
         //地图上设置定位数据源
         tencentMap.setLocationSource(this);
         //设置当前位置可见
@@ -130,7 +131,7 @@ public class LocationLayerActivity extends SupportMapFragmentActivity implements
     @Override
     public void onStatusUpdate(String s, int i, String s1) {
         //GPS, WiFi, Radio 等状态发生变化
-        Log.e("State changed", s +"===" +  s1);
+        Log.v("State changed", s +"===" +  s1);
     }
 
 
