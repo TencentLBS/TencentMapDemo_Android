@@ -37,6 +37,8 @@ public class LocationLayerActivity extends SupportMapFragmentActivity implements
     private TencentLocationRequest locationRequest;
     private MyLocationStyle locationStyle;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +75,7 @@ public class LocationLayerActivity extends SupportMapFragmentActivity implements
         locationRequest = TencentLocationRequest.create();
         //设置定位周期（位置监听器回调周期）为10s
         locationRequest.setInterval(10000);
+
         //地图上设置定位数据源
         tencentMap.setLocationSource(this);
         //设置当前位置可见
@@ -126,6 +129,14 @@ public class LocationLayerActivity extends SupportMapFragmentActivity implements
             location.setLongitude(tencentLocation.getLongitude());
             location.setAccuracy(tencentLocation.getAccuracy());
             locationChangedListener.onLocationChanged(location);
+
+            //显示回调的实时位置信息
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(getApplicationContext(), new Gson().toJson(location), Toast.LENGTH_LONG).show();
+                }
+            });
         }
     }
 
