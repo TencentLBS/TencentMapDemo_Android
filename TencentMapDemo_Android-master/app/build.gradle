@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.example.tencentmap.tencentmapdemo"
+        applicationId "com.example.tencentmap.com.example.tencentmap.tencentmapdemo"
         minSdkVersion 22
         targetSdkVersion 27
         versionCode 1
@@ -29,7 +29,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation files('libs/tencent_map_sdk_4.1.0.0.41b7a926d.jar')
+    //implementation files('libs/tencent_map_sdk_4.1.0.0.41b7a926d.jar')
     implementation 'pub.devrel:easypermissions:1.1.0'
-    implementation files('libs/TencentmapVectorUtils_v1.0.2.3ed9c2b.jar')
+    //implementation files('libs/TencentmapVectorUtils_v1.0.2.3ed9c2b.jar')
+    implementation 'com.tencent.map:tencent-map-vector-sdk:4.2.4'
+    implementation 'com.google.code.gson:gson:2.8.5'
 }

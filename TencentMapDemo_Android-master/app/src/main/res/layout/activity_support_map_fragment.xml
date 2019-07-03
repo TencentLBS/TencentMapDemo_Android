@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SupportMapFragmentActivity"
+    tools:context=".basic.SupportMapFragmentActivity"
    >
 
     <LinearLayout
@@ -56,7 +56,76 @@
                 android:id="@+id/btn_line_arrow"
                 android:text="箭头"/>
         </RadioGroup>
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:id="@+id/lay_map_style"
+            android:orientation="horizontal"
+            android:visibility="gone">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_none"
+                android:checked="true"
+                android:text="空图"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_normal"
+                android:text="普通图"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_satellite"
+                android:text="卫星图"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_navi"
+                android:text="导航图"/>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_night"
+                android:text="夜间图"/>
+        </RadioGroup>
 
+
+        <Switch
+            android:id="@+id/switch_zoom"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:checked="true"
+            android:paddingLeft="@dimen/padding"
+            android:visibility="gone" />
+        <Switch
+            android:id="@+id/switch_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:checked="true"
+            android:paddingLeft="@dimen/padding"
+            android:visibility="gone" />
+        <Switch
+            android:id="@+id/switch_compass"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:checked="true"
+            android:paddingLeft="@dimen/padding"
+            android:visibility="gone" />
+        <Switch
+            android:id="@+id/switch_scale_view"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:checked="true"
+            android:paddingLeft="@dimen/padding"
+            android:visibility="gone" />
+        <Switch
+            android:id="@+id/switch_location"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:checked="true"
+            android:paddingLeft="@dimen/padding"
+            android:visibility="gone" />
         <fragment
             android:id="@+id/map_frag"
             class="com.tencent.tencentmap.mapsdk.maps.SupportMapFragment"

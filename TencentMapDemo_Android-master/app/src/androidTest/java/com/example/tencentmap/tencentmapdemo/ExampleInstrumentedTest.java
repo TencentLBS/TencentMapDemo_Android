@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.tencentmap.tencentmapdemo", appContext.getPackageName());
+        assertEquals("com.example.tencentmap.com.example.tencentmap.tencentmapdemo", appContext.getPackageName());
     }
 }

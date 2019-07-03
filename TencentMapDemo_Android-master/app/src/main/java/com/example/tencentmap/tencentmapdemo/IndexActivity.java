@@ -2,10 +2,10 @@ package com.example.tencentmap.tencentmapdemo;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +14,31 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.tencentmap.tencentmapdemo.basic.LocationLayerActivity;
+import com.example.tencentmap.tencentmapdemo.basic.MapViewActivity;
+import com.example.tencentmap.tencentmapdemo.basic.SupportMapFragmentActivity;
+import com.example.tencentmap.tencentmapdemo.basic.TrafficMapActivity;
+import com.example.tencentmap.tencentmapdemo.circle.DrawCircleActivity;
+import com.example.tencentmap.tencentmapdemo.gesture.MapCameraActivity;
+import com.example.tencentmap.tencentmapdemo.gesture.MapListenActivity;
+import com.example.tencentmap.tencentmapdemo.gesture.MapLongClickActivity;
+import com.example.tencentmap.tencentmapdemo.heatoverlay.DrawHeatOverlayActivity;
+import com.example.tencentmap.tencentmapdemo.marker.MarkerActivity;
+import com.example.tencentmap.tencentmapdemo.marker.MarkerAnimation;
+import com.example.tencentmap.tencentmapdemo.marker.MarkerClickActivity;
+import com.example.tencentmap.tencentmapdemo.marker.MarkerClusterActivity;
+import com.example.tencentmap.tencentmapdemo.marker.MarkerDragActivity;
+import com.example.tencentmap.tencentmapdemo.marker.MarkerInfoWindowActivity;
+import com.example.tencentmap.tencentmapdemo.polygon.DrawPolygonActivity;
+import com.example.tencentmap.tencentmapdemo.polyline.DrawLineActivity;
+import com.example.tencentmap.tencentmapdemo.transaction.AnimateCameraActivity;
+import com.example.tencentmap.tencentmapdemo.transaction.MoveCameraActivity;
+import com.example.tencentmap.tencentmapdemo.transaction.RotateMapActivity;
+import com.example.tencentmap.tencentmapdemo.transaction.ScollMapActivity;
+import com.example.tencentmap.tencentmapdemo.transaction.ZoomCalulateActivity;
+import com.example.tencentmap.tencentmapdemo.transaction.ZoomMapActivity;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class IndexActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
 
@@ -166,7 +189,7 @@ public class IndexActivity extends AppCompatActivity implements AdapterView.OnIt
                 startActivity(trafficIntent);
                 break;
             case 27:
-                Intent heapMapIntent = new Intent(IndexActivity.this, HeapMapActivity.class);
+                Intent heapMapIntent = new Intent(IndexActivity.this, DrawHeatOverlayActivity.class);
                 startActivity(heapMapIntent);
                 break;
             case 28:
