@@ -49,7 +49,13 @@
         <meta-data
             android:name="TencentMapSDK"
             android:value="GZVBZ-HBQRF-TUCJW-JB3SL-5ETTQ-5LBKQ" />
+        <activity android:name=".IndexActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".basic.MapViewActivity" />
         <activity android:name=".basic.SupportMapFragmentActivity" />
         <activity android:name=".heatoverlay.DrawHeatOverlayActivity" />
@@ -74,6 +80,7 @@
         <activity android:name=".transaction.RotateMapActivity" />
         <activity android:name=".transaction.ScollMapActivity" />
         <activity android:name=".marker.MarkerAnimation"></activity>
+        <activity android:name=".route.WalkingRouteActivity"></activity>
     </application>
 
 </manifest>

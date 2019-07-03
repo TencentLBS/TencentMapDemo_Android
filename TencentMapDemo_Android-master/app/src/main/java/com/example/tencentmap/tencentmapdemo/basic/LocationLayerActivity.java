@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.tencentmap.tencentmapdemo.R;
 import com.example.tencentmap.tencentmapdemo.basic.SupportMapFragmentActivity;
+import com.google.gson.Gson;
 import com.tencent.map.geolocation.TencentLocation;
 import com.tencent.map.geolocation.TencentLocationListener;
 import com.tencent.map.geolocation.TencentLocationManager;
@@ -55,6 +56,7 @@ public class LocationLayerActivity extends SupportMapFragmentActivity implements
         }
         //设置显示定位的图标
         mapUiSettings.setMyLocationButtonEnabled(true);
+        tencentMap.setOnMapLongClickListener(this);
         //建立定位
         initLocation();
     }
@@ -71,7 +73,6 @@ public class LocationLayerActivity extends SupportMapFragmentActivity implements
         locationRequest = TencentLocationRequest.create();
         //设置定位周期（位置监听器回调周期）为10s
         locationRequest.setInterval(10000);
-        Log.v("location period", "100000");
         //地图上设置定位数据源
         tencentMap.setLocationSource(this);
         //设置当前位置可见
@@ -176,12 +177,12 @@ public class LocationLayerActivity extends SupportMapFragmentActivity implements
 
     @Override
     public void onMapLongClick(LatLng latLng) {
-        if (locationChangedListener == null)
-            return;
         Location location = new Location("LongPressLocationProvider");
         location.setLatitude(latLng.latitude);
         location.setLongitude(latLng.longitude);
         location.setAccuracy(20);
         locationChangedListener.onLocationChanged(location);
+        Log.i("long click", new Gson().toJson(latLng));
+        Toast.makeText(getApplicationContext(), new Gson().toJson(latLng), Toast.LENGTH_LONG).show();
     }
 }

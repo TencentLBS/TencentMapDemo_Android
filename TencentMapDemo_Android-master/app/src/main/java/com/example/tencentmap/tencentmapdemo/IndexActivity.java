@@ -31,12 +31,14 @@ import com.example.tencentmap.tencentmapdemo.marker.MarkerDragActivity;
 import com.example.tencentmap.tencentmapdemo.marker.MarkerInfoWindowActivity;
 import com.example.tencentmap.tencentmapdemo.polygon.DrawPolygonActivity;
 import com.example.tencentmap.tencentmapdemo.polyline.DrawLineActivity;
+import com.example.tencentmap.tencentmapdemo.route.WalkingRouteActivity;
 import com.example.tencentmap.tencentmapdemo.transaction.AnimateCameraActivity;
 import com.example.tencentmap.tencentmapdemo.transaction.MoveCameraActivity;
 import com.example.tencentmap.tencentmapdemo.transaction.RotateMapActivity;
 import com.example.tencentmap.tencentmapdemo.transaction.ScollMapActivity;
 import com.example.tencentmap.tencentmapdemo.transaction.ZoomCalulateActivity;
 import com.example.tencentmap.tencentmapdemo.transaction.ZoomMapActivity;
+import com.tencent.tencentmap.mapsdk.maps.model.IndoorMapPoi;
 
 import java.util.ArrayList;
 
@@ -96,6 +98,7 @@ public class IndexActivity extends AppCompatActivity implements AdapterView.OnIt
         activityList.add("路况图");
         activityList.add("热力图");
         activityList.add("定位");
+        activityList.add("步行规划");
         return activityList;
     }
 
@@ -195,6 +198,10 @@ public class IndexActivity extends AppCompatActivity implements AdapterView.OnIt
             case 28:
                 Intent locationIntent = new Intent(IndexActivity.this, LocationLayerActivity.class);
                 startActivity(locationIntent);
+                break;
+            case 29:
+                Intent walkingRouteIntent = new Intent(IndexActivity.this, WalkingRouteActivity.class);
+                startActivity(walkingRouteIntent);
                 break;
 
         }
