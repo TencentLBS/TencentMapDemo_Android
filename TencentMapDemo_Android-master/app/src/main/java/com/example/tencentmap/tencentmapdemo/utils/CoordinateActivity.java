@@ -4,6 +4,7 @@ import android.graphics.Point;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.tencentmap.tencentmapdemo.R;
 import com.example.tencentmap.tencentmapdemo.basic.SupportMapFragmentActivity;
@@ -34,7 +35,9 @@ public class CoordinateActivity extends SupportMapFragmentActivity implements On
     public void onMapLongClick(LatLng latLng) {
         Projection projection = tencentMap.getProjection();
         Point screen = projection.toScreenLocation(latLng);
+        LatLng transferLatLng = projection.fromScreenLocation(screen);
         textView.setText("屏幕坐标：" + new Gson().toJson(screen));
+        Toast.makeText(this, new Gson().toJson(transferLatLng), Toast.LENGTH_SHORT).show();
     }
 
 
