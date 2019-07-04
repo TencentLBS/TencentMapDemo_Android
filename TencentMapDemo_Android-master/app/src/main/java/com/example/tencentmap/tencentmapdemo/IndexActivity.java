@@ -14,12 +14,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.example.tencentmap.tencentmapdemo.basic.LocationLayerActivity;
+import com.example.tencentmap.tencentmapdemo.location.LocationLayerActivity;
 import com.example.tencentmap.tencentmapdemo.basic.MapViewActivity;
 import com.example.tencentmap.tencentmapdemo.basic.SupportMapFragmentActivity;
 import com.example.tencentmap.tencentmapdemo.basic.TrafficMapActivity;
 import com.example.tencentmap.tencentmapdemo.circle.DrawCircleActivity;
-import com.example.tencentmap.tencentmapdemo.gesture.MapCameraActivity;
+import com.example.tencentmap.tencentmapdemo.camera.MapCameraActivity;
 import com.example.tencentmap.tencentmapdemo.gesture.MapListenActivity;
 import com.example.tencentmap.tencentmapdemo.gesture.MapLongClickActivity;
 import com.example.tencentmap.tencentmapdemo.heatoverlay.DrawHeatOverlayActivity;
@@ -31,14 +31,13 @@ import com.example.tencentmap.tencentmapdemo.marker.MarkerDragActivity;
 import com.example.tencentmap.tencentmapdemo.marker.MarkerInfoWindowActivity;
 import com.example.tencentmap.tencentmapdemo.polygon.DrawPolygonActivity;
 import com.example.tencentmap.tencentmapdemo.polyline.DrawLineActivity;
-import com.example.tencentmap.tencentmapdemo.route.WalkingRouteActivity;
+import com.example.tencentmap.tencentmapdemo.search.WalkingRouteActivity;
 import com.example.tencentmap.tencentmapdemo.transaction.AnimateCameraActivity;
 import com.example.tencentmap.tencentmapdemo.transaction.MoveCameraActivity;
 import com.example.tencentmap.tencentmapdemo.transaction.RotateMapActivity;
 import com.example.tencentmap.tencentmapdemo.transaction.ScollMapActivity;
 import com.example.tencentmap.tencentmapdemo.transaction.ZoomCalulateActivity;
 import com.example.tencentmap.tencentmapdemo.transaction.ZoomMapActivity;
-import com.tencent.tencentmap.mapsdk.maps.model.IndoorMapPoi;
 
 import java.util.ArrayList;
 

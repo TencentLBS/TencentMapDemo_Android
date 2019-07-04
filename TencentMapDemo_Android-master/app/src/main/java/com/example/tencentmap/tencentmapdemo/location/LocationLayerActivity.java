@@ -1,4 +1,4 @@
-package com.example.tencentmap.tencentmapdemo.basic;
+package com.example.tencentmap.tencentmapdemo.location;
 
 import android.Manifest;
 import android.graphics.Bitmap;

@@ -1,4 +1,4 @@
-package com.example.tencentmap.tencentmapdemo.route;
+package com.example.tencentmap.tencentmapdemo.search;
 
 import android.os.Bundle;
 import android.widget.Toast;
