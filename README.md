@@ -1553,3 +1553,50 @@ public TestOnIndoorStateChangeListener implements OnIndoorStateChangeListener{
             }
         });
 ```
+# 工具类 #
+## 截图 ##
+```
+   /**
+    * 重写截图的回调函数
+    */
+    public TencentMap.SnapshotReadyCallback snapshotReadyCallback = new TencentMap.SnapshotReadyCallback(){
+        @Override
+        public void onSnapshotReady(Bitmap snapshot) {
+            imgView.setImageBitmap(snapshot);
+	    //存储Bitmap等操作
+        }
+    };
+   
+    private Runnable runScreenShot = new Runnable() {
+
+        @Override
+        public void run() {
+            // TODO Auto-generated method stub
+            tencentMap.snapshot(snapshotReadyCallback, Bitmap.Config.ARGB_8888);
+        }
+
+    };
+    Handler handScreen = new Handler();
+    //回调函数包含UI操作，要在主线程运行
+    handScreen.postDelayed(runScreenShot, 2000);
+```
+
+## 坐标转换 ##
+屏幕坐标与经纬度之间的转换：
+```
+	// 经纬度转换为像素点
+	Projection projection = tencentMap.getProjection();
+        Point screen = projection.toScreenLocation(latLng);
+        Toast.makeText(getApplicationContext(), ("屏幕坐标：" + new Gson().toJson(screen)), Toast.LENGTH_LONG).show();
+	
+	// 像素点转换为经纬度
+	LatLng transferLatLng = projection.fromScreenLocation(screen);
+	Toast.makeText(getApplicationContext(), ("经纬度坐标：" + new Gson().toJson(transferLatLng)), Toast.LENGTH_LONG).show();	
+```
+当前屏幕地图的视野范围：
+```
+	// 获取当前屏幕地图的视野范围
+        Projection projection = tencentMap.getProjection();
+        VisibleRegion region = projection.getVisibleRegion();
+        Toast.makeText(getApplicationContext(), ("当前地图的视野范围：" + new Gson().toJson(region)), Toast.LENGTH_LONG).show();
+```
