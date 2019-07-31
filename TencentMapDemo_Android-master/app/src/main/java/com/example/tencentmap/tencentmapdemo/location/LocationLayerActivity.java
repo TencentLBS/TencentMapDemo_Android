@@ -1,4 +1,4 @@
-package com.example.tencentmap.tencentmapdemo.basic;
+package com.example.tencentmap.tencentmapdemo.location;
 
 import android.Manifest;
 import android.graphics.Bitmap;
@@ -134,6 +134,7 @@ public class LocationLayerActivity extends SupportMapFragmentActivity implements
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
+                    //打印tencentLocation的json字符串
                     Toast.makeText(getApplicationContext(), new Gson().toJson(location), Toast.LENGTH_LONG).show();
                 }
             });

@@ -48,7 +48,7 @@
         <!-- 如果您key确认无误，却依然授权没有通过，请检查您的key的白名单配置 -->
         <meta-data
             android:name="TencentMapSDK"
-            android:value="GZVBZ-HBQRF-TUCJW-JB3SL-5ETTQ-5LBKQ" />
+            android:value="" />
         <activity android:name=".IndexActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -60,14 +60,14 @@
         <activity android:name=".basic.SupportMapFragmentActivity" />
         <activity android:name=".heatoverlay.DrawHeatOverlayActivity" />
         <activity android:name=".basic.TrafficMapActivity" />
-        <activity android:name=".basic.LocationLayerActivity" />
+        <activity android:name=".location.LocationLayerActivity" />
         <activity android:name=".basic.UiSettingsActivity" />
         <activity android:name=".marker.MarkerActivity" />
         <activity android:name=".marker.MarkerDragActivity" />
         <activity android:name=".marker.MarkerClickActivity" />
         <activity android:name=".marker.MarkerInfoWindowActivity" />
         <activity android:name=".gesture.MapListenActivity" />
-        <activity android:name=".gesture.MapCameraActivity" />
+        <activity android:name=".camera.MapCameraActivity" />
         <activity android:name=".gesture.MapLongClickActivity" />
         <activity android:name=".polyline.DrawLineActivity" />
         <activity android:name=".polygon.DrawPolygonActivity" />
@@ -80,7 +80,7 @@
         <activity android:name=".transaction.RotateMapActivity" />
         <activity android:name=".transaction.ScollMapActivity" />
         <activity android:name=".marker.MarkerAnimation"></activity>
-        <activity android:name=".route.WalkingRouteActivity"></activity>
+        <activity android:name=".search.WalkingRouteActivity"></activity>
     </application>
 
 </manifest>

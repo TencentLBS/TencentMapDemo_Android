@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/marker"> <!--背景资源可以自己设置-->
+
+    <!--用于展示自定义信息窗的内容-->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="custom_infowindow:"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ff000000"
+        android:textSize="15sp"/>
+
+</LinearLayout>

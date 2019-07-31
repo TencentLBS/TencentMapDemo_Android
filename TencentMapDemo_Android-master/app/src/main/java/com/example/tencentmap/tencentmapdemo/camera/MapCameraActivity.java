@@ -1,4 +1,4 @@
-package com.example.tencentmap.tencentmapdemo.gesture;
+package com.example.tencentmap.tencentmapdemo.camera;
 
 import android.os.Bundle;
 import android.view.View;

@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.example.tencentmap.com.example.tencentmap.tencentmapdemo"
+        applicationId "com.example.tencentmap.tencentmapdemo"
         minSdkVersion 22
         targetSdkVersion 27
         versionCode 1
