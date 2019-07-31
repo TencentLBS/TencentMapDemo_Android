@@ -19,31 +19,32 @@ API是提供给那些具有一定Android编程经验和了解面向对象概念�
 SDK的集成有以下两种方法
 ###  通过拷贝jar包、so库添加SDK ###
 地图SDK压缩包的下载地址如下：[https://lbs.qq.com/android_v1/log.html](https://lbs.qq.com/android_v1/log.html)
-解压下载的压缩包，文件结构如下图所示：
-<img src="./image/Settings07.jpg" width="300">
+解压下载的压缩包，文件结构如下图所示：  
+<img src="./image/Settings07.jpg" width="300">  
 将lib目录下的"*.jar"文件拷贝到Android Studio项目对应的app/libs/文件夹下。 
 将jniLibs目录下的所有文件按照原目录格式，拷贝到Android Studio项目对应的app/src/jniLibs/目录下。
 
-Android Studio项目结构如下图所示：
-<img src="./image/Settings08.jpg" width="300">
+Android Studio项目结构如下图所示：  
+<img src="./image/Settings08.jpg" width="300">  
 
-然后在app module的build.gradle里修改dependencies，在项目中的位置如下图所示：
-<img src="./image/Settings03.jpg" width="300">
+然后在app module的build.gradle里修改dependencies，在项目中的位置如下图所示：  
+<img src="./image/Settings03.jpg" width="300">  
 
 添加如下代码，rebuild一下即可。
 ```properties
 implementation fileTree(dir: 'libs', include: ['*.jar'])
 ```
-最终app module的build.gradle修改示例如下：
-<img src="./image/Settings02.jpg" width="300">
+最终app module的build.gradle修改示例如下：  
+<img src="./image/Settings02.jpg" width="300">  
 
 
 ### 通过Gradle配置maven或jcenter仓库集成SDK ###
 #### 1、在Project的build.gradle文件中配置repositories，添加maven或jcenter仓库地址 ####
-Android Studio默认会在Project的build.gradle为所有module自动添加jcenter的仓库地址，如果已存在，则不需要重复添加。Project的build.gradle文件在Project目录中位置如图所示：
-<img src="./image/Settings06.jpg" width="300">
+Android Studio默认会在Project的build.gradle为所有module自动添加jcenter的仓库地址，如果已存在，则不需要重复添加。
+Project的build.gradle文件在Project目录中位置如图所示：  
+<img src="./image/Settings06.jpg" width="300">  
 配置如下：
-```json
+```properties
 allprojects {
     repositories {
         google()
@@ -54,13 +55,13 @@ allprojects {
 #### 2、在主工程app module的build.gradle文件配置dependencies ####
 推荐开发者使用第二种方式集成SDK。
 根据项目需求添加SDK依赖。引入各个SDK功能最新版本， dependencies 配置方式如下：
-app module的build.gradle文件在Project目录中位置：
-<img src="./image/Settings03.jpg" width="300">
-以腾讯地图的demo工程为例，添加地图SDK的配置如下：
-<img src="./image/Settings02.jpg" width="300">
+app module的build.gradle文件在Project目录中位置：  
+<img src="./image/Settings03.jpg" width="300">  
+以腾讯地图的demo工程为例，添加地图SDK的配置如下：  
+<img src="./image/Settings02.jpg" width="300">  
 
 如需引入指定版本SDK（所有SDK版本号与官网发版一致），则在app module的build.gradle中修改maven仓库版本号即可，如下图所示（4.2.4版本）：
-```json
+```properties
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.tencent.map:tencent-map-vector-sdk:4.2.4'    
@@ -89,11 +90,11 @@ dependencies {
 
 ## key配置 ##
 
-要正常使用腾讯地图SDK用户需要在[https://lbs.qq.com/console/key.html](https://lbs.qq.com/console/key.html)申请开发密钥：
-<img src="./image/Settings04.jpg" width="300">
+要正常使用腾讯地图SDK用户需要在[https://lbs.qq.com/console/key.html](https://lbs.qq.com/console/key.html)申请开发密钥：  
+<img src="./image/Settings04.jpg" width="300">  
 申请开发密钥是免费的，腾讯地图SDK的使用也是免费的。
-Key的设置如下图所示：
-<img src="./image/Settings05.jpg" width="300">
+Key的设置如下图所示：  
+<img src="./image/Settings05.jpg" width="300">  
 其中地图SDK的对应位置，应传入对应App的包名，保存设置即可。
 开发者申请key后，把Key输入工程的AndroidManifest.xml文件中，在application节点里，添加名称为TencentMapSDK的meta，如下所示(value值为申请的key)：
 
@@ -104,8 +105,8 @@ Key的设置如下图所示：
         android:value="*****-*****-*****-*****-*****-*****"/>
 </application>
 ```
-以腾讯地图的demo工程为例，AndroidManifest.xml的权限配置与Key配置的示例如下图所示：
-<img src="./image/Settings01.jpg" width="300">
+以腾讯地图的demo工程为例，AndroidManifest.xml的权限配置与Key配置的示例如下图所示：  
+<img src="./image/Settings01.jpg" width="300">  
 
 ## 混淆配置 ##
 
