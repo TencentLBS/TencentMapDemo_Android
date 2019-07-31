@@ -15,18 +15,18 @@ API是提供给那些具有一定Android编程经验和了解面向对象概念�
 
 这里我们提供Android Studio的腾讯地图SDK的工程配置方法。
 
-**Android Studio SDK集成配置**  
-***SDK的集成有以下两种方法：***    
+**Android Studio配置**  
+***地图SDK在Android Studio项目的集成有以下两种方法：***    
 ###  (一) 通过拷贝jar包、so库添加SDK  ###
 地图SDK压缩包的下载地址如下：[https://lbs.qq.com/android_v1/log.html](https://lbs.qq.com/android_v1/log.html)  
 #### 1、解压下载的压缩包并拷贝文件 ####
+****Android Studio项目目录结构如下图所示：****  
+<img src="./image/Settings08.jpg" width="500">  
 ****文件目录结构如下图所示：****  
 <img src="./image/Settings07.jpg" width="500">  
 将lib目录下的"*.jar"文件拷贝到Android Studio项目对应的app/libs/文件夹下。  
 将jniLibs目录下的所有文件按照原目录格式，拷贝到Android Studio项目对应的app/src/jniLibs/目录下。  
-
-****Android Studio项目结构如下图所示：****  
-<img src="./image/Settings08.jpg" width="500">  
+ 
 
 #### 2、修改配置 ####
 ****在app module的build.gradle里修改dependencies，在项目中的位置如下图所示：****  
