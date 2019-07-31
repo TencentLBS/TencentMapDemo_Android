@@ -407,7 +407,7 @@ tencentMap.moveCamera(cameraSigma); //移动地图
 
 <img src="https://i.imgur.com/jifdoKS.jpg" width="300">
 
-## 地图移动##
+## 地图移动 ##
 
 CameraUpdateFactory中提供scrollBy()方法平移地图，newLatLng()方法改变地图中心点、移动地图，如下所示：
 
