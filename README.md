@@ -188,8 +188,6 @@ protected void onCreate(Bundle savedInstanceState) {
 
 <img src="https://i.imgur.com/WqMxfd7.jpg" width="300">
 
-<<<<<<< HEAD
-=======
 ## 显示当前定位 ##
 
 定位前需要进行动态权限申请，具体需要申请的权限如下：
@@ -325,7 +323,6 @@ protected void onCreate(Bundle savedInstanceState) {
 ```
 具体关于定位的样例Demo可以参考TencentMapDemo项目中LocationLayerActivity.java文件。
 
->>>>>>> latest_branch
 ## 设置地图类型 ##
 
 腾讯地图SDK提供5种类型的基本地图，具体如下：
@@ -1505,8 +1502,6 @@ public TestOnIndoorStateChangeListener implements OnIndoorStateChangeListener{
     }
 }
 ```
-<<<<<<< HEAD
-=======
 # 导航 #
 腾讯地图SDK支持导航功能，包括驾驶、步行、自行车、公交换乘等不同交通工具的导航路线规划。
 ## 步行路线规划 ##
@@ -1605,4 +1600,4 @@ public TestOnIndoorStateChangeListener implements OnIndoorStateChangeListener{
         VisibleRegion region = projection.getVisibleRegion();
         Toast.makeText(getApplicationContext(), ("当前地图的视野范围：" + new Gson().toJson(region)), Toast.LENGTH_LONG).show();
 ```
->>>>>>> latest_branch
+
