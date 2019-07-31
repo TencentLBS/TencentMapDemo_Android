@@ -32,6 +32,6 @@ dependencies {
     //implementation files('libs/tencent_map_sdk_4.1.0.0.41b7a926d.jar')
     implementation 'pub.devrel:easypermissions:1.1.0'
     //implementation files('libs/TencentmapVectorUtils_v1.0.2.3ed9c2b.jar')
-    implementation 'com.tencent.map:tencent-map-vector-sdk:4.2.4'
+    implementation 'com.tencent.map:tencent-map-vector-sdk:4.2.5'
     implementation 'com.google.code.gson:gson:2.8.5'
 }

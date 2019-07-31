@@ -48,7 +48,7 @@
         <!-- 如果您key确认无误，却依然授权没有通过，请检查您的key的白名单配置 -->
         <meta-data
             android:name="TencentMapSDK"
-            android:value="" />
+            android:value="***********此处添加Key************" />
         <activity android:name=".IndexActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
