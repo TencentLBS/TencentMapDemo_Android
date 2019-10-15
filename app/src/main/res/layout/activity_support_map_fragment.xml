@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".basic.SupportMapFragmentActivity"
+   >
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <!--地图开关-->
+        <Switch
+            android:id="@+id/switch_map"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:checked="false"
+            android:paddingLeft="@dimen/padding"
+            android:visibility="gone" />
+        <!--动态路名开关-->
+        <LinearLayout
+            android:id="@+id/switch_linetext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Switch
+                android:id="@+id/switch_off"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:checked="false"
+                android:text="动态路名开关"
+                android:paddingLeft="@dimen/padding"
+                android:visibility="gone" />
+            <Switch
+                android:id="@+id/switch_style"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:checked="false"
+                android:text="切换文字样式"
+                android:paddingLeft="@dimen/padding"
+                android:visibility="gone" />
+
+        </LinearLayout>
+        <!--poi开关-->
+        <Switch
+            android:id="@+id/switch_poi"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:checked="true"
+            android:paddingLeft="@dimen/padding"
+            android:visibility="gone" />
+        <!--poi检索/文字补全-->
+        <LinearLayout
+            android:id="@+id/ll_poi_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_poi_search"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/et_search_poi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:hint="输入关键字" />
+
+            <Button
+                android:id="@+id/btn_search_poi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="搜索" />
+        </LinearLayout>
+
+        <!--地址解析-->
+        <LinearLayout
+            android:id="@+id/ll_geocoder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_search_poi"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/et_geocoder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:hint="输入地址" />
+
+            <Button
+                android:id="@+id/btn_geocoder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="获取坐标" />
+        </LinearLayout>
+        <!--逆地址解析-->
+        <LinearLayout
+            android:id="@+id/ll_regeocoder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_geocoder"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/et_regeocoder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="输入坐标，经纬度用英文逗号分隔"
+                android:inputType="numberDecimal|textCapCharacters"
+                android:visibility="gone"
+                android:text="39.984154,116.307490" />
+
+            <Button
+                android:id="@+id/btn_regeocoder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="获取地址" />
+        </LinearLayout>
+
+
+        <!--行政区域-->
+        <LinearLayout
+            android:id="@+id/ll_district"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_geocoder"
+            android:orientation="horizontal" >
+
+            <Spinner
+                android:id="@+id/sp_province"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:spinnerMode="dropdown" />
+
+            <Spinner
+                android:id="@+id/sp_city"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:spinnerMode="dropdown" />
+
+            <Spinner
+                android:id="@+id/sp_district"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+        <!--poi补全提示-->
+        <ListView
+            android:id="@+id/lv_suggestions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/et_search_poi"
+            android:layout_alignRight="@+id/et_search_poi"
+            android:layout_below="@+id/et_search_poi"
+            android:background="@android:color/white"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_below="@+id/ll_poi_search" />
+
+        <!--设置UI组件-->
+        <RadioGroup
+            android:id="@+id/linearHorizonLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!--<Switch-->
+                <!--android:id="@+id/switch_zoom"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:checked="true"-->
+                <!--android:paddingLeft="@dimen/padding"-->
+                <!--android:visibility="gone" />-->
+
+            <Switch
+                android:id="@+id/switch_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:checked="false"
+                android:paddingLeft="@dimen/padding"
+                android:visibility="gone" />
+
+            <Switch
+                android:id="@+id/switch_compass"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:checked="false"
+                android:paddingLeft="@dimen/padding"
+                android:visibility="gone" />
+
+            <Switch
+                android:id="@+id/switch_scale_view"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:checked="true"
+                android:paddingLeft="@dimen/padding"
+                android:visibility="gone" />
+
+            <!--<Switch-->
+                <!--android:id="@+id/switch_location"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:checked="true"-->
+                <!--android:paddingLeft="@dimen/padding"-->
+                <!--android:visibility="gone" />-->
+        </RadioGroup>
+
+        <!--设置手势-->
+        <RadioGroup
+            android:id="@+id/lay_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <CheckBox
+                android:id="@+id/btn_scroll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="滑动手势" />
+
+            <CheckBox
+                android:id="@+id/btn_zoom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="缩放手势" />
+
+            <CheckBox
+                android:id="@+id/btn_rotate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="旋转手势" />
+
+            <CheckBox
+                android:id="@+id/btn_slope"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="倾斜手势" />
+        </RadioGroup>
+
+        <!--地图适应显示-->
+        <RadioGroup
+            android:id="@+id/lay_map_bound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <CheckBox
+                android:id="@+id/btn_fit_width"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="适应宽度" />
+
+            <CheckBox
+                android:id="@+id/btn_fit_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="适应高度" />
+
+
+        </RadioGroup>
+        <!--MapFragment-->
+        <fragment
+            android:id="@+id/map_frag"
+            class="com.tencent.tencentmap.mapsdk.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="550dp" />
+
+        <TextView
+            android:id="@+id/tv_info"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/padding"
+            android:visibility="gone" />
+        <!--线的类型-->
+        <RadioGroup
+            android:id="@+id/lay_line"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <RadioButton
+                android:id="@+id/btn_line_simple"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="简单" />
+
+            <RadioButton
+                android:id="@+id/btn_line_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="虚线" />
+
+            <RadioButton
+                android:id="@+id/btn_line_color"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="彩虹" />
+
+            <RadioButton
+                android:id="@+id/btn_line_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="箭头" />
+        </RadioGroup>
+        <!--地图类型切换-->
+        <RadioGroup
+            android:id="@+id/lay_map_type"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/map_frag">
+
+            <RadioButton
+                android:id="@+id/btn_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="普通图" />
+
+            <RadioButton
+                android:id="@+id/btn_satellite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="卫星图" />
+
+            <RadioButton
+                android:id="@+id/btn_navi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="导航图" />
+
+            <RadioButton
+                android:id="@+id/btn_night"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="夜间图" />
+        </RadioGroup>
+
+        <!--定位点类型-->
+        <RadioGroup
+            android:id="@+id/location_type"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/map_frag">
+
+            <RadioButton
+                android:id="@+id/btn_follow_no_center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="默认" />
+
+            <RadioButton
+                android:id="@+id/btn_location_rotate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="固定中心点" />
+
+            <RadioButton
+                android:id="@+id/btn_location_rotate_no_center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="定位点旋转" />
+
+            <RadioButton
+                android:id="@+id/btn_map_rotate_no_center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="地图旋转" />
+        </RadioGroup>
+
+
+
+
+
+
+        <!--个性化地图-->
+        <RadioGroup
+            android:id="@+id/lay_map_style"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/map_frag">
+
+            <RadioButton
+                android:id="@+id/btn_baiqian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="白浅" />
+
+            <RadioButton
+                android:id="@+id/btn_moyuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="墨渊" />
+
+            <RadioButton
+                android:id="@+id/btn_zhanyue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="澹月" />
+        </RadioGroup>
+
+
+
+
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_zoomout"
+        android:visibility="gone"
+         />
+
+    <Button
+        android:id="@+id/btn_zoomout"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:text="缩小"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_zoomin"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btn_zoomin"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:text="放大"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"/>
+
+</android.support.constraint.ConstraintLayout>

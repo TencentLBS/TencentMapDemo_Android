@@ -2,13 +2,23 @@
 
 # 介绍 #
 
-腾讯地图SDK（Android）是一套基于Android 2.3及以上设备的应用程序接口。通过该接口，您可以轻松访问腾讯地图服务和数据，构建功能丰富、交互性强的地图应用程序。
+腾讯位置服务地图SDK（Android）是一套提供多种地理位置服务的应用程序接口。 
+通过调用该接口，您可以轻松访问腾讯地图服务和数据，构建功能丰富、交互性强、契合各种行业场景的地图类应用程序。也可以在自己的Android应用中加入地图相关的功能，包括：地图展示、标注、绘制图形等。 
 
-地图SDK：提供地图的展示、标注、绘制图形等功能。
+使用本平台地图SDK之前，在技术层面，您需具备一定的android编程经验并理解面向对象概念。此外，还需对地图类产品有一定程度的了解。 
 
-API是提供给那些具有一定Android编程经验和了解面向对象概念的读者使用。此外，读者还应该对地图产品有一定的了解。您在使用中遇到任何问题，都可以及时向我们反馈。
+<span style="color:red">地图作为一个 UI 控件，用户对地图所有接口的调用都应从主线程调用，请重点关注！！！</span> 
 
-<span style="color:red">地图作为一个 UI 控件，用户对地图所有接口的调用都应从主线程调用，请重点关注！！！</span>
+您在使用中遇到任何问题，都可以及时向我们反馈。我们推荐您以下几种方式来获得解答：
+
+1. 在腾讯位置服务官网提交工单，系统会将您的问题分配给专业的技术支持进行解答。 
+
+2. 加入腾讯位置服务地图SDK开发者QQ群，群里有众多开发者和您一起讨论问题，群内管理员也会定期收集开发者提出的问题，安排专业技术支持进行解答。 
+
+ QQ群号: 42043129 
+
+
+
 
 # 配置 #
 ## 工程配置 ##
@@ -25,7 +35,7 @@ Android Studio项目的目录结构如下图所示：
 压缩包解压后的文件目录结构如下图所示：  
 <img src="./image/Settings07.jpg" width="500">  
 将lib目录下的"*.jar"文件拷贝到Android Studio项目对应的app/libs/文件夹下。  
-将jniLibs目录下的所有文件按照原目录格式，拷贝到Android Studio项目对应的app/src/jniLibs/目录下。  
+将jniLibs目录下的所有文件按照原目录格式，拷贝到Android Studio项目对应的app/src/main/jniLibs/目录下。  
  
 
 #### 2、修改配置 ####
@@ -93,7 +103,6 @@ dependencies {
 
 要正常使用腾讯地图SDK用户需要在[https://lbs.qq.com/console/key.html](https://lbs.qq.com/console/key.html)申请开发密钥：  
 <img src="./image/Settings04.jpg" width="500">  
-申请开发密钥是免费的，腾讯地图SDK的使用也是免费的。
 Key的设置如下图所示：  
 <img src="./image/Settings05.jpg" width="500">  
 其中地图SDK的对应位置，应传入对应App的包名，保存设置即可。
@@ -1186,6 +1195,52 @@ polyline.remove();
 ```
 
 更多Polyline属性的设置、修改、获取操作请参考“接口文档”。
+
+
+- 添加折线文字
+可以在折线上动态添加、修改文字，可以实现路名的动态显示（详见动态路名Demo）
+```java
+//设置具体折线每条线段上要添加的文字
+public PolylineOptions.Text createText() {
+        List<PolylineOptions.SegmentText> segmentTexts = new ArrayList<>();
+        // SegmentText的三个参数分别为起点在数组中的下标，终点在数组中的下标，以及要显示的文字
+        segmentTexts.add(new PolylineOptions.SegmentText(0, 1, "苏州街"));
+        segmentTexts.add(new PolylineOptions.SegmentText(1, 2, "北四环西路辅路"));
+        segmentTexts.add(new PolylineOptions.SegmentText(2, 4, "彩和坊路"));
+        return new PolylineOptions.Text.Builder(segmentTexts).build();
+    }
+
+Polyline polyline = mTencentmap.addPolyline(
+                new PolylineOptions()
+                        .addAll(mPoints)
+                        .color(0x22ff0000)).text(createText());
+
+```
+- 获取折线文字的样式 
+
+```java
+PolylineOptions.Text text = mPolyline.getText();
+```
+- 修改文字样式 
+```java
+//设置显示优先级，可选项有HIGH或NORMAL
+text.setPriority(PolylineOptions.TextPriority.HIGH);
+//设置字体大小
+text.setTextSize(10);
+//设置填充颜色
+text.setStrokeColor(Color.WHITE);
+//设置文字颜色
+text.setTextColor(Color.BLACK);
+
+//重新修改折线文字样式
+mPolyline.setText(text);
+
+```
+- 移除折线文字 
+```java
+mPolyline.setText(null);
+```
+
 	
 ## 多边形 ##
 
@@ -1297,6 +1352,114 @@ tencentMap.setOnMapLongClickListener(new TencentMap.OnMapLongClickListener() {
 <img src="https://i.imgur.com/lCAH1XV.jpg" width="300">
 
 # 热力图 #
+以特殊高亮的形式显示访客热衷的地理区域和访客所在的地理区域的图示。开发者可以使用这一功能，将自己的数据展示在地图上给用户直观的展示效果。  
+添加热力图需要HeatMapTileProvider对象。通过该对象，可以设置一个热力图层的参数，包括热力图节点、半径、配色方案等属性。  
+WeightedLatLng是热力图节点，包括经纬度和热度值。  
+
+- 添加热力图
+
+热力图需要的数据是经纬度和热力值，下面以随机模拟的数据为例，添加热力图的示例代码如下：
+```java
+
+//默认卷积半径
+private static final int ALT_HEATMAP_RADIUS = HeatMapTileProvider.DEFAULT_RADIUS;
+//默认透明度
+private static final double ALT_HEATMAP_OPACITY = HeatMapTileProvider.DEFAULT_OPACITY;
+//默认渐变控制器
+public static final Gradient ALT_HEATMAP_GRADIENT = HeatMapTileProvider.DEFAULT_GRADIENT;
+
+//热力图顶点
+ArrayList<WeightedLatLng> nodes = new ArrayList<>();
+//
+//以下示例是从data2k文件中读取提前模拟好的顶点数据
+br = new BufferedReader(new InputStreamReader(getResources().getAssets().open("data2k")));
+String line;
+while ((line = br.readLine()) != null) {
+    String[] lines = line.split("\t");
+    if (lines.length == 3) {
+    	double value = Double.parseDouble(lines[2]);
+        LatLng latLng = new LatLng((Double.parseDouble(lines[1])), (Double.parseDouble(lines[0])));
+        nodes.add(new WeightedLatLng(latLng, value));
+    }
+}
+//设置热力图参数
+HeatMapTileProvider mProvider = new HeatMapTileProvider.Builder()
+                    .weightedData(nodes) //热力图节点
+                    .gradient(ALT_HEATMAP_GRADIENT)  //设置渐变控制器
+                    .opacity(ALT_HEATMAP_OPACITY) //设置透明色
+                    .radius(ALT_HEATMAP_RADIUS) //设置卷积半径
+                    .readyListener(new HeatMapTileProvider.OnHeatMapReadyListener() { // 设置热力图准备完成回调
+                        @Override
+                        public void onHeatMapReady() { //热力图准备完成后热力图瓦片缓存刷新
+                            mHeatmapTileOverlay.clearTileCache();
+                            mHeatmapTileOverlay.reload();
+                        }
+                    })
+                    .build(); //创建mProvider
+
+//在当前地图上添加热力图
+mHeatmapTileOverlay = tencentMap.addTileOverlay(new TileOverlayOptions().tileProvider(mProvider));
+
+//地图视野移动到热力图显示的位置，指定了经纬度和缩放级别
+tencentMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(39.961629,116.355343), 18)); 
+
+
+```
+
+添加热力图后的效果如下：  
+<img src="./image/heatmap01.jpg" width="300"> 
+
+自定义热力图方案的示例代码如下： 
+```java
+//渐变色数组
+private static final int[] CUSTOM_GRADIENT_COLORS = {
+            Color.argb(0,0, 225, 225),
+            Color.rgb(102, 125, 200),
+            Color.rgb(255, 0, 0)
+};
+//渐变色边界
+private static final float[] CUSTOM_GRADIENT_START_POINTS = {
+            0.0f, 0.2f, 1f
+};
+
+//自定义渐变算法（参数包括渐变色数组，渐变色边界）
+public static final Gradient CUSTOM_HEATMAP_GRADIENT = new Gradient(CUSTOM_GRADIENT_COLORS,
+            CUSTOM_GRADIENT_START_POINTS);
+
+//添加自定义瓦片生成器
+mProvider.setHeatTileGenerator(new HeatMapTileProvider.HeatTileGenerator() {
+                    @Override
+                    public double[] generateKernel(int radius) { //生成扩散矩阵,radius为半径
+                        double[] kernel = new double[radius * 2 + 1];
+                        for (int i = -radius; i <= radius; i++) {
+                            kernel[i + radius] = Math.exp(-i * i / (2 * (radius / 2f) * (radius / 2f)));
+                        }
+                        return kernel;
+                    }
+
+                    @Override
+                    public int[] generateColorMap(double opacity) { //生成自定义渐变颜色，opacity为透明值
+                        return CUSTOM_HEATMAP_GRADIENT.generateColorMap(opacity);
+                    }
+});
+//热力图瓦片缓存刷新
+mHeatmapTileOverlay.clearTileCache();
+mHeatmapTileOverlay.reload();
+
+```
+自定义热力图效果如下：  
+<img src="./image/heatmap00.jpg" width="300"> 
+
+
+- 移除热力图
+
+移除热力图的示例代码如下：  
+
+```java
+mHeatmapTileOverlay.clearTileCache();
+```
+
+# 旧版本热力图 #
 
 以特殊高亮的形式显示访客热衷的地理区域和访客所在的地理区域的图示。开发者可以使用这一功能，将自己的数据展示在地图上给用户直观的展示效果。
 
@@ -1424,6 +1587,7 @@ heatOverlay.updateData(nodes2);
 heatOverlay.remove();
 ```
 
+
 # 室内图 #
 腾讯地图 SDK 支持室内图功能，包括室内图的展示、带有室内属性的 marker、polyline 等地图元素</br>
 <span style="color:red">室内图功能为付费功能，用户可以参考[腾讯地图室内图官网](https://lbs.qq.com/lbsindoor/home/index.html)了解详情。</span>
@@ -1517,13 +1681,16 @@ tencentMap.setOnMapPoiClickListener(newTencentMap.OnMapPoiClickListener() {
 
 - 自定义楼层控件
 
-开发者可以通过室内图状态的回调信息定制自己的楼层控件，包括UI样式和位置都可以灵活定义。定制前，先隐藏默认的楼层控件：
+开发者可以通过室内图状态的回调信息定制自己的楼层控件，定制前，先隐藏默认的楼层控件，然后基于地图回调的室内数据，使用原生view自行研发楼层控件。
+
+自定义的步骤：
+
+1）隐藏默认楼层控件
 
 ```
 uisettings.setIndoorLevelPickerEnabled(false);
 ```
-
-然后通过OnIndoorStateChangeListener回调中获取的信息，来实现建筑物的状态展示，和楼层信息的实时切换。
+2）通过OnIndoorStateChangeListener回调中获取的信息，来实现建筑物的状态展示，和楼层信息的实时切换。
 
 ```
 Tencentmap:
