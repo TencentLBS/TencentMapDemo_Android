@@ -1,10 +1,13 @@
 apply plugin: 'com.android.application'
 
 Properties properties = new Properties()
-InputStream inputStream = project.rootProject.file('local.properties').newDataInputStream() ;
-properties.load( inputStream )
+File localFile = project.rootProject.file('local.properties')
+if (localFile.exists()) {
+    InputStream inputStream = localFile.newDataInputStream()
+    properties.load( inputStream )
+}
 
-def mapsdkkey = properties.getProperty('mapsdk.key')
+def mapsdkkey = properties.getProperty('mapsdk.key', "")
 
 android {
     compileSdkVersion 28
