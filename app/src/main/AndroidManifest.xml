@@ -5,39 +5,6 @@
 
     <!-- 腾讯地图 sdk 要求的权限(开始) -->
     <!-- 访问网络获取地图服务 -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!-- 检查网络可用性 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!-- 访问WiFi状态 -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <!-- 需要外部存储写权限用于保存地图缓存 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!-- 获取 device id 辨别设备 -->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <!-- 获取日志读取权限，帮助我们提高地图 sdk 稳定性 -->
-    <uses-permission android:name="android.permission.READ_LOGS" />
-    <!-- 腾讯地图 sdk 要求的权限(结束) -->
-
-
-    <!-- 腾讯定位 sdk 要求的权限  (开始) -->
-    <!-- 通过GPS得到精确位置 -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!-- 通过网络得到粗略位置 -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <!-- 访问网络. 某些位置信息需要从网络服务器获取 -->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!-- 访问WiFi状态. 需要WiFi信息用于网络定位 -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <!-- 修改WiFi状态. 发起WiFi扫描, 需要WiFi信息用于网络定位 -->
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <!-- 访问网络状态, 检测网络的可用性. 需要网络运营商相关信息用于网络定位 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!-- 访问网络的变化, 需要某些信息用于网络定位 -->
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-    <!-- 访问手机当前状态, 需要device id用于网络定位 -->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-
-    <!-- 腾讯定位 sdk 要求的权限 (结束) -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -48,63 +15,266 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
         <!-- 如果您key确认无误，却依然授权没有通过，请检查您的key的白名单配置 -->
-        <meta-data
-            android:name="TencentMapSDK"
-            android:value="${TencentMapSDK_KEY}" />
-        <activity android:name=".IndexActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".basic.MapViewActivity" />
+
+        <activity
+            android:name=".main.BasicActivity"
+            android:label="@string/title_main_basic"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="ORDER"
+                android:value="0" />
+        </activity>
+        <activity
+            android:name=".main.InteractiveActivity"
+            android:label="@string/title_main_interactive"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="ORDER"
+                android:value="1" />
+        </activity>
+        <activity
+            android:name=".main.TransformationActivity"
+            android:label="@string/title_main_transformation"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="ORDER"
+                android:value="2" />
+        </activity>
+        <activity
+            android:name=".main.MarkerActivity"
+            android:label="@string/title_main_marker"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="ORDER"
+                android:value="3" />
+        </activity>
+        <activity
+            android:name=".main.DrawActivity"
+            android:label="@string/title_main_draw"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="ORDER"
+                android:value="4" />
+        </activity>
+        <activity
+            android:name=".main.NaviActivity"
+            android:label="@string/title_main_navi"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="ORDER"
+                android:value="5" />
+        </activity>
+        <activity
+            android:name=".main.SearchActivity"
+            android:label="@string/title_main_search"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="ORDER"
+                android:value="6" />
+        </activity>
+        <activity
+            android:name=".main.SpecialActivity"
+            android:label="@string/title_main_special"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="ORDER"
+                android:value="7" />
+        </activity>
+        <activity
+            android:name=".main.ToolsActivity"
+            android:label="@string/title_main_tools"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="ORDER"
+                android:value="8" />
+        </activity>
+
+
+        <activity
+            android:name=".basic.MapViewActivity"
+            android:label="地图对象"
+            android:parentActivityName=".main.BasicActivity" />
+        <activity android:name=".basic.SetMapTypeActivity"
+            android:label="设置地图类型"
+            android:parentActivityName=".main.BasicActivity" />
+        <activity android:name=".basic.SetMapStyleActivity"
+            android:label="个性化地图"
+            android:parentActivityName=".main.BasicActivity"/>
+        <activity android:name=".location.LocationLayerActivity"
+            android:label="地图定位"
+            android:parentActivityName=".main.BasicActivity"/>
+        <activity android:name=".location.LocationPointActivity"
+            android:label="修改地图定位Icon"
+            android:parentActivityName=".main.BasicActivity"/>
+        <activity android:name=".basic.IndoorMapActivity"
+            android:label="室内图"
+            android:parentActivityName=".main.BasicActivity"/>
+        <activity android:name=".basic.HandDrawActivity"
+            android:label="手绘图"
+            android:parentActivityName=".main.BasicActivity"/>
+        <activity android:name=".basic.OverseaMapActivity"
+            android:label="海外图"
+            android:parentActivityName=".main.BasicActivity"/>
+        <activity android:name=".basic.TrafficMapActivity"
+            android:label="路况"
+            android:parentActivityName=".main.BasicActivity"/>
+
+
+        <activity android:name=".basic.UiSettingsActivity"
+            android:label="UI控件交互"
+            android:parentActivityName=".main.InteractiveActivity" />
+        <activity android:name=".gesture.GestureSettingsActivity"
+            android:label="手势交互"
+            android:parentActivityName=".main.InteractiveActivity"/>
+        <activity android:name=".transaction.ZoomMapActivity"
+            android:label="改变地图缩放级别"
+            android:parentActivityName=".main.InteractiveActivity"/>
+        <activity android:name=".camera.MapCameraCenterActivity"
+            android:label="改变地图中心点"
+            android:parentActivityName=".main.InteractiveActivity"/>
+        <activity android:name=".camera.MapBoundActivity"
+            android:label="限制地图显示范围"
+            android:parentActivityName=".main.InteractiveActivity"/>
+        <activity android:name=".utils.SnapshotActivity"
+            android:label="地图截屏"
+            android:parentActivityName=".main.InteractiveActivity"/>
+        <activity android:name=".poi.PoiClickActivity"
+            android:label="POI点击"
+            android:parentActivityName=".main.InteractiveActivity"/>
+        <activity android:name=".transaction.AnimateCameraActivity"
+            android:label="动画效果"
+            android:parentActivityName=".main.InteractiveActivity"/>
+        <activity android:name=".camera.MapAnchorZoomActivity"
+            android:label="指定锚点缩放"
+            android:parentActivityName=".main.InteractiveActivity"/>
+
+
+        <activity android:name=".transaction.ScollMapActivity"
+            android:label="平移"
+            android:parentActivityName=".main.TransformationActivity"/>
+        <activity android:name=".transaction.RotateMapActivity"
+            android:label="旋转"
+            android:parentActivityName=".main.TransformationActivity"/>
+        <activity android:name=".transaction.ZoomCalulateActivity"
+            android:label="平移改变视图效果"
+            android:parentActivityName=".main.TransformationActivity"/>
+        <activity android:name=".transaction.MoveCameraActivity"
+            android:label="地图视图改变监听事件"
+            android:parentActivityName=".main.TransformationActivity"/>
+        <activity android:name=".gesture.MapListenActivity"
+            android:label="地图点击监听事件"
+            android:parentActivityName=".main.TransformationActivity"/>
+        <activity android:name=".gesture.MapLongClickActivity"
+            android:label="地图长按监听事件"
+            android:parentActivityName=".main.TransformationActivity"/>
+
+
+        <activity android:name=".marker.MarkerClickActivity"
+            android:label="标注点击事件"
+            android:parentActivityName=".main.MarkerActivity"/>
+        <activity android:name=".marker.MarkerDragActivity"
+            android:label="标注拖拽事件"
+            android:parentActivityName=".main.MarkerActivity"/>
+        <activity android:name=".marker.MarkerInfoWindowActivity"
+            android:label="标注信息窗点击事件"
+            android:parentActivityName=".main.MarkerActivity"/>
+        <activity android:name=".marker.MarkerClusterActivity"
+            android:label="标注聚合"
+            android:parentActivityName=".main.MarkerActivity"/>
+        <activity android:name=".marker.MarkerAnimation"
+            android:label="标注动画"
+            android:parentActivityName=".main.MarkerActivity"/>
+
+        <activity android:name=".heatoverlay.DrawHeatOverlayActivity"
+            android:label="热力图"
+            android:parentActivityName=".main.DrawActivity"/>
+        <activity android:name=".polyline.DrawLineActivity"
+            android:label="折线"
+            android:parentActivityName=".main.DrawActivity"/>
+        <activity android:name=".polygon.DrawPolygonActivity"
+            android:label="多边形"
+            android:parentActivityName=".main.DrawActivity"/>
+        <activity android:name=".circle.DrawCircleActivity"
+            android:label="圆"
+            android:parentActivityName=".main.DrawActivity"/>
+        <activity android:name=".marker.MarkerActivity"
+            android:label="标注"
+            android:parentActivityName=".main.DrawActivity"/>
+
+        <activity android:name=".search.WalkingRouteActivity"
+            android:label="步行导航"
+            android:parentActivityName=".main.NaviActivity"/>
+        <activity android:name=".search.DrivingRouteActivity"
+            android:label="驾车导航"
+            android:parentActivityName=".main.NaviActivity"/>
+
+        <activity android:name=".search.SearchBasicActivity"
+            android:label="基础检索"
+            android:parentActivityName=".main.SearchActivity"/>
+        <activity android:name=".search.GeoCoderActivity"
+            android:label="地址逆地址解析"
+            android:parentActivityName=".main.SearchActivity"/>
+        <activity android:name=".search.DistrictActivity"
+            android:label="行政区划"
+            android:parentActivityName=".main.SearchActivity"/>
+
+        <activity android:name=".polyline.LineTextActivity"
+            android:label="动态路名"
+            android:parentActivityName=".main.SpecialActivity"/>
+
+        <activity android:name=".utils.BitMapActivity"
+            android:label="位图"
+            android:parentActivityName=".main.ToolsActivity"/>
+        <activity android:name=".utils.CoordinateActivity"
+            android:label="坐标转换"
+            android:parentActivityName=".main.ToolsActivity"/>
+
         <activity android:name=".basic.SupportMapFragmentActivity" />
-        <activity android:name=".heatoverlay.DrawHeatOverlayActivity" />
-        <activity android:name=".basic.TrafficMapActivity" />
-        <activity android:name=".location.LocationLayerActivity" />
-        <activity android:name=".basic.UiSettingsActivity" />
-        <activity android:name=".marker.MarkerActivity" />
-        <activity android:name=".marker.MarkerDragActivity" />
-        <activity android:name=".marker.MarkerClickActivity" />
-        <activity android:name=".marker.MarkerInfoWindowActivity" />
-        <activity android:name=".gesture.MapListenActivity" />
-        <activity android:name=".camera.MapCameraCenterActivity" />
-        <activity android:name=".gesture.MapLongClickActivity" />
-        <activity android:name=".polyline.DrawLineActivity" />
-        <activity android:name=".polygon.DrawPolygonActivity" />
-        <activity android:name=".circle.DrawCircleActivity" />
-        <activity android:name=".marker.MarkerClusterActivity" />
-        <activity android:name=".transaction.MoveCameraActivity" />
-        <activity android:name=".transaction.AnimateCameraActivity" />
-        <activity android:name=".transaction.ZoomCalulateActivity" />
-        <activity android:name=".transaction.ZoomMapActivity" />
-        <activity android:name=".transaction.RotateMapActivity" />
-        <activity android:name=".transaction.ScollMapActivity" />
-        <activity android:name=".marker.MarkerAnimation"></activity>
-        <activity android:name=".basic.SetMapTypeActivity"></activity>
-        <activity android:name=".basic.HandDrawActivity"></activity>
-        <activity android:name=".basic.OverseaMapActivity"></activity>
-        <activity android:name=".basic.IndoorMapActivity"></activity>
-        <activity android:name=".basic.SetMapStyleActivity"></activity>
-        <activity android:name=".location.LocationPointActivity"></activity>
-        <activity android:name=".poi.PoiClickActivity"></activity>
-        <activity android:name=".gesture.GestureSettingsActivity"></activity>
 
-        <activity android:name=".camera.MapBoundActivity"></activity>
-        <activity android:name=".camera.MapAnchorZoomActivity"></activity>
-
-        <activity android:name=".search.WalkingRouteActivity"></activity>
-        <activity android:name=".search.DrivingRouteActivity"></activity>
-        <activity android:name=".search.SearchBasicActivity"></activity>
-        <activity android:name=".search.GeoCoderActivity"></activity>
-        <activity android:name=".search.DistrictActivity"></activity>
-
-        <activity android:name=".polyline.LineTextActivity"></activity>
-
-        <activity android:name=".utils.CoordinateActivity"></activity>
-        <activity android:name=".utils.BitMapActivity"></activity>
-        <activity android:name=".utils.SnapshotActivity"></activity>
+        <meta-data
+            android:name="TencentMapSDK"
+            android:value="${TencentMapSDK_KEY}" />
     </application>
+
+    <!-- 检查网络可用性 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 访问WiFi状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 需要外部存储写权限用于保存地图缓存 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 获取 device id 辨别设备 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 获取日志读取权限，帮助我们提高地图 sdk 稳定性 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 腾讯地图 sdk 要求的权限(结束) -->
+
+
+    <!-- 腾讯定位 sdk 要求的权限  (开始) -->
+    <!-- 通过GPS得到精确位置 -->
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <!-- 通过网络得到粗略位置 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 访问网络. 某些位置信息需要从网络服务器获取 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 访问WiFi状态. 需要WiFi信息用于网络定位 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 修改WiFi状态. 发起WiFi扫描, 需要WiFi信息用于网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 访问网络状态, 检测网络的可用性. 需要网络运营商相关信息用于网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 访问网络的变化, 需要某些信息用于网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 访问手机当前状态, 需要device id用于网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <!-- 腾讯定位 sdk 要求的权限 (结束) -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
 </manifest>

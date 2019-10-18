@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MapViewActivity">
+    tools:context=".basic.MapViewActivity">
 
     <com.tencent.tencentmap.mapsdk.maps.MapView
         android:id="@+id/mapview"
