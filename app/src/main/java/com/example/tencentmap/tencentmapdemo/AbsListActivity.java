@@ -69,24 +69,27 @@ public abstract class AbsListActivity extends AbsActivity {
             pE.printStackTrace();
         }
 
-        //排序
         Arrays.sort(activityIfs, new Comparator<ActivityInfo>() {
             @Override
             public int compare(ActivityInfo o1, ActivityInfo o2) {
-                int order1 = -1;
-                if (o1.metaData != null) {
-                    order1 = o1.metaData.getInt("ORDER", -1);
-                }
-                int order2 = -1;
-                if (o2.metaData != null) {
-                    order2 = o2.metaData.getInt("ORDER", -1);
-                }
-
-                if (order1 != -1 && order2 != -1) {
-                    return order1 - order2;
-                }
-
                 return o1.name.compareTo(o2.name);
+            }
+        });
+
+        //优先以ORDER排序
+        Arrays.sort(activityIfs, new Comparator<ActivityInfo>() {
+            @Override
+            public int compare(ActivityInfo o1, ActivityInfo o2) {
+                int order1 = Integer.MAX_VALUE;
+                if (o1.metaData != null) {
+                    order1 = o1.metaData.getInt("ORDER", Integer.MAX_VALUE);
+                }
+                int order2 = Integer.MAX_VALUE;
+                if (o2.metaData != null) {
+                    order2 = o2.metaData.getInt("ORDER", Integer.MAX_VALUE);
+                }
+
+                return order1 - order2;
             }
         });
 

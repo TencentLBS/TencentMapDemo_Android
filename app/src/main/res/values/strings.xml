@@ -9,5 +9,18 @@
     <string name="title_main_search">检索</string>
     <string name="title_main_special">特色</string>
     <string name="title_main_tools">工具</string>
+    <string name="menu_title_add">添加</string>
+    <string name="menu_title_default">默认</string>
+    <string name="menu_title_custom">自定义</string>
+    <string name="menu_title_delete">移除</string>
+    <string name="menu_title_animation">播放动画</string>
+    <string name="menu_title_hide">隐藏</string>
+    <string name="menu_title_show">显示</string>
+    <string name="menu_title_style1">样式1</string>
+    <string name="menu_title_style2">样式2</string>
+    <string name="menu_title_infowindow_bitmap">Bitmap</string>
+    <string name="menu_title_infowindow_view">View</string>
+    <string name="menu_title_enable">开启</string>
+    <string name="menu_title_close">关闭</string>
 
 </resources>

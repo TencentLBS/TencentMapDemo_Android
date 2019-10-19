@@ -176,14 +176,24 @@
             android:parentActivityName=".main.TransformationActivity"/>
 
 
+        <!-- 标注 -->
+        <activity android:name=".marker.SimpleMarkerActivity"
+            android:label="添加一个标注"
+            android:parentActivityName=".main.MarkerActivity">
+            <meta-data android:name="ORDER" android:value="0" />
+        </activity>
+
         <activity android:name=".marker.MarkerClickActivity"
             android:label="标注点击事件"
             android:parentActivityName=".main.MarkerActivity"/>
         <activity android:name=".marker.MarkerDragActivity"
             android:label="标注拖拽事件"
             android:parentActivityName=".main.MarkerActivity"/>
+        <activity android:name=".marker.MarkerOptionsActivity"
+            android:label="标注配置"
+            android:parentActivityName=".main.MarkerActivity"/>
         <activity android:name=".marker.MarkerInfoWindowActivity"
-            android:label="标注信息窗点击事件"
+            android:label="标注信息窗"
             android:parentActivityName=".main.MarkerActivity"/>
         <activity android:name=".marker.MarkerClusterActivity"
             android:label="标注聚合"

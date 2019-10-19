@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
 import android.view.Menu;
+import android.view.MenuItem;
 
 import com.tencent.tencentmap.mapsdk.maps.SupportMapFragment;
 import com.tencent.tencentmap.mapsdk.maps.TencentMap;
@@ -42,5 +43,11 @@ public abstract class AbsMapActivity extends AbsActivity {
     public boolean onPrepareOptionsMenu(Menu menu) {
         supportInvalidateOptionsMenu();
         return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        supportInvalidateOptionsMenu();
+        return super.onOptionsItemSelected(item);
     }
 }
