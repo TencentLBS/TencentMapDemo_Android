@@ -22,5 +22,9 @@
     <string name="menu_title_infowindow_view">View</string>
     <string name="menu_title_enable">开启</string>
     <string name="menu_title_close">关闭</string>
+    <string name="menu_title_line_text">路名</string>
+    <string name="menu_title_line_dash">虚线</string>
+    <string name="menu_title_line_segment">分段线</string>
+    <string name="menu_title_line_texture">纹理线</string>
 
 </resources>

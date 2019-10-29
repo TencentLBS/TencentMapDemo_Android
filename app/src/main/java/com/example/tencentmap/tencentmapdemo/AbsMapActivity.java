@@ -35,7 +35,7 @@ public abstract class AbsMapActivity extends AbsActivity {
         return mTencentMap == null || mTencentMap.isDestroyed();
     }
 
-    protected void onCreate(@Nullable Bundle savedInstanceState, TencentMap pTencentMap) {
+    protected void onCreate(@Nullable Bundle savedInstanceState, TencentMap tencentMap) {
 
     }
 
