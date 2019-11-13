@@ -16,6 +16,13 @@ import com.tencent.tencentmap.mapsdk.maps.model.MarkerOptions;
 
 public class MarkerInfoWindowActivity extends MarkerActivity implements TencentMap.OnInfoWindowClickListener {
 
+    private LatLng latlng_disanji = new LatLng(39.984253,116.307439);
+
+    /**
+     * Marker配置
+     */
+    Marker marker;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,20 +31,20 @@ public class MarkerInfoWindowActivity extends MarkerActivity implements TencentM
         tencentMap.setOnInfoWindowClickListener(this);
         //设置信息窗适配器
         tencentMap.setInfoWindowAdapter(infoWindowAdapter);
+        marker = tencentMap.addMarker(new MarkerOptions()
+                //标注的位置
+                .position(latlng_disanji)
+                //标注的InfoWindow的标题
+                .title("第三极大厦")
+                //标注的InfoWindow的内容
+                .snippet("地址: 北京市北四环西路66号")
+                //标注的锚点，取值为[0.0 ~ 1.0]
+                .anchor(0.5f, 0.5f)
+                //设置自定义Marker图标
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker))
+        );
     }
 
-
-    private LatLng latlng_disanji = new LatLng(39.984253,116.307439);
-    /**
-     * Marker配置
-     */
-    final Marker marker = tencentMap.addMarker(new MarkerOptions()
-            .position(latlng_disanji)  //标注的位置
-            .title("第三极大厦")     //标注的InfoWindow的标题
-            .snippet("地址: 北京市北四环西路66号") //标注的InfoWindow的内容
-            .anchor(0.5f, 0.5f)  //标注的锚点，取值为[0.0 ~ 1.0]
-            .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker)) //设置自定义Marker图标
-    );
     /**
      * 自定义信息窗
      */
