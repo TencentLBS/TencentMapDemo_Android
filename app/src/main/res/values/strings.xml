@@ -5,7 +5,7 @@
     <string name="title_main_transformation">地图变换</string>
     <string name="title_main_marker">标注</string>
     <string name="title_main_draw">图形绘制</string>
-    <string name="title_main_navi">导航</string>
+    <string name="title_main_route_plan">路线规划</string>
     <string name="title_main_search">检索</string>
     <string name="title_main_special">特色</string>
     <string name="title_main_tools">工具</string>

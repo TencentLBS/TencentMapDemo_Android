@@ -19,15 +19,15 @@
     tencentMap.setIndoorEnabled(true);
     ```
 
-    以北京南站为例，如下图所示：
-    ![](/indoor_map/images/beijing_nan.png)
+    以欧美汇为例，如下图所示：
+    ![](/indoor_map/images/indoor.png)
     当室内图打开时，默认会展示室内图楼层控件，用户也可以按照自己的需求展示/隐藏室内图楼层控件：
 
     ```java
     uisettings.setIndoorLevelPickerEnabled(false);
     ```
 
-    ![](/indoor_map/images/beijing_nan_without_controller.png)
+    ![](/indoor_map/images/indoor_without_controller.png)
 
 3. 设置展示室内图的建筑的楼层
 
@@ -66,14 +66,14 @@
 ```java
 tencentMap.setIndoorEnabled(true);
 tencentMap.moveCamera(CameraUpdateFactory.newLatLngZoo(new LatLng(39.865105,116.378345), 18));
-tencentMap.addMarker(new MarkerOptions(new LatLn(39.865105,116.378345))
+tencentMap.addMarker(new MarkerOptions(new LatLn(39.979708, 116.313486))
         // *******需要更换为当前建筑的builidingid
-        .indoorInfo(new IndoorInfo("**********", "B1")));
+        .indoorInfo(new IndoorInfo("**********", "F3")));
 ```
 ![](/indoor_map/images/marker.png)
 ![](/indoor_map/images/no_marker.png)
 
-如图所示，添加的 marker 只在北京南站的 B1 层展示
+如图所示，添加的 marker 只在欧美汇的 F3 层展示
 
 #### 获取室内 poi 的属性
 ----

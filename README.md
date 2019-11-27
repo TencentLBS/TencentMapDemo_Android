@@ -15,3 +15,7 @@
 
  QQ群号: 42043129 
 
+更多功能请查阅[接入文档](https://tencentlbs.github.io/TencentMapDemo_Android/)
+
+# DEMO key 配置#
+用户可以在 demo 中的 AndroidManifest.xml 文件中设置腾讯地图开发者 key, 也可以在项目根目录的 local.properties 中添加 mapsdk.key=腾讯地图开发者 key

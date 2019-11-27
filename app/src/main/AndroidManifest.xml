@@ -64,8 +64,8 @@
                 android:value="4" />
         </activity>
         <activity
-            android:name=".main.NaviActivity"
-            android:label="@string/title_main_navi"
+            android:name=".main.RoutePlanActivity"
+            android:label="@string/title_main_route_plan"
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="ORDER"
@@ -209,11 +209,11 @@
             android:parentActivityName=".main.DrawActivity"/>
 
         <activity android:name=".search.WalkingRouteActivity"
-            android:label="步行导航"
-            android:parentActivityName=".main.NaviActivity"/>
+            android:label="步行路线规划"
+            android:parentActivityName=".main.RoutePlanActivity"/>
         <activity android:name=".search.DrivingRouteActivity"
-            android:label="驾车导航"
-            android:parentActivityName=".main.NaviActivity"/>
+            android:label="驾车路线规划"
+            android:parentActivityName=".main.RoutePlanActivity"/>
 
         <activity android:name=".search.SearchBasicActivity"
             android:label="基础检索"
@@ -258,23 +258,22 @@
 
     <!-- 腾讯定位 sdk 要求的权限  (开始) -->
     <!-- 通过GPS得到精确位置 -->
-    <uses-permission android:name="android.permission.READ_LOGS" />
-    <!-- 通过网络得到粗略位置 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!-- 访问网络. 某些位置信息需要从网络服务器获取 -->
+    <!-- 通过网络得到粗略位置 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <!-- 访问WiFi状态. 需要WiFi信息用于网络定位 -->
+    <!-- 访问网络. 某些位置信息需要从网络服务器获取 -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <!-- 修改WiFi状态. 发起WiFi扫描, 需要WiFi信息用于网络定位 -->
+    <!-- 访问WiFi状态. 需要WiFi信息用于网络定位 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <!-- 访问网络状态, 检测网络的可用性. 需要网络运营商相关信息用于网络定位 -->
+    <!-- 修改WiFi状态. 发起WiFi扫描, 需要WiFi信息用于网络定位 -->
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <!-- 访问网络的变化, 需要某些信息用于网络定位 -->
+    <!-- 访问网络状态, 检测网络的可用性. 需要网络运营商相关信息用于网络定位 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!-- 访问手机当前状态, 需要device id用于网络定位 -->
+    <!-- 访问网络的变化, 需要某些信息用于网络定位 -->
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!-- 访问手机当前状态, 需要device id用于网络定位 -->
 
-    <!-- 腾讯定位 sdk 要求的权限 (结束) -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 腾讯定位 sdk 要求的权限 (结束) -->
 
 </manifest>
