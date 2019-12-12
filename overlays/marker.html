@@ -1,0 +1,934 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>点标注 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="polyline.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    工程配置
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../config/manual.html">
+            
+                <a href="../config/manual.html">
+            
+                    
+                    手动导入 SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../config/maven.html">
+            
+                <a href="../config/maven.html">
+            
+                    
+                    Gradle 集成SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../config/permission.html">
+            
+                <a href="../config/permission.html">
+            
+                    
+                    权限配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../config/proguard.html">
+            
+                <a href="../config/proguard.html">
+            
+                    
+                    混淆配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../config/key.html">
+            
+                <a href="../config/key.html">
+            
+                    
+                    Key配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    地图显示
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../show_map/mapview.html">
+            
+                <a href="../show_map/mapview.html">
+            
+                    
+                    MapView
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../show_map/supportmapfragment.html">
+            
+                <a href="../show_map/supportmapfragment.html">
+            
+                    
+                    SupportMapFragment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../show_map/map_type.html">
+            
+                <a href="../show_map/map_type.html">
+            
+                    
+                    设置地图类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../show_map/camera.html">
+            
+                <a href="../show_map/camera.html">
+            
+                    
+                    地图视野
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../show_map/uisetting.html">
+            
+                <a href="../show_map/uisetting.html">
+            
+                    
+                    UI设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                    地图标注
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="4.1.1" data-path="marker.html">
+            
+                <a href="marker.html">
+            
+                    
+                    点标注
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="polyline.html">
+            
+                <a href="polyline.html">
+            
+                    
+                    折线
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="polygon.html">
+            
+                <a href="polygon.html">
+            
+                    
+                    多边形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="circle.html">
+            
+                <a href="circle.html">
+            
+                    
+                    圆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="remove.html">
+            
+                <a href="remove.html">
+            
+                    
+                    清除Overlay
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                    瓦片图层
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../tile_overlay/heatmap.html">
+            
+                <a href="../tile_overlay/heatmap.html">
+            
+                    
+                    热力图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../tile_overlay/old_heatmap.html">
+            
+                <a href="../tile_overlay/old_heatmap.html">
+            
+                    
+                    旧版本热力图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../indoor_map/indoor_map.html">
+            
+                <a href="../indoor_map/indoor_map.html">
+            
+                    
+                    室内图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../show_location/show_location.html">
+            
+                <a href="../show_location/show_location.html">
+            
+                    
+                    显示当前定位
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" >
+            
+                <span>
+            
+                    
+                    路线规划
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.1" data-path="../route_plan/walking.html">
+            
+                <a href="../route_plan/walking.html">
+            
+                    
+                    步行路线规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" >
+            
+                <span>
+            
+                    
+                    工具类
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.1" data-path="../utils/snapshot.html">
+            
+                <a href="../utils/snapshot.html">
+            
+                    
+                    截图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2" data-path="../utils/projection.html">
+            
+                <a href="../utils/projection.html">
+            
+                    
+                    坐标转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >点标注</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="&#x70B9;&#x6807;&#x6CE8;">&#x70B9;&#x6807;&#x6CE8;</h3>
+<p>&#x70B9;&#x6807;&#x6CE8;&#x53EF;&#x7528;&#x6765;&#x6807;&#x6CE8;&#x5730;&#x56FE;&#x4E0A;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x5982;&#x7528;&#x6237;&#x4F4D;&#x7F6E;&#x3001;&#x5E97;&#x94FA;&#x4F4D;&#x7F6E;&#x3002;&#x5730;&#x56FE;SDK&#x63D0;&#x4F9B;&#x7684;&#x70B9;&#x6807;&#x6CE8;&#x529F;&#x80FD;&#x5305;&#x62EC;&#x4E24;&#x90E8;&#x5206;&#xFF1A;&#x6807;&#x6CE8;&#x70B9;&#x4F4D;&#x7F6E;&#x7684; Marker &#x548C;&#x663E;&#x793A;&#x4F4D;&#x7F6E;&#x4FE1;&#x606F;&#x7684; InfoWindow &#xFF0C;&#x540C;&#x65F6;&#x63D0;&#x4F9B;&#x4E86; Marker &#x7684;&#x70B9;&#x51FB;&#x3001;&#x62D6;&#x62FD;&#x4E8B;&#x4EF6;&#x76D1;&#x542C;&#x548C; InfoWindow &#x7684;&#x70B9;&#x51FB;&#x76D1;&#x542C;&#x3002;</p>
+<h4 id="&#x6DFB;&#x52A0;-marker-&#x53CA;-infowindow">&#x6DFB;&#x52A0; Marker &#x53CA; InfoWindow</h4>
+<hr>
+<p>&#x6DFB;&#x52A0;Marker&#x53EF;&#x4EE5;&#x5728;&#x5730;&#x56FE;&#x4E0A;&#x6807;&#x6CE8;&#x6307;&#x5B9A;&#x7684;&#x70B9;&#xFF0C;MarkerOption&#x662F;&#x8BBE;&#x7F6E;Marker&#x53C2;&#x6570;&#x7684;&#x7C7B;&#x3002;&#x6DFB;&#x52A0;Marker&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java">LatLng latlng_disanji = <span class="hljs-keyword">new</span> LatLng(<span class="hljs-number">39.984253</span>,<span class="hljs-number">116.307439</span>);
+<span class="hljs-keyword">final</span> Marker marker = tencentMap.addMarker(<span class="hljs-keyword">new</span> MarkerOptions()
+            <span class="hljs-comment">// &#x6807;&#x6CE8;&#x7684;&#x4F4D;&#x7F6E;</span>
+            .position(latlng_disanji)
+            <span class="hljs-comment">// &#x6807;&#x6CE8;&#x7684;InfoWindow&#x7684;&#x6807;&#x9898;</span>
+            .title(<span class="hljs-string">&quot;&#x7B2C;&#x4E09;&#x6781;&#x5927;&#x53A6;&quot;</span>)
+            <span class="hljs-comment">//&#x6807;&#x6CE8;&#x7684;InfoWindow&#x7684;&#x5185;&#x5BB9;</span>
+            .snippet(<span class="hljs-string">&quot;&#x5730;&#x5740;: &#x5317;&#x4EAC;&#x5E02;&#x5317;&#x56DB;&#x73AF;&#x897F;&#x8DEF;66&#x53F7;&quot;</span>)
+            <span class="hljs-comment">// &#x6807;&#x6CE8;&#x7684;&#x951A;&#x70B9;&#xFF0C;&#x53D6;&#x503C;&#x4E3A;[0.0 ~ 1.0]</span>
+            .anchor(<span class="hljs-number">0.5f</span>, <span class="hljs-number">0.5f</span>)
+    );
+
+<span class="hljs-comment">// &#x663E;&#x793A;&#x4FE1;&#x606F;&#x7A97;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x70B9;&#x51FB;Marker&#x56FE;&#x6807;&#x8BBE;&#x7F6E;&#x663E;&#x793A;&#x6216;&#x9690;&#x85CF;</span>
+marker.showInfoWindow();
+
+<span class="hljs-comment">// &#x628A;&#x5730;&#x56FE;&#x79FB;&#x52A8;&#x5230;&#x6307;&#x5B9A;&#x7ECF;&#x7EAC;&#x5EA6;</span>
+tencentMap.moveCamera(CameraUpdateFactory.newLatLng(latlng_disanji));
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x7ED8;&#x5236;&#x7684; Marker &#x53CA; InfoWindow &#x6548;&#x679C;&#x56FE;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><img src="images/default_marker.jpg" alt="&#x7B2C;&#x4E09;&#x6781;"></p>
+<p>Marker &#x5E38;&#x7528;&#x5C5E;&#x6027;&#x5982;&#x4E0B;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5C5E;&#x6027;</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">position</td>
+<td style="text-align:left">&#x6807;&#x6CE8;&#x7684;&#x4F4D;&#x7F6E;</td>
+</tr>
+<tr>
+<td style="text-align:left">title</td>
+<td style="text-align:left">&#x6807;&#x6CE8;&#x7684;InfoWindow&#x7684;&#x6807;&#x9898;&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86;InfoWindowAdapter&#x5219;&#x5931;&#x6548;</td>
+</tr>
+<tr>
+<td style="text-align:left">snippet</td>
+<td style="text-align:left">&#x6807;&#x6CE8;&#x7684;InfoWindow&#x7684;&#x5185;&#x5BB9;</td>
+</tr>
+<tr>
+<td style="text-align:left">icon</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;&#x6807;&#x6CE8;&#x7684;&#x6837;&#x5F0F;</td>
+</tr>
+<tr>
+<td style="text-align:left">anchor</td>
+<td style="text-align:left">&#x6807;&#x6CE8;&#x7684;&#x951A;&#x70B9;</td>
+</tr>
+<tr>
+<td style="text-align:left">draggable</td>
+<td style="text-align:left">&#x6807;&#x6CE8;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x88AB;&#x62D6;&#x52A8;</td>
+</tr>
+<tr>
+<td style="text-align:left">visible</td>
+<td style="text-align:left">&#x6807;&#x6CE8;&#x662F;&#x5426;&#x53EF;&#x89C1;</td>
+</tr>
+<tr>
+<td style="text-align:left">rotation</td>
+<td style="text-align:left">&#x6807;&#x6CE8;&#x7684;&#x65CB;&#x8F6C;&#x89D2;&#x5EA6;</td>
+</tr>
+<tr>
+<td style="text-align:left">alpha</td>
+<td style="text-align:left">&#x6807;&#x6CE8;&#x7684;&#x900F;&#x660E;&#x5EA6;</td>
+</tr>
+<tr>
+<td style="text-align:left">zIndex</td>
+<td style="text-align:left">&#x6807;&#x6CE8;&#x7684;&#x5C42;&#x7EA7;&#x5173;&#x7CFB;</td>
+</tr>
+<tr>
+<td style="text-align:left">indoorInfo</td>
+<td style="text-align:left">&#x4E3A;Marker&#x6DFB;&#x52A0;&#x5BA4;&#x5185;&#x56FE;&#x4FE1;&#x606F;&#xFF08;buildingId&#xFF0C;floorName), &#x5F53;&#x6DFB;&#x52A0;&#x5BA4;&#x5185;&#x56FE;&#x4FE1;&#x606F;&#x540E;&#xFF0C;Marker&#x5C06;&#x4F1A;&#x968F;&#x7740;&#x7ED1;&#x5B9A;&#x7684;&#x5BA4;&#x5185;&#x56FE;&#x72B6;&#x6001;&#x6539;&#x53D8;&#x800C;&#x5C55;&#x793A;&#x548C;&#x9690;&#x85CF;</td>
+</tr>
+<tr>
+<td style="text-align:left">infoWindowEnable</td>
+<td style="text-align:left">&#x6807;&#x6CE8;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x5F39;&#x51FA;InfoWindow</td>
+</tr>
+<tr>
+<td style="text-align:left">flat</td>
+<td style="text-align:left">&#x662F;&#x4E0D;&#x662F;3D&#x6807;&#x6CE8;&#xFF0C;3D&#x6807;&#x6CE8;&#x4F1A;&#x968F;&#x7740;&#x5730;&#x56FE;&#x503E;&#x659C;&#x9762;&#x503E;&#x659C;</td>
+</tr>
+<tr>
+<td style="text-align:left">displayLevel</td>
+<td style="text-align:left">&#x663E;&#x793A;&#x7EA7;&#x522B;&#xFF1A;0 &#x4E0D;&#x53C2;&#x4E0E;&#x907F;&#x8BA9;&#xFF0C;1-65535 &#x53C2;&#x4E0E;&#x907F;&#x8BA9;&#x4E14;1&#x7684;&#x7EA7;&#x522B;&#x6700;&#x9AD8;</td>
+</tr>
+<tr>
+<td style="text-align:left">autoOverturnInfoWindow</td>
+<td style="text-align:left">&#x8BE5;marker&#x5BF9;&#x5E94;&#x7684;&#x6C14;&#x6CE1;&#x662F;&#x5426;&#x5B9E;&#x73B0;&#x81EA;&#x52A8;&#x7FFB;&#x8F6C;</td>
+</tr>
+<tr>
+<td style="text-align:left">avoidAnnocation</td>
+<td style="text-align:left">&#x662F;&#x5426;&#x907F;&#x8BA9;&#x5E95;&#x56FE;&#x6587;&#x5B57;</td>
+</tr>
+<tr>
+<td style="text-align:left">clockwise</td>
+<td style="text-align:left">&#x65CB;&#x8F6C;&#x89D2;&#x5EA6;&#x662F;&#x5426;&#x6CBF;&#x987A;&#x65F6;&#x9488;&#x65B9;&#x5411;</td>
+</tr>
+<tr>
+<td style="text-align:left">infoWindowAnchor</td>
+<td style="text-align:left">&#x8BBE;&#x7F6E;infowindow anchor point</td>
+</tr>
+<tr>
+<td style="text-align:left">fastLoad</td>
+<td style="text-align:left">&#x662F;&#x5426;&#x5141;&#x8BB8; marker &#x5FEB;&#x901F;&#x52A0;&#x8F7D;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x81EA;&#x5B9A;&#x4E49;marker&#x53CA;infowindow">&#x81EA;&#x5B9A;&#x4E49;Marker&#x53CA;InfoWindow</h4>
+<hr>
+<p>&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5728;&#x5730;&#x56FE;&#x7684;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x6DFB;&#x52A0;&#x81EA;&#x5B9A;&#x4E49;&#x7684; Marker&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x81EA;&#x5B9A;&#x4E49;&#x4FE1;&#x606F;&#x7A97;&#x3002;InfoWindow &#x4FE1;&#x606F;&#x7A97;&#x662F;&#x663E;&#x793A;&#x5F53;&#x524D;&#x6807;&#x6CE8;&#x4FE1;&#x606F;&#x7684;&#x63A7;&#x4EF6;&#xFF0C;SDK &#x63D0;&#x4F9B;&#x7684; InfoWindow &#x53EA;&#x80FD;&#x663E;&#x793A; Marker &#x7684;&#x4E24;&#x6761;&#x4FE1;&#x606F;&#xFF1A;title &#x548C; snippet&#xFF0C;&#x5982;&#x679C;&#x7528;&#x6237;&#x5BF9;&#x4FE1;&#x606F;&#x7A97;&#x7684;&#x6837;&#x5F0F;&#x6216;&#x8005;&#x663E;&#x793A;&#x65B9;&#x5F0F;&#x6709;&#x5176;&#x4ED6;&#x8981;&#x6C42;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x4FE1;&#x606F;&#x7A97;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x5728; layout &#x4E2D;&#x521B;&#x5EFA; custom_infowindow.XML &#x6587;&#x4EF6;&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;&#x4FE1;&#x606F;&#x7A97;&#x6837;&#x5F0F;</p>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;utf-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">LinearLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;match_parent&quot;</span>
+    <span class="hljs-attr">android:background</span>=<span class="hljs-string">&quot;@drawable/infowindow_background&quot;</span>&gt;</span> <span class="hljs-comment">&lt;!--&#x80CC;&#x666F;&#x8D44;&#x6E90;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x8BBE;&#x7F6E;--&gt;</span>
+
+<span class="hljs-comment">&lt;!--&#x7528;&#x4E8E;&#x5C55;&#x793A;&#x81EA;&#x5B9A;&#x4E49;&#x4FE1;&#x606F;&#x7A97;&#x7684;&#x5185;&#x5BB9;--&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">TextView</span>
+    <span class="hljs-attr">android:id</span>=<span class="hljs-string">&quot;@+id/tv_title&quot;</span>
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">&quot;wrap_content&quot;</span>
+    <span class="hljs-attr">android:text</span>=<span class="hljs-string">&quot;custom_infowindow:&quot;</span>
+    <span class="hljs-attr">android:layout_gravity</span>=<span class="hljs-string">&quot;center_horizontal&quot;</span>
+    <span class="hljs-attr">android:textColor</span>=<span class="hljs-string">&quot;#ff000000&quot;</span>
+    <span class="hljs-attr">android:textSize</span>=<span class="hljs-string">&quot;15sp&quot;</span>/&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">LinearLayout</span>&gt;</span>
+</code></pre>
+<p>&#x7136;&#x540E;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;Marker&#x5E76;&#x5C55;&#x793A;&#x81EA;&#x5B9A;&#x4E49;InfoWindow&#xFF08;&#x4EE5;MainActivity&#x4E3A;&#x4F8B;&#xFF09;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// &#x6DFB;&#x52A0;Marker&#x5E76;&#x81EA;&#x5B9A;&#x4E49;&#x56FE;&#x6807;</span>
+LatLng latlng_disanji = <span class="hljs-keyword">new</span> LatLng(<span class="hljs-number">39.984253</span>,<span class="hljs-number">116.307439</span>);
+<span class="hljs-keyword">final</span> Marker marker = tencentMap.addMarker(<span class="hljs-keyword">new</span> MarkerOptions()
+        <span class="hljs-comment">// &#x6807;&#x6CE8;&#x7684;&#x4F4D;&#x7F6E;</span>
+        .position(latlng_disanji)
+        <span class="hljs-comment">// &#x6807;&#x6CE8;&#x7684;InfoWindow&#x7684;&#x6807;&#x9898;</span>
+        .title(<span class="hljs-string">&quot;&#x7B2C;&#x4E09;&#x6781;&#x5927;&#x53A6;&quot;</span>)
+        <span class="hljs-comment">// &#x6807;&#x6CE8;&#x7684;InfoWindow&#x7684;&#x5185;&#x5BB9;</span>
+        .snippet(<span class="hljs-string">&quot;&#x5730;&#x5740;: &#x5317;&#x4EAC;&#x5E02;&#x5317;&#x56DB;&#x73AF;&#x897F;&#x8DEF;66&#x53F7;&quot;</span>)
+        <span class="hljs-comment">// &#x6807;&#x6CE8;&#x7684;&#x951A;&#x70B9;&#xFF0C;&#x53D6;&#x503C;&#x4E3A;[0.0 ~ 1.0]</span>
+        .anchor(<span class="hljs-number">0.5f</span>, <span class="hljs-number">0.5f</span>)
+        <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x81EA;&#x5B9A;&#x4E49;Marker&#x56FE;&#x6807;</span>
+        .icon(BitmapDescriptorFactory.fromResource(R.drawable.taxi))
+);
+
+<span class="hljs-comment">// &#x663E;&#x793A;&#x4FE1;&#x606F;&#x7A97;</span>
+marker.showInfoWindow();
+
+<span class="hljs-comment">// &#x628A;&#x5730;&#x56FE;&#x79FB;&#x52A8;&#x5230;&#x6307;&#x5B9A;&#x7ECF;&#x7EAC;&#x5EA6;</span>
+tencentMap.moveCamera(CameraUpdateFactory.newLatLng(latlng_disanji));
+
+<span class="hljs-comment">// &#x81EA;&#x5B9A;&#x4E49;&#x4FE1;&#x606F;&#x7A97;</span>
+TencentMap.InfoWindowAdapter infoWindowAdapter = <span class="hljs-keyword">new</span> TencentMap.InfoWindowAdapter() {
+
+    TextView tvTitle;
+
+    <span class="hljs-comment">// &#x8FD4;&#x56DE;View&#x4E3A;&#x4FE1;&#x606F;&#x7A97;&#x81EA;&#x5B9A;&#x4E49;&#x6837;&#x5F0F;&#xFF0C;&#x8FD4;&#x56DE;null&#x65F6;&#x4E3A;&#x9ED8;&#x8BA4;&#x4FE1;&#x606F;&#x7A97;&#x6837;&#x5F0F;</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> View <span class="hljs-title">getInfoWindow</span><span class="hljs-params">(<span class="hljs-keyword">final</span> Marker arg0)</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        <span class="hljs-keyword">if</span> (arg0.equals(marker)) {
+            LinearLayout custInfowindow = (LinearLayout) View.inflate(
+                    MainActivity.<span class="hljs-keyword">this</span>, R.layout.custom_infowindow, <span class="hljs-keyword">null</span>);
+            tvTitle = (TextView)custInfowindow.findViewById(R.id.tv_title);
+            <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x81EA;&#x5B9A;&#x4E49;&#x4FE1;&#x606F;&#x7A97;&#x7684;&#x5185;&#x5BB9;</span>
+            tvTitle.setText(<span class="hljs-string">&quot;custom_infowindow:&quot;</span>);
+            tvTitle.append(<span class="hljs-string">&quot;\n&quot;</span> + arg0.getTitle());
+            tvTitle.append(<span class="hljs-string">&quot;\n&quot;</span> + arg0.getSnippet());
+            <span class="hljs-keyword">return</span> custInfowindow;
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+
+    <span class="hljs-comment">// &#x8FD4;&#x56DE;View&#x4E3A;&#x4FE1;&#x606F;&#x7A97;&#x5185;&#x5BB9;&#x81EA;&#x5B9A;&#x4E49;&#x6837;&#x5F0F;&#xFF0C;&#x8FD4;&#x56DE;null&#x65F6;&#x4E3A;&#x9ED8;&#x8BA4;&#x4FE1;&#x606F;&#x7A97;&#x6837;&#x5F0F;</span>
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> View <span class="hljs-title">getInfoContents</span><span class="hljs-params">(Marker arg0)</span> </span>{
+        <span class="hljs-comment">// TODO Auto-generated method stub</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+};
+
+<span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x4FE1;&#x606F;&#x7A97;&#x9002;&#x914D;&#x5668;</span>
+tencentMap.setInfoWindowAdapter(infoWindowAdapter);
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x4EE3;&#x7801;&#x8BBE;&#x7F6E;&#x7684;&#x81EA;&#x5B9A;&#x4E49;Marker&#x548C;InfoWindow&#x7684;&#x6548;&#x679C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;</p>
+<p><img src="images/custom_marker.jpg" alt="&#x7B2C;&#x4E09;&#x6781;"></p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x5BF9;&#x5DF2;&#x7ECF;&#x6DFB;&#x52A0;&#x7684;Marker&#x8BBE;&#x7F6E;&#x81EA;&#x5B9A;&#x4E49;&#x56FE;&#x6807;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// &#x8BBE;&#x7F6E;marker&#x7684;&#x663E;&#x793A;&#x6837;&#x5F0F;&#xFF0C;&#x53C2;&#x6570;&#x4E3A;&#x7EB9;&#x7406;&#x6837;&#x5F0F;</span>
+marker.setIcon(BitmapDescriptorFactory.fromResource(R.drawable.taxi));
+</code></pre>
+<p>&#x53E6;&#x5916;&#xFF0C;InfoWindow&#x4E5F;&#x63D0;&#x4F9B;&#x4E00;&#x4E9B;&#x8BBE;&#x7F6E;&#x64CD;&#x4F5C;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// &#x70B9;&#x51FB;&#x5730;&#x56FE;&#x5176;&#x4ED6;&#x533A;&#x57DF;&#x65F6;&#xFF0C;infowindow&#x662F;&#x5426;&#x9700;&#x8981;&#x9690;&#x85CF;</span>
+tencentMap.setOnTapMapViewInfoWindowHidden(<span class="hljs-keyword">boolean</span> hidden); 
+
+<span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x5730;&#x56FE;&#x662F;&#x5426;&#x5141;&#x8BB8;&#x591A;InfoWindow&#x6A21;&#x5F0F;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;false(&#x53EA;&#x5141;&#x8BB8;&#x663E;&#x793A;&#x4E00;&#x4E2A;InfoWindow)&#x3002;&#x6CE8;&#x610F;&#xFF1A;&#x6B64;&#x65B9;&#x6CD5;&#x9700;&#x8981;&#x5728;addMarker&#x4E4B;&#x524D;&#x8C03;&#x7528;&#x3002;    </span>
+tencentMap.enableMultipleInfowindow(<span class="hljs-keyword">boolean</span> isEnable);
+</code></pre>
+<p><span style="color:red">Tips: <br>&#x77E2;&#x91CF;&#x5730;&#x56FE; SDK &#x4F7F;&#x7528; OpenGL &#x6280;&#x672F;&#x6E32;&#x67D3;&#x5E95;&#x56FE;&#x53CA;&#x7528;&#x6237;&#x6DFB;&#x52A0;&#x5230;&#x5730;&#x56FE;&#x4E0A;&#x7684;&#x5404;&#x79CD;&#x8986;&#x76D6;&#x7269;&#xFF0C;&#x6240;&#x4EE5;&#x7528;&#x6237;&#x901A;&#x8FC7; BitmapDescriptorFactory.fromView &#x6784;&#x9020;&#x7684; Marker &#x4EE5;&#x53CA;&#x5728; InfoWindowAdapter &#x56DE;&#x8C03;&#x4E2D;&#x4F20;&#x5165;&#x5730;&#x56FE;&#x7684; View &#x6700;&#x7EC8;&#x90FD;&#x4F1A;&#x5728;&#x5730;&#x56FE;&#x5C55;&#x793A;&#x8FD9;&#x4E2A; marker/infowindow &#x65F6;&#x5C06; view &#x8F6C;&#x5316;&#x4E3A;&#x56FE;&#x7247;&#x6E32;&#x67D3;&#x5230;&#x5730;&#x56FE;&#x4E0A;&#x3002;&#x56E0;&#x6B64;&#x4E0D;&#x4F1A;&#x6709; Andorid &#x63D0;&#x4F9B;&#x7684; View &#x7684;&#x4E8B;&#x4EF6;&#x54CD;&#x5E94;&#x3001;&#x52A8;&#x753B;&#x7B49;&#x529F;&#x80FD;</span></p>
+<h4 id="&#x6807;&#x6CE8;&#x7684;&#x4E8B;&#x4EF6;">&#x6807;&#x6CE8;&#x7684;&#x4E8B;&#x4EF6;</h4>
+<hr>
+<p>&#x8BBE;&#x7F6E;Marker&#x548C;InfoWindow&#x7684;&#x76D1;&#x542C;&#x4E8B;&#x4EF6;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// Marker&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;</span>
+tencentMap.setOnMarkerClickListener(<span class="hljs-keyword">new</span> TencentMap.OnMarkerClickListener() {
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">onMarkerClick</span><span class="hljs-params">(Marker marker)</span> </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+        }
+    }
+);
+
+<span class="hljs-comment">// Marker&#x62D6;&#x62FD;&#x4E8B;&#x4EF6;</span>
+tencentMap.setOnMarkerDragListener(<span class="hljs-keyword">new</span> TencentMap.OnMarkerDragListener() {
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onMarkerDragStart</span><span class="hljs-params">(Marker marker)</span> </span>{
+
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onMarkerDrag</span><span class="hljs-params">(Marker marker)</span> </span>{
+
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onMarkerDragEnd</span><span class="hljs-params">(Marker marker)</span> </span>{
+
+        }
+    }
+);
+
+<span class="hljs-comment">// InfoWindow&#x70B9;&#x51FB;&#x4E8B;&#x4EF6;</span>
+tencentMap.setOnInfoWindowClickListener(<span class="hljs-keyword">new</span> TencentMap.OnInfoWindowClickListener() {
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onInfoWindowClick</span><span class="hljs-params">(Marker marker)</span> </span>{
+
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onInfoWindowClickLocation</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i, <span class="hljs-keyword">int</span> i1, <span class="hljs-keyword">int</span> i2, <span class="hljs-keyword">int</span> i3)</span> </span>{
+
+        }
+    }
+);
+</code></pre>
+<h4 id="&#x79FB;&#x9664;&#x6807;&#x6CE8;">&#x79FB;&#x9664;&#x6807;&#x6CE8;</h4>
+<hr>
+<p>&#x4ECE;&#x5730;&#x56FE;&#x4E0A;&#x79FB;&#x9664;Marker&#x6807;&#x6CE8;&#x7684;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java">marker.remove();
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="polyline.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 折线">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"点标注","level":"4.1.1","depth":2,"next":{"title":"折线","level":"4.1.2","depth":2,"path":"overlays/polyline.md","ref":"overlays/polyline.md","articles":[]},"previous":{"title":"地图标注","level":"4.1","depth":1,"ref":"","articles":[{"title":"点标注","level":"4.1.1","depth":2,"path":"overlays/marker.md","ref":"overlays/marker.md","articles":[]},{"title":"折线","level":"4.1.2","depth":2,"path":"overlays/polyline.md","ref":"overlays/polyline.md","articles":[]},{"title":"多边形","level":"4.1.3","depth":2,"path":"overlays/polygon.md","ref":"overlays/polygon.md","articles":[]},{"title":"圆","level":"4.1.4","depth":2,"path":"overlays/circle.md","ref":"overlays/circle.md","articles":[]},{"title":"清除Overlay","level":"4.1.5","depth":2,"path":"overlays/remove.md","ref":"overlays/remove.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"overlays/marker.md","mtime":"2019-11-27T08:06:35.387Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-12T01:54:24.568Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

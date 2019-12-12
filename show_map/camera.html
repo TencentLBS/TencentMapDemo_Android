@@ -1,0 +1,859 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>地图视野 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="uisetting.html" />
+    
+    
+    <link rel="prev" href="map_type.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    工程配置
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../config/manual.html">
+            
+                <a href="../config/manual.html">
+            
+                    
+                    手动导入 SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../config/maven.html">
+            
+                <a href="../config/maven.html">
+            
+                    
+                    Gradle 集成SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../config/permission.html">
+            
+                <a href="../config/permission.html">
+            
+                    
+                    权限配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../config/proguard.html">
+            
+                <a href="../config/proguard.html">
+            
+                    
+                    混淆配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../config/key.html">
+            
+                <a href="../config/key.html">
+            
+                    
+                    Key配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    地图显示
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="mapview.html">
+            
+                <a href="mapview.html">
+            
+                    
+                    MapView
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="supportmapfragment.html">
+            
+                <a href="supportmapfragment.html">
+            
+                    
+                    SupportMapFragment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="map_type.html">
+            
+                <a href="map_type.html">
+            
+                    
+                    设置地图类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.1.4" data-path="camera.html">
+            
+                <a href="camera.html">
+            
+                    
+                    地图视野
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="uisetting.html">
+            
+                <a href="uisetting.html">
+            
+                    
+                    UI设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                    地图标注
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../overlays/marker.html">
+            
+                <a href="../overlays/marker.html">
+            
+                    
+                    点标注
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../overlays/polyline.html">
+            
+                <a href="../overlays/polyline.html">
+            
+                    
+                    折线
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../overlays/polygon.html">
+            
+                <a href="../overlays/polygon.html">
+            
+                    
+                    多边形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../overlays/circle.html">
+            
+                <a href="../overlays/circle.html">
+            
+                    
+                    圆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../overlays/remove.html">
+            
+                <a href="../overlays/remove.html">
+            
+                    
+                    清除Overlay
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                    瓦片图层
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../tile_overlay/heatmap.html">
+            
+                <a href="../tile_overlay/heatmap.html">
+            
+                    
+                    热力图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../tile_overlay/old_heatmap.html">
+            
+                <a href="../tile_overlay/old_heatmap.html">
+            
+                    
+                    旧版本热力图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../indoor_map/indoor_map.html">
+            
+                <a href="../indoor_map/indoor_map.html">
+            
+                    
+                    室内图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../show_location/show_location.html">
+            
+                <a href="../show_location/show_location.html">
+            
+                    
+                    显示当前定位
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" >
+            
+                <span>
+            
+                    
+                    路线规划
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.1" data-path="../route_plan/walking.html">
+            
+                <a href="../route_plan/walking.html">
+            
+                    
+                    步行路线规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" >
+            
+                <span>
+            
+                    
+                    工具类
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.1" data-path="../utils/snapshot.html">
+            
+                <a href="../utils/snapshot.html">
+            
+                    
+                    截图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2" data-path="../utils/projection.html">
+            
+                <a href="../utils/projection.html">
+            
+                    
+                    坐标转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >地图视野</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="&#x5730;&#x56FE;&#x89C6;&#x91CE;">&#x5730;&#x56FE;&#x89C6;&#x91CE;</h3>
+<hr>
+<p>&#x5730;&#x56FE;&#x89C6;&#x91CE;&#x64CD;&#x4F5C;&#x4E3B;&#x8981;&#x5305;&#x62EC;&#x5730;&#x56FE;&#x7684;&#x7F29;&#x653E;&#x3001;&#x79FB;&#x52A8;&#x3001;&#x65CB;&#x8F6C;&#x3001;&#x503E;&#x659C;&#x3001;&#x6539;&#x53D8;&#x5730;&#x56FE;&#x4E2D;&#x5FC3;&#x70B9;&#x7B49;&#x64CD;&#x4F5C;&#xFF0C;&#x4EE5;&#x52A8;&#x753B;&#x7684;&#x65B9;&#x5F0F;&#x628A;&#x5730;&#x56FE;&#x53D8;&#x6362;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x72B6;&#x6001;&#x3002;CameraUpdateFactory&#x63D0;&#x4F9B;13&#x79CD;&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x5730;&#x56FE;&#x89C6;&#x91CE;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7; TencentMap &#x7684; <code>animateCamera()</code> &#x65B9;&#x6CD5;&#x4EE5;&#x52A8;&#x753B;&#x7684;&#x65B9;&#x5F0F;&#x628A;&#x5730;&#x56FE;&#x53D8;&#x6362;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;TencentMap&#x7684; <code>moveCamera()</code> &#x65B9;&#x6CD5;&#x76F4;&#x63A5;&#x628A;&#x5730;&#x56FE;&#x53D8;&#x6362;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x72B6;&#x6001;&#xFF1B; TencentMap &#x7684; <code>stopAnimation()</code> &#x53EF;&#x4EE5;&#x505C;&#x6B62;&#x5730;&#x56FE;&#x6240;&#x6709;&#x6B63;&#x5728;&#x8FDB;&#x884C;&#x7684;&#x52A8;&#x753B;&#x3002;&#x5177;&#x4F53;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * &#x4EE5;&#x52A8;&#x753B;&#x7684;&#x65B9;&#x5F0F;&#x628A;&#x5730;&#x56FE;&#x53D8;&#x6362;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x72B6;&#x6001;
+ *
+ * &#x53C2;&#x6570;&#xFF1A;
+ * cameraupdate&#xFF1A;&#x72B6;&#x6001;&#x5BF9;&#x8C61;
+ * duration&#xFF1A;&#x52A8;&#x753B;&#x6267;&#x884C;&#x65F6;&#x95F4;&#xFF08;&#x5355;&#x4F4D;&#xFF1A;ms&#xFF09;
+ * cancelablecallback&#xFF1A;&#x52A8;&#x753B;&#x72B6;&#x6001;&#x76D1;&#x542C;&#x5668;
+ */</span>
+tencentMap.animateCamera(CameraUpdate cameraupdate);
+
+tencentMap.animateCamera(CameraUpdate cameraupdate, CancelableCallback cancelablecallback);
+
+tencentMap.animateCamera(CameraUpdate cameraupdate, <span class="hljs-keyword">long</span> duration,CancelableCallback cancelablecallback);
+
+<span class="hljs-comment">// &#x76F4;&#x63A5;&#x628A;&#x5730;&#x56FE;&#x53D8;&#x6362;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x72B6;&#x6001;</span>
+tencentMap.moveCamera(CameraUpdate cameraupdate);
+
+<span class="hljs-comment">// &#x505C;&#x6B62;&#x5730;&#x56FE;&#x6240;&#x6709;&#x6B63;&#x5728;&#x8FDB;&#x884C;&#x7684;&#x52A8;&#x753B;</span>
+tencentMap.stopAnimation();
+</code></pre>
+<h4 id="&#x6539;&#x53D8;&#x5730;&#x56FE;&#x89C6;&#x91CE;">&#x6539;&#x53D8;&#x5730;&#x56FE;&#x89C6;&#x91CE;</h4>
+<hr>
+<p>&#x7531;CameraPosition&#x751F;&#x6210;&#x5730;&#x56FE;&#x72B6;&#x6001;&#x5BF9;&#x8C61;&#xFF0C;&#x76F4;&#x63A5;&#x6539;&#x53D8;&#x5730;&#x56FE;&#x89C6;&#x91CE;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;&#x817E;&#x8BAF;&#x5730;&#x56FE;SDK&#x4F7F;&#x7528;&#x7684;&#x662F;&#x56FD;&#x6D4B;&#x5C40;&#x5750;&#x6807;&#x7CFB;&#xFF08;&#x706B;&#x661F;&#x5750;&#x6807;&#xFF0C;GCJ-02&#xFF09;&#x3002;</strong></p>
+<p>&#x76F4;&#x63A5;&#x8BBE;&#x7F6E;&#x5730;&#x56FE;&#x89C6;&#x91CE;&#x5230;&#x6307;&#x5B9A;&#x72B6;&#x6001;&#x7684;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java">CameraUpdate cameraSigma =
+    CameraUpdateFactory.newCameraPosition(<span class="hljs-keyword">new</span> CameraPosition(
+        <span class="hljs-keyword">new</span> LatLng(<span class="hljs-number">39.977290</span>,<span class="hljs-number">116.337000</span>), <span class="hljs-comment">// &#x4E2D;&#x5FC3;&#x70B9;&#x5750;&#x6807;&#xFF0C;&#x5730;&#x56FE;&#x76EE;&#x6807;&#x7ECF;&#x7EAC;&#x5EA6;</span>
+        <span class="hljs-number">19</span>,    <span class="hljs-comment">// &#x76EE;&#x6807;&#x7F29;&#x653E;&#x7EA7;&#x522B;</span>
+        <span class="hljs-number">45f</span>,   <span class="hljs-comment">// &#x76EE;&#x6807;&#x503E;&#x659C;&#x89D2;[0.0 ~ 45.0] (&#x5782;&#x76F4;&#x5730;&#x56FE;&#x65F6;&#x4E3A;0)</span>
+        <span class="hljs-number">45f</span>)); <span class="hljs-comment">// &#x76EE;&#x6807;&#x65CB;&#x8F6C;&#x89D2; 0~360&#xB0; (&#x6B63;&#x5317;&#x65B9;&#x4E3A;0)</span>
+
+tencentMap.moveCamera(cameraSigma); <span class="hljs-comment">// &#x79FB;&#x52A8;&#x5730;&#x56FE;</span>
+</code></pre>
+<p>&#x6548;&#x679C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF1A;
+<img src="images/camera_position.jpg" alt="sigma"></p>
+<h4 id="&#x8BBE;&#x7F6E;&#x5730;&#x56FE;&#x7684;&#x951A;&#x70B9;">&#x8BBE;&#x7F6E;&#x5730;&#x56FE;&#x7684;&#x951A;&#x70B9;</h4>
+<hr>
+<p>&#x8BBE;&#x7F6E;&#x65B9;&#x6CD5;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * &#x8BBE;&#x7F6E;camera&#x53D8;&#x6362;&#x7684;&#x4E2D;&#x5FC3;&#x70B9;
+ *
+ * xratio &#x6C34;&#x5E73;&#x65B9;&#x5411;&#x4F4D;&#x7F6E;
+ * yratio &#x5782;&#x76F4;&#x65B9;&#x5411;&#x4F4D;&#x7F6E;
+ */</span>
+tencentMap.setCameraCenterProportion(<span class="hljs-keyword">float</span> xratio, <span class="hljs-keyword">float</span> yratio);
+</code></pre>
+<p>&#x6216;&#x8005;:</p>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * &#x8BBE;&#x7F6E;camera&#x53D8;&#x6362;&#x7684;&#x4E2D;&#x5FC3;&#x70B9;
+ *
+ * xratio &#x6C34;&#x5E73;&#x65B9;&#x5411;&#x4F4D;&#x7F6E;
+ * yratio &#x5782;&#x76F4;&#x65B9;&#x5411;&#x4F4D;&#x7F6E;
+ * moveMap &#x6539;&#x53D8;&#x4E2D;&#x5FC3;&#x70B9;&#x7684;&#x540C;&#x65F6;&#x662F;&#x5426;&#x5C06;&#x539F;&#x6709;&#x4E2D;&#x5FC3;&#x70B9;&#x79FB;&#x5230;&#x65B0;&#x7684;&#x4E2D;&#x5FC3;&#x70B9;
+ */</span>
+tencentMap.setCameraCenterProportion(<span class="hljs-keyword">float</span> xratio, <span class="hljs-keyword">float</span> yratio, <span class="hljs-keyword">boolean</span> moveMap);
+</code></pre>
+<h4 id="&#x4FEE;&#x6539;&#x5730;&#x56FE;&#x4E2D;&#x5FC3;&#x70B9;">&#x4FEE;&#x6539;&#x5730;&#x56FE;&#x4E2D;&#x5FC3;&#x70B9;</h4>
+<hr>
+<p>CameraUpdateFactory&#x4E2D;&#x63D0;&#x4F9B;<code>scrollBy()</code>&#x65B9;&#x6CD5;&#x5E73;&#x79FB;&#x5730;&#x56FE;&#xFF0C;<code>newLatLng()</code>&#x65B9;&#x6CD5;&#x6539;&#x53D8;&#x5730;&#x56FE;&#x4E2D;&#x5FC3;&#x70B9;&#x3001;&#x79FB;&#x52A8;&#x5730;&#x56FE;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * &#x5C06;&#x5730;&#x56FE;&#x5411;&#x5DE6;&#x4E0B;&#x79FB;&#x52A8;xPixel&#x548C;yPexil&#x50CF;&#x7D20;
+ * 
+ * xPixel: &#x5411;&#x5DE6;&#x79FB;&#x52A8;&#x7684;&#x50CF;&#x7D20;
+ * yPixel: &#x5411;&#x4E0B;&#x79FB;&#x52A8;&#x7684;&#x50CF;&#x7D20;
+ */</span>
+tencentMap.animateCamera(CameraUpdateFactory.scrollBy(<span class="hljs-keyword">float</span> xPixel, <span class="hljs-keyword">float</span> yPixel));
+
+<span class="hljs-comment">/**
+ * &#x628A;&#x5730;&#x56FE;&#x79FB;&#x52A8;&#x6307;&#x5B9A;&#x7684;&#x7ECF;&#x7EAC;&#x5EA6;&#x5230;&#x5C4F;&#x5E55;&#x4E2D;&#x5FC3;
+ * 
+ * latlng: &#x4E3A;&#x76EE;&#x6807;&#x7ECF;&#x7EAC;&#x5EA6;
+ */</span>
+tencentMap.animateCamera(CameraUpdateFactory.newLatLng(LatLng latlng));
+
+<span class="hljs-comment">/**
+ * &#x628A;&#x5730;&#x56FE;&#x4EE5;latlng&#x4E3A;&#x4E2D;&#x5FC3;&#xFF0C;&#x4EE5;zoom&#x4E3A;&#x7F29;&#x653E;&#x7EA7;&#x522B;&#xFF0C;&#x79FB;&#x5230;&#x5C4F;&#x5E55;&#x4E2D;&#x5FC3;
+ * 
+ * latlng: &#x76EE;&#x6807;&#x7ECF;&#x7EAC;&#x5EA6;
+ * zoom: &#x65B0;&#x7684;&#x6307;&#x5B9A;&#x7EA7;&#x522B;&#xFF0C;&#x53D6;&#x503C;&#x8303;&#x56F4;&#x4E3A; [3.0 ~ 19.0]
+ */</span>
+tencentMap.animateCamera(CameraUpdateFactory.newLatLng(LatLng latlng, <span class="hljs-keyword">float</span> zoom));
+</code></pre>
+<p>&#x628A;&#x5730;&#x56FE;&#x79FB;&#x52A8;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x7ECF;&#x7EAC;&#x5EA6;&#x8303;&#x56F4;&#xFF0C;&#x5177;&#x4F53;&#x5E94;&#x7528;&#x53C2;&#x89C1;&#x201C;&#x5730;&#x56FE;&#x6807;&#x6CE8;&#x201D;&#x90E8;&#x5206;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * &#x628A;&#x5730;&#x56FE;&#x79FB;&#x5230;&#x5230;&#x4EE5;&#x6307;&#x5B9A;&#x7684;&#x7ECF;&#x7EAC;&#x5EA6;&#x8303;&#x56F4;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x8FD9;&#x4E2A;&#x8303;&#x56F4;&#x56DB;&#x5468;&#x52A0;&#x4E0A;padding&#x50CF;&#x7D20;&#x7684;&#x586B;&#x5145;
+ *
+ * latLngBounds: &#x7ECF;&#x7EAC;&#x5EA6;&#x8303;&#x56F4;
+ * padding: &#x56DB;&#x5468;&#x586B;&#x5145;&#x7684;&#x50CF;&#x7D20;
+ */</span>
+tencentMap.animateCamera(CameraUpdateFactory.newLatLngBounds(LatLngBounds latlngbounds, <span class="hljs-keyword">int</span> padding));
+
+<span class="hljs-comment">/**
+ * &#x628A;&#x5730;&#x56FE;&#x79FB;&#x52A8;&#x5230;&#x6307;&#x5B9A;&#x7ECF;&#x7EAC;&#x5EA6;&#x8303;&#x56F4;&#xFF0C;&#x4EE5;&#x9002;&#x5E94;&#x5F53;&#x524D;&#x5C4F;&#x5E55;&#x7684;&#x663E;&#x793A;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x4E3A;&#x4E0A;&#x4E0B;&#x5DE6;&#x53F3;&#x5206;&#x522B;&#x8BBE;&#x7F6E;&#x586B;&#x5145;&#x7684;&#x50CF;&#x7D20;
+ *
+ * latlngbounds: &#x7ECF;&#x7EAC;&#x5EA6;&#x8303;&#x56F4;
+ * leftPadding: &#x5DE6;&#x4FA7;&#x586B;&#x5145;&#x50CF;&#x7D20;
+ * rightPadding: &#x53F3;&#x4FA7;&#x586B;&#x5145;&#x50CF;&#x7D20;
+ * topPadding: &#x53F3;&#x4FA7;&#x586B;&#x5145;&#x50CF;&#x7D20;
+ * bottomPadding: &#x9876;&#x90E8;&#x586B;&#x5145;&#x50CF;&#x7D20;&#x3001;&#x5E95;&#x90E8;&#x586B;&#x5145;&#x50CF;&#x7D20;
+ */</span>
+tencentMap.animateCamera(CameraUpdateFactory.newLatLngBoundsRect(LatLngBounds latlngbounds, <span class="hljs-keyword">int</span> leftPadding, <span class="hljs-keyword">int</span> rightPadding, <span class="hljs-keyword">int</span> topPadding, <span class="hljs-keyword">int</span> bottomPadding));
+
+<span class="hljs-comment">/**
+ * &#x628A;&#x5730;&#x56FE;&#x79FB;&#x52A8;&#x5230;&#x6307;&#x5B9A;&#x5143;&#x7D20;&#x6240;&#x5728;&#x8303;&#x56F4;&#xFF0C;&#x4EE5;&#x9002;&#x5E94;&#x5F53;&#x524D;&#x5C4F;&#x5E55;&#x7684;&#x663E;&#x793A;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x4E3A;&#x4E0A;&#x4E0B;&#x5DE6;&#x53F3;&#x5206;&#x522B;&#x8BBE;&#x7F6E;&#x586B;&#x5145;&#x7684;&#x50CF;&#x7D20;.
+ *
+ * latLngBounds: &#x7ECF;&#x7EAC;&#x5EA6;&#x8303;&#x56F4;&#xFF08;&#x6307;&#x5B9A;&#x897F;&#x5357;&#x548C;&#x4E1C;&#x5317;&#x7684;&#x5750;&#x6807;&#x70B9;&#xFF09;
+ * padding: &#x56DB;&#x5468;&#x586B;&#x5145;&#x7684;&#x50CF;&#x7D20;
+ * leftPadding: &#x5DE6;&#x4FA7;&#x586B;&#x5145;&#x50CF;&#x7D20;
+ * rightPadding: &#x53F3;&#x4FA7;&#x586B;&#x5145;&#x50CF;&#x7D20;
+ * topPadding: &#x9876;&#x90E8;&#x586B;&#x5145;&#x50CF;&#x7D20;
+ * bottomPadding: &#x5E95;&#x90E8;&#x586B;&#x5145;&#x50CF;&#x7D20;
+ * elements: &#x8981;&#x663E;&#x793A;&#x5728;&#x5E95;&#x56FE;&#x4E0A;&#x7684;&#x5143;&#x7D20;
+ */</span>
+tencentMap.animateCamera(CameraUpdateFactory.newElementBoundsRect(List&lt;IMapElement&gt; elements, <span class="hljs-keyword">int</span> leftPadding, <span class="hljs-keyword">int</span> rightPadding, <span class="hljs-keyword">int</span> topPadding, <span class="hljs-keyword">int</span> bottomPadding));
+</code></pre>
+<h4 id="&#x4FEE;&#x6539;&#x5730;&#x56FE;&#x7F29;&#x653E;&#x7EA7;&#x522B;">&#x4FEE;&#x6539;&#x5730;&#x56FE;&#x7F29;&#x653E;&#x7EA7;&#x522B;</h4>
+<hr>
+<p>CameraUpdateFactory&#x4E2D;&#x63D0;&#x4F9B;<code>zoomIn()</code>&#x3001;<code>zoomOut()</code>&#x3001;<code>zoomTo()</code>&#x3001;<code>zoomBy()</code>&#x7B49;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x6539;&#x53D8;&#x5730;&#x56FE;&#x7684;&#x7F29;&#x653E;&#x7EA7;&#x522B;&#x3002;</p>
+<p>&#x8BBE;&#x7F6E;&#x65B9;&#x6CD5;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// &#x628A;&#x5730;&#x56FE;&#x653E;&#x5927;&#x4E00;&#x7EA7;</span>
+tencentMap.animateCamera(CameraUpdateFactory.zoomIn()); 
+
+<span class="hljs-comment">// &#x628A;&#x5730;&#x56FE;&#x7F29;&#x5C0F;&#x4E00;&#x7EA7;</span>
+tencentMap.animateCamera(CameraUpdateFactory.zoomOut()); 
+
+<span class="hljs-comment">// &#x628A;&#x5730;&#x56FE;&#x7F29;&#x653E;&#x5230;&#x76EE;&#x6807;&#x7EA7;&#x522B;zoomLevel&#xFF0C;&#x53D6;&#x503C;&#x8303;&#x56F4;&#x4E3A; [4.0 ~ 20.0]</span>
+tencentMap.animateCamera(CameraUpdateFactory.zoomTo(<span class="hljs-keyword">float</span> zoomLevel));
+
+<span class="hljs-comment">// &#x5728;&#x5F53;&#x524D;&#x7684;&#x7F29;&#x653E;&#x7EA7;&#x522B;&#x4E0B;&#xFF0C;&#x628A;&#x7F29;&#x653E;&#x7EA7;&#x522B;&#x53D8;&#x5316;zoomLevelDelta&#xFF0C;&#x5982;&#x679C;&#x8D85;&#x51FA;&#x4E86;&#x8303;&#x56F4;&#xFF0C;&#x5219;&#x505C;&#x6B62;&#x5728;&#x8303;&#x56F4;&#x5185;</span>
+tencentMap.animateCamera(CameraUpdateFactory.zoomBy(<span class="hljs-keyword">float</span> zoomLevelDelta)); 
+
+<span class="hljs-comment">/**
+ * &#x5728;&#x5F53;&#x524D;&#x7684;&#x7F29;&#x653E;&#x7EA7;&#x522B;&#x4E0B;&#xFF0C;&#x628A;&#x7F29;&#x653E;&#x7EA7;&#x522B;&#x53D8;&#x5316;zoomLevelDelta&#xFF0C;&#x5982;&#x679C;&#x8D85;&#x51FA;&#x4E86;&#x8303;&#x56F4;&#xFF0C;&#x5219;&#x505C;&#x6B62;&#x5728;&#x8303;&#x56F4;&#x5185;&#xFF1B;
+ *
+ * zoomLevelDelta: &#x8981;&#x53D8;&#x5316;&#x7684;&#x7EA7;&#x522B;&#x6570;&#x503C;
+ * point: &#x5F53;&#x524D;&#x5730;&#x56FE;&#x6240;&#x5904;&#x7684;&#x5730;&#x56FE;&#x70B9;&#xFF0C;&#x79FB;&#x52A8;&#x540E;&#x5C4F;&#x5E55;&#x5904;&#x4E8E;&#x4E2D;&#x5FC3;&#x70B9;
+ */</span>
+tencentMap.animateCamera(CameraUpdateFactory.zoomBy(<span class="hljs-keyword">float</span> zoomLevelDelta, Point point));
+</code></pre>
+<h4 id="&#x9650;&#x5236;&#x5730;&#x56FE;&#x7684;&#x7F29;&#x653E;&#x7EA7;&#x522B;&#x8303;&#x56F4;">&#x9650;&#x5236;&#x5730;&#x56FE;&#x7684;&#x7F29;&#x653E;&#x7EA7;&#x522B;&#x8303;&#x56F4;</h4>
+<hr>
+<pre><code class="lang-java"><span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x5730;&#x56FE;&#x7684;&#x6700;&#x5927;&#x7F29;&#x653E;&#x7EA7;&#x522B;  &#xFF08;3~19&#xFF09;</span>
+tencentMap.setMaxZoomLevel(<span class="hljs-keyword">int</span> zoomLevel); 
+
+<span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x5730;&#x56FE;&#x7684;&#x6700;&#x5C0F;&#x7F29;&#x653E;&#x7EA7;&#x522B;</span>
+tencentMap.setMinZoomLevel(<span class="hljs-keyword">int</span> zoomLevel);
+</code></pre>
+<h4 id="&#x65CB;&#x8F6C;&#x3001;&#x503E;&#x659C;&#x5730;&#x56FE;">&#x65CB;&#x8F6C;&#x3001;&#x503E;&#x659C;&#x5730;&#x56FE;</h4>
+<hr>
+<p>&#x8BBE;&#x7F6E;&#x65B9;&#x6CD5;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// &#x5C06;&#x5730;&#x56FE;&#x987A;&#x65F6;&#x9488;&#x65CB;&#x8F6C;rotate&#x5EA6;&#xFF0C;&#x5E76;&#x4E14;&#x5411;&#x540E;&#x503E;&#x659C;skew&#x5EA6;</span>
+tencentMap.animateCamera(CameraUpdateFactory.rotateTo(<span class="hljs-keyword">float</span> rotate, <span class="hljs-keyword">float</span> skew));
+</code></pre>
+<h4 id="&#x5730;&#x56FE;&#x89C6;&#x91CE;&#x53D8;&#x5316;&#x76D1;&#x542C;">&#x5730;&#x56FE;&#x89C6;&#x91CE;&#x53D8;&#x5316;&#x76D1;&#x542C;</h4>
+<hr>
+<pre><code class="lang-java"><span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x5730;&#x56FE;&#x89C6;&#x91CE;&#x53D8;&#x5316;&#x7684;&#x76D1;&#x542C;&#x63A5;&#x53E3;</span>
+tencentMap.setOnCameraChangeListener(<span class="hljs-keyword">new</span> TencentMap.OnCameraChangeListener() {
+        <span class="hljs-meta">@Override</span> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCameraChange</span><span class="hljs-params">(CameraPosition cameraPosition)</span> </span>{
+
+        }
+
+        <span class="hljs-meta">@Override</span> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onCameraChangeFinished</span><span class="hljs-params">(CameraPosition cameraPosition)</span> </span>{
+
+        }
+    }
+);
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="map_type.html" class="navigation navigation-prev " aria-label="Previous page: 设置地图类型">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="uisetting.html" class="navigation navigation-next " aria-label="Next page: UI设置">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"地图视野","level":"3.1.4","depth":2,"next":{"title":"UI设置","level":"3.1.5","depth":2,"path":"show_map/uisetting.md","ref":"show_map/uisetting.md","articles":[]},"previous":{"title":"设置地图类型","level":"3.1.3","depth":2,"path":"show_map/map_type.md","ref":"show_map/map_type.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"show_map/camera.md","mtime":"2019-11-27T07:09:21.058Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-12T01:54:24.568Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

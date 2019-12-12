@@ -1,0 +1,726 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>设置地图类型 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="camera.html" />
+    
+    
+    <link rel="prev" href="supportmapfragment.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    工程配置
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../config/manual.html">
+            
+                <a href="../config/manual.html">
+            
+                    
+                    手动导入 SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../config/maven.html">
+            
+                <a href="../config/maven.html">
+            
+                    
+                    Gradle 集成SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../config/permission.html">
+            
+                <a href="../config/permission.html">
+            
+                    
+                    权限配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../config/proguard.html">
+            
+                <a href="../config/proguard.html">
+            
+                    
+                    混淆配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../config/key.html">
+            
+                <a href="../config/key.html">
+            
+                    
+                    Key配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    地图显示
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="mapview.html">
+            
+                <a href="mapview.html">
+            
+                    
+                    MapView
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="supportmapfragment.html">
+            
+                <a href="supportmapfragment.html">
+            
+                    
+                    SupportMapFragment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.1.3" data-path="map_type.html">
+            
+                <a href="map_type.html">
+            
+                    
+                    设置地图类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="camera.html">
+            
+                <a href="camera.html">
+            
+                    
+                    地图视野
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="uisetting.html">
+            
+                <a href="uisetting.html">
+            
+                    
+                    UI设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                    地图标注
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../overlays/marker.html">
+            
+                <a href="../overlays/marker.html">
+            
+                    
+                    点标注
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../overlays/polyline.html">
+            
+                <a href="../overlays/polyline.html">
+            
+                    
+                    折线
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../overlays/polygon.html">
+            
+                <a href="../overlays/polygon.html">
+            
+                    
+                    多边形
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../overlays/circle.html">
+            
+                <a href="../overlays/circle.html">
+            
+                    
+                    圆
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../overlays/remove.html">
+            
+                <a href="../overlays/remove.html">
+            
+                    
+                    清除Overlay
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                    瓦片图层
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../tile_overlay/heatmap.html">
+            
+                <a href="../tile_overlay/heatmap.html">
+            
+                    
+                    热力图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.1.2" data-path="../tile_overlay/old_heatmap.html">
+            
+                <a href="../tile_overlay/old_heatmap.html">
+            
+                    
+                    旧版本热力图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../indoor_map/indoor_map.html">
+            
+                <a href="../indoor_map/indoor_map.html">
+            
+                    
+                    室内图
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../show_location/show_location.html">
+            
+                <a href="../show_location/show_location.html">
+            
+                    
+                    显示当前定位
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" >
+            
+                <span>
+            
+                    
+                    路线规划
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1.1" data-path="../route_plan/walking.html">
+            
+                <a href="../route_plan/walking.html">
+            
+                    
+                    步行路线规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" >
+            
+                <span>
+            
+                    
+                    工具类
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.1" data-path="../utils/snapshot.html">
+            
+                <a href="../utils/snapshot.html">
+            
+                    
+                    截图
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.1.2" data-path="../utils/projection.html">
+            
+                <a href="../utils/projection.html">
+            
+                    
+                    坐标转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >设置地图类型</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="&#x8BBE;&#x7F6E;&#x5730;&#x56FE;&#x7C7B;&#x578B;">&#x8BBE;&#x7F6E;&#x5730;&#x56FE;&#x7C7B;&#x578B;</h3>
+<p>&#x817E;&#x8BAF;&#x5730;&#x56FE;SDK&#x63D0;&#x4F9B;3&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x57FA;&#x672C;&#x5730;&#x56FE;&#xFF0C;&#x5177;&#x4F53;&#x5982;&#x4E0B;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5730;&#x56FE;&#x7C7B;&#x578B; (mapType)</th>
+<th style="text-align:left">&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">MAP_TYPE_NORMAL</td>
+<td style="text-align:left">&#x666E;&#x901A;&#x5730;&#x56FE;&#xFF0C;&#x53EA;&#x6709;&#x5728;&#x8FD9;&#x4E2A;&#x7C7B;&#x578B;&#x4E0B;&#xFF0C;TencentMap.setMapStyle(int styleType) &#x624D;&#x80FD;&#x8BBE;&#x7F6E;&#x751F;&#x6548;</td>
+</tr>
+<tr>
+<td style="text-align:left">MAP_TYPE_SATELLITE</td>
+<td style="text-align:left">&#x536B;&#x661F;&#x56FE;</td>
+</tr>
+<tr>
+<td style="text-align:left">MAP_TYPE_DARK</td>
+<td style="text-align:left">&#x6697;&#x8272;&#x6A21;&#x5F0F;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1&#x3001;&#x666E;&#x901A;&#x5730;&#x56FE;&#x4E0E;&#x5B9E;&#x65F6;&#x8DEF;&#x51B5;&#xFF1A;">1&#x3001;&#x666E;&#x901A;&#x5730;&#x56FE;&#x4E0E;&#x5B9E;&#x65F6;&#x8DEF;&#x51B5;&#xFF1A;</h4>
+<p>&#x666E;&#x901A;&#x5730;&#x56FE;&#x7684;&#x4FE1;&#x606F;&#x5305;&#x62EC;&#x8DEF;&#x7F51;&#x4FE1;&#x606F;&#x3001;&#x5EFA;&#x7B51;&#x7269;&#x53CA;&#x91CD;&#x8981;&#x7684;&#x81EA;&#x7136;&#x666F;&#x89C2;&#xFF1B;&#x817E;&#x8BAF;&#x5730;&#x56FE;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x5B9E;&#x65F6;&#x8DEF;&#x51B5;&#x56FE;&#x5C42;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;&#x63D0;&#x4F9B;&#x5B9E;&#x65F6;&#x4EA4;&#x901A;&#x6570;&#x636E;&#x7684;&#x57CE;&#x5E02;&#x5C55;&#x793A;&#x5B9E;&#x65F6;&#x4EA4;&#x901A;&#x72B6;&#x51B5;&#xFF0C;&#x8BBE;&#x7F6E;&#x663E;&#x793A;&#x666E;&#x901A;&#x5730;&#x56FE;&#x548C;&#x5B9E;&#x65F6;&#x8DEF;&#x51B5;&#x7684;&#x793A;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// &#x663E;&#x793A;&#x666E;&#x901A;&#x5730;&#x56FE;</span>
+tencentMap.setMapType(TencentMap.MAP_TYPE_NORMAL);
+<span class="hljs-comment">// &#x53C2;&#x6570;&#x4E3A;true&#x8868;&#x793A;&#x5F00;&#x542F;&#x5B9E;&#x65F6;&#x8DEF;&#x51B5;&#xFF0C;&#x53C2;&#x6570;&#x4E3A;false&#x8868;&#x793A;&#x5173;&#x95ED;</span>
+tencentMap.setTrafficEnabled(<span class="hljs-keyword">true</span>);
+</code></pre>
+<h4 id="2&#x3001;&#x536B;&#x661F;&#x56FE;&#xFF1A;">2&#x3001;&#x536B;&#x661F;&#x56FE;&#xFF1A;</h4>
+<p>&#x536B;&#x661F;&#x5730;&#x56FE;&#x6709;&#x4E24;&#x79CD;&#x8BBE;&#x7F6E;&#x65B9;&#x5F0F;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// &#x76F4;&#x63A5;&#x8BBE;&#x7F6E;&#x536B;&#x661F;&#x5730;&#x56FE;</span>
+tencentMap.setMapType(TencentMap.MAP_TYPE_SATELLITE);
+</code></pre>
+<p>&#x5B9E;&#x65F6;&#x8DEF;&#x51B5;&#x548C;&#x536B;&#x661F;&#x56FE;&#x7684;&#x6548;&#x679C;&#x5982;&#x4E0B;&#x6240;&#x793A;&#xFF1A;</p>
+<p><img src="images/traffic.png" alt="&#x5B9E;&#x65F6;&#x8DEF;&#x51B5;">
+<img src="images/satellite.png" alt="&#x536B;&#x661F;&#x56FE;"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="supportmapfragment.html" class="navigation navigation-prev " aria-label="Previous page: SupportMapFragment">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="camera.html" class="navigation navigation-next " aria-label="Next page: 地图视野">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"设置地图类型","level":"3.1.3","depth":2,"next":{"title":"地图视野","level":"3.1.4","depth":2,"path":"show_map/camera.md","ref":"show_map/camera.md","articles":[]},"previous":{"title":"SupportMapFragment","level":"3.1.2","depth":2,"path":"show_map/supportmapfragment.md","ref":"show_map/supportmapfragment.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"show_map/map_type.md","mtime":"2019-12-11T02:49:10.607Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-12T01:54:24.568Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
