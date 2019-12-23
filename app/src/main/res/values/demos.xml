@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="demo_type">TYPE</string>
+
+    <string-array name="demo_types">
+        <item>@string/demo_type_basic</item>
+        <item>@string/demo_type_interactive</item>
+        <item>@string/demo_type_transformation</item>
+        <item>@string/demo_type_marker</item>
+        <item>@string/demo_type_draw</item>
+        <item>@string/demo_type_route_plan</item>
+        <item>@string/demo_type_search</item>
+        <item>@string/demo_type_special</item>
+        <item>@string/demo_type_tools</item>
+    </string-array>
+
+    <!--地图基础操作-->
+    <string name="demo_type_basic">基础地图</string>
+
+    <string name="demo_label_show_map">展示地图</string>
+    <string name="demo_description_show_map">.basic.MapViewActivity\n在 Activity 中使用 MapView 展示地图</string>
+
+    <string name="demo_label_map_type">地图类型</string>
+    <string name="demo_description_map_type">.basic.SetMapTypeActivity\n展示地图支持的类型和样式</string>
+
+    <string name="demo_label_show_location">地图内置定位标</string>
+    <string name="demo_description_show_location">.location.LocationLayerActivity\n展示地图内置定位标的使用</string>
+
+    <string name="demo_label_change_location_style">自定义地图内置定位标</string>
+    <string name="demo_description_change_location_style">.location.LocationPointActivity\n展示自定义地图内置定位标的样式</string>
+
+    <string name="demo_label_indoor_map">室内图</string>
+    <string name="demo_description_indoor_map">.basic.IndoorMapActivity\n展示室内图</string>
+
+    <string name="demo_label_oversea">海外图</string>
+    <string name="demo_description_oversea">.basic.OverseaMapActivity\n展示海外图</string>
+
+    <string name="demo_label_traffic">实时路况</string>
+    <string name="demo_description_traffic">.basic.TrafficMapActivity\n展示实时路况</string>
+
+    <!--地图交互-->
+    <string name="demo_type_interactive">地图交互</string>
+
+    <string name="demo_label_ui">控件</string>
+    <string name="demo_description_ui">.gesture.UiSettingsActivity\n展示地图内置控件</string>
+
+    <string name="demo_label_gesture">手势</string>
+    <string name="demo_description_gesture">.gesture.GestureSettingsActivity\n地图支持的手势及开关</string>
+
+    <string name="demo_label_modify_zoom">修改缩放级别</string>
+    <string name="demo_description_modify_zoom">.transaction.ZoomMapActivity\n展示修改地图级别的方法</string>
+
+    <string name="demo_label_modify_map_center">修改地图中心点</string>
+    <string name="demo_description_modify_map_center">.camera.MapCameraCenterActivity\n展示修改地图中心点坐标的方法</string>
+
+    <string name="demo_label_map_bound">限制地图展示范围</string>
+    <string name="demo_description_map_bound">.camera.MapBoundActivity\n展示限制地图展示范围的方法</string>
+
+    <string name="demo_label_map_snapshot">地图截屏</string>
+    <string name="demo_description_map_snapshot">.utils.SnapshotActivity\n展示截取当前地图屏幕的方法</string>
+
+    <string name="demo_label_click_poi">POI点击</string>
+    <string name="demo_description_click_poi">.poi.PoiClickActivity\n展示地图 POI 点击事件</string>
+
+    <string name="demo_label_animate_camera">地图视野动画</string>
+    <string name="demo_description_animate_camera">.transaction.AnimateCameraActivity\n展示平滑修改地图视野</string>
+
+    <string name="demo_label_map_camera_anchor">地图锚点</string>
+    <string name="demo_description_map_camera_anchor">.camera.MapAnchorZoomActivity\n锚点修改后，地图的中心点坐标在锚点处</string>
+
+    <!--修改地图视野-->
+    <string name="demo_type_transformation">地图变换</string>
+
+    <string name="demo_label_camera_translation">平移地图</string>
+    <string name="demo_description_camera_translation">.transaction.ScollMapActivity\n平移地图</string>
+
+    <string name="demo_label_camera_rotation">旋转地图</string>
+    <string name="demo_description_camera_rotation">.transaction.RotateMapActivity\n设置地图正北的旋转角度</string>
+
+    <string name="demo_label_camera_include_points">展示指定地图区域</string>
+    <string name="demo_description_camera_include_points">.transaction.ZoomCalulateActivity\n将指定坐标全部展示在地图上</string>
+
+    <string name="demo_label_camera_change_listener">地图变化回调</string>
+    <string name="demo_description_camera_change_listener">.transaction.MoveCameraActivity\n展示地图变化回调的使用</string>
+
+    <string name="demo_label_map_click_listener">地图点击回调</string>
+    <string name="demo_description_map_click_listener">.gesture.MapListenActivity\n展示地图点击回调的使用</string>
+
+    <string name="demo_label_map_long_click_listener">地图长按回调</string>
+    <string name="demo_description_map_long_click_listener">.gesture.MapLongClickActivity\n展示地图长按回调的使用</string>
+
+    <!--标注的使用-->
+    <string name="demo_type_marker">标注</string>
+
+    <string name="demo_label_marker_click_listener">标注点击回调</string>
+    <string name="demo_description_marker_click_listener">.marker.MarkerClickActivity\n展示标注点击回调的使用</string>
+
+    <string name="demo_label_marker_drag_listener">标注拖动回调</string>
+    <string name="demo_description_marker_drag_listener">.marker.MarkerDragActivity\n展示标注拖动回调的使用</string>
+
+    <string name="demo_label_infowindow_click_listener">信息窗点击回调</string>
+    <string name="demo_description_infowindow_click_listener">.marker.MarkerInfoWindowActivity\n展示信息窗点击回调的使用</string>
+
+    <string name="demo_label_marker_animation">标注动画</string>
+    <string name="demo_description_marker_animation">.marker.MarkerAnimation\n展示标注动画使用</string>
+
+    <string name="demo_label_marker_cluster">标注聚合</string>
+    <string name="demo_description_marker_cluster">.marker.MarkerClusterActivity\n展示标注聚合使用</string>
+
+    <!--图形绘制-->
+    <string name="demo_type_draw">图形绘制</string>
+
+    <string name="demo_label_polyline">折线</string>
+    <string name="demo_description_polyline">.polyline.DrawLineActivity\n展示绘制折线</string>
+
+    <string name="demo_label_polygon">多边形</string>
+    <string name="demo_description_polygon">.polyline.DrawPolygonActivity\n展示绘制多边形</string>
+
+    <string name="demo_label_circle">圆形</string>
+    <string name="demo_description_circle">.polyline.DrawCircleActivity\n展示绘制圆形</string>
+
+    <string name="demo_label_heat_map">热力图</string>
+    <string name="demo_description_heat_map">.heatoverlay.DrawHeatOverlayActivity\n展示热力图</string>
+
+    <!--路线规划-->
+    <string name="demo_type_route_plan">路线规划</string>
+
+    <string name="demo_label_walking_plan">步行路线规划</string>
+    <string name="demo_description_walking_plan">.search.WalkingRouteActivity\n展示步行路线规划</string>
+
+    <string name="demo_label_driving_plan">驾车路线规划</string>
+    <string name="demo_description_driving_plan">.search.DrivingRouteActivity\n展示驾车路线规划</string>
+
+    <!--地图数据检索-->
+    <string name="demo_type_search">检索</string>
+
+    <string name="demo_label_basic_search">基础检索</string>
+    <string name="demo_description_basic_search">.search.SearchBasicActivity\n展示基础检索功能</string>
+
+    <string name="demo_label_geocoder">地址、逆地址解析</string>
+    <string name="demo_description_geocoder">.search.GeoCoderActivity\n展示地址、逆地址解析功能</string>
+
+    <string name="demo_label_district">行政区划</string>
+    <string name="demo_description_district">.search.DistrictActivity\n展示行政区划检索功能</string>
+
+    <!--特色功能-->
+    <string name="demo_type_special">特色</string>
+
+    <string name="demo_label_line_text">线形文字标注</string>
+    <string name="demo_description_line_text">.polyline.LineTextActivity\n展示线形文字标注功能</string>
+
+    <!--工具类-->
+    <string name="demo_type_tools">工具</string>
+
+    <string name="demo_label_bitmap">位图</string>
+    <string name="demo_description_bitmap">.utils.BitMapActivity\n展示位图标注</string>
+
+    <string name="demo_label_projection">坐标转换</string>
+    <string name="demo_description_projection">.utils.CoordinateActivity\n展示屏幕和地理坐标的相互转换</string>
+
+</resources>
