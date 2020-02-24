@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".basic.SupportMapFragmentActivity"
-   >
+    tools:context=".basic.SupportMapFragmentActivity">
 
 
     <LinearLayout
@@ -27,23 +26,24 @@
             android:id="@+id/switch_linetext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <Switch
                 android:id="@+id/switch_off"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:checked="false"
-                android:text="动态路名开关"
                 android:paddingLeft="@dimen/padding"
+                android:text="动态路名开关"
                 android:visibility="gone" />
+
             <Switch
                 android:id="@+id/switch_style"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:checked="false"
-                android:text="切换文字样式"
                 android:paddingLeft="@dimen/padding"
+                android:text="切换文字样式"
                 android:visibility="gone" />
 
         </LinearLayout>
@@ -61,22 +61,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_poi_search"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/et_search_poi"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:visibility="gone"
-                android:hint="输入关键字" />
+                android:hint="输入关键字"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/btn_search_poi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:text="搜索" />
+                android:text="搜索"
+                android:visibility="gone" />
         </LinearLayout>
 
         <!--地址解析-->
@@ -85,22 +85,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/et_search_poi"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/et_geocoder"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:visibility="gone"
-                android:hint="输入地址" />
+                android:hint="输入地址"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/btn_geocoder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:text="获取坐标" />
+                android:text="获取坐标"
+                android:visibility="gone" />
         </LinearLayout>
         <!--逆地址解析-->
         <LinearLayout
@@ -108,7 +108,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ll_geocoder"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/et_regeocoder"
@@ -117,15 +117,15 @@
                 android:layout_weight="1"
                 android:hint="输入坐标，经纬度用英文逗号分隔"
                 android:inputType="numberDecimal|textCapCharacters"
-                android:visibility="gone"
-                android:text="39.984154,116.307490" />
+                android:text="39.984154,116.307490"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/btn_regeocoder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:text="获取地址" />
+                android:text="获取地址"
+                android:visibility="gone" />
         </LinearLayout>
 
 
@@ -135,40 +135,40 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ll_geocoder"
-            android:orientation="horizontal" >
+            android:orientation="horizontal">
 
             <Spinner
                 android:id="@+id/sp_province"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:visibility="gone"
-                android:spinnerMode="dropdown" />
+                android:spinnerMode="dropdown"
+                android:visibility="gone" />
 
             <Spinner
                 android:id="@+id/sp_city"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:visibility="gone"
-                android:spinnerMode="dropdown" />
+                android:spinnerMode="dropdown"
+                android:visibility="gone" />
 
             <Spinner
                 android:id="@+id/sp_district"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:visibility="gone"
-                android:spinnerMode="dropdown" />
+                android:spinnerMode="dropdown"
+                android:visibility="gone" />
         </LinearLayout>
         <!--poi补全提示-->
         <ListView
             android:id="@+id/lv_suggestions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/et_search_poi"
             android:layout_alignLeft="@+id/et_search_poi"
             android:layout_alignRight="@+id/et_search_poi"
-            android:layout_below="@+id/et_search_poi"
             android:background="@android:color/white"
             android:visibility="gone" />
 
@@ -177,8 +177,8 @@
             android:id="@+id/tv_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:layout_below="@+id/ll_poi_search" />
+            android:layout_below="@+id/ll_poi_search"
+            android:visibility="gone" />
 
         <!--设置UI组件-->
         <RadioGroup
@@ -187,12 +187,12 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <!--<Switch-->
-                <!--android:id="@+id/switch_zoom"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="40dp"-->
-                <!--android:checked="true"-->
-                <!--android:paddingLeft="@dimen/padding"-->
-                <!--android:visibility="gone" />-->
+            <!--android:id="@+id/switch_zoom"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:checked="true"-->
+            <!--android:paddingLeft="@dimen/padding"-->
+            <!--android:visibility="gone" />-->
 
             <Switch
                 android:id="@+id/switch_logo"
@@ -219,12 +219,12 @@
                 android:visibility="gone" />
 
             <!--<Switch-->
-                <!--android:id="@+id/switch_location"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="40dp"-->
-                <!--android:checked="true"-->
-                <!--android:paddingLeft="@dimen/padding"-->
-                <!--android:visibility="gone" />-->
+            <!--android:id="@+id/switch_location"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:checked="true"-->
+            <!--android:paddingLeft="@dimen/padding"-->
+            <!--android:visibility="gone" />-->
         </RadioGroup>
 
         <!--设置手势-->
@@ -406,44 +406,6 @@
         </RadioGroup>
 
 
-
-
-
-
-        <!--个性化地图-->
-        <RadioGroup
-            android:id="@+id/lay_map_style"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@+id/map_frag">
-
-            <RadioButton
-                android:id="@+id/btn_baiqian"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="白浅" />
-
-            <RadioButton
-                android:id="@+id/btn_moyuan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="墨渊" />
-
-            <RadioButton
-                android:id="@+id/btn_zhanyue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="澹月" />
-        </RadioGroup>
-
-
-
-
-
-
     </LinearLayout>
 
     <Button
@@ -451,21 +413,20 @@
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_zoomout"
         android:visibility="gone"
-         />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_zoomout" />
 
     <Button
         android:id="@+id/btn_zoomout"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:text="缩小"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_zoomin"
-        android:visibility="gone"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn_zoomin" />
 
     <Button
         android:id="@+id/btn_zoomin"
@@ -473,7 +434,7 @@
         android:layout_height="40dp"
         android:layout_marginEnd="8dp"
         android:text="放大"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:visibility="gone"/>
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
