@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_add"
+        android:title="@string/menu_title_add"
+        app:showAsAction="ifRoom" >
+        <menu>
+            <item
+                android:id="@+id/menu_add_marker_simple"
+                android:title="@string/menu_title_default" />
+
+            <item
+                android:id="@+id/menu_add_marker_custom"
+                android:title="@string/menu_title_custom" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/menu_delete"
+        android:title="@string/menu_title_delete"
+        app:showAsAction="ifRoom"/>
+</menu>

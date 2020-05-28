@@ -103,7 +103,7 @@ public class DrawHeatOverlayActivity extends SupportMapFragmentActivity implemen
                     .opacity(ALT_HEATMAP_OPACITY)
                     .radius(ALT_HEATMAP_RADIUS)
                     .readyListener(this)
-                    .build();
+                    .build(tencentMap);
             mHeatmapTileOverlay = tencentMap.addTileOverlay(new TileOverlayOptions().tileProvider(mProvider));
         } catch (Exception e) {
             e.printStackTrace();

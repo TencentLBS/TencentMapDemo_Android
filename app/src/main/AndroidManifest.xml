@@ -195,6 +195,23 @@
                 android:name="@string/demo_type"
                 android:value="@string/demo_type_transformation" />
         </activity>
+        <!-- 标注 -->
+        <activity
+            android:name=".marker.SimpleMarkerActivity"
+            android:description="@string/demo_description_simple_marker"
+            android:label="@string/demo_label_simple_marker">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_marker" />
+        </activity>
+        <activity
+            android:name=".marker.MarkerOptionsActivity"
+            android:description="@string/demo_description_marker_options"
+            android:label="@string/demo_label_marker_options">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_marker" />
+        </activity>
         <activity
             android:name=".marker.MarkerClickActivity"
             android:description="@string/demo_description_marker_click_listener"

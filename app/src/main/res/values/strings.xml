@@ -13,5 +13,22 @@
     <string name="normal">普通地图</string>
     <string name="dark">暗色模式</string>
     <string name="satellite">卫星图</string>
+    <string name="menu_title_add">添加</string>
+    <string name="menu_title_default">默认</string>
+    <string name="menu_title_custom">自定义</string>
+    <string name="menu_title_delete">移除</string>
+    <string name="menu_title_animation">播放动画</string>
+    <string name="menu_title_hide">隐藏</string>
+    <string name="menu_title_show">显示</string>
+    <string name="menu_title_style1">样式1</string>
+    <string name="menu_title_style2">样式2</string>
+    <string name="menu_title_infowindow_bitmap">Bitmap</string>
+    <string name="menu_title_infowindow_view">View</string>
+    <string name="menu_title_enable">开启</string>
+    <string name="menu_title_close">关闭</string>
+    <string name="menu_title_line_text">路名</string>
+    <string name="menu_title_line_dash">虚线</string>
+    <string name="menu_title_line_segment">分段线</string>
+    <string name="menu_title_line_texture">纹理线</string>
 
 </resources>
