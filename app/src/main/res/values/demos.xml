@@ -39,6 +39,9 @@
     <string name="demo_label_traffic">实时路况</string>
     <string name="demo_description_traffic">.basic.TrafficMapActivity\n展示实时路况</string>
 
+    <string name="demo_label_style">多样式切换</string>
+    <string name="demo_description_style">.basic.MapStyleDemoActivity\n多样式切换</string>
+
     <!--地图交互-->
     <string name="demo_type_interactive">地图交互</string>
 
