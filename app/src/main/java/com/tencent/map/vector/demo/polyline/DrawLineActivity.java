@@ -2,15 +2,13 @@ package com.tencent.map.vector.demo.polyline;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.RadioGroup;
 
-import com.example.tencentmap.tencentmapdemo.AbsMapActivity;
+import androidx.annotation.Nullable;
+
+import com.tencent.map.vector.demo.AbsMapActivity;
 import com.tencent.map.vector.demo.R;
-import com.tencent.map.vector.demo.basic.SupportMapFragmentActivity;
 import com.tencent.tencentmap.mapsdk.maps.CameraUpdateFactory;
 import com.tencent.tencentmap.mapsdk.maps.TencentMap;
 import com.tencent.tencentmap.mapsdk.maps.model.BitmapDescriptorFactory;

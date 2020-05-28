@@ -15,8 +15,7 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
 
         <!-- 如果您key确认无误，却依然授权没有通过，请检查您的key的白名单配置 -->
-        <activity
-            android:name=".MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -198,35 +197,6 @@
                 android:name="@string/demo_type"
                 android:value="@string/demo_type_transformation" />
         </activity>
-        <!-- 标注 -->
-        <activity android:name=".marker.SimpleMarkerActivity"
-            android:label="添加一个标注"
-            android:parentActivityName=".main.MarkerActivity">
-            <meta-data android:name="ORDER" android:value="0" />
-        </activity>
-
-        <activity android:name=".marker.MarkerClickActivity"
-            android:label="标注点击事件"
-            android:parentActivityName=".main.MarkerActivity"/>
-        <activity android:name=".marker.MarkerDragActivity"
-            android:label="标注拖拽事件"
-            android:parentActivityName=".main.MarkerActivity"/>
-        <activity android:name=".marker.MarkerOptionsActivity"
-            android:label="标注配置"
-            android:parentActivityName=".main.MarkerActivity"/>
-        <activity android:name=".marker.MarkerInfoWindowActivity"
-            android:label="标注信息窗"
-            android:parentActivityName=".main.MarkerActivity"/>
-        <activity android:name=".marker.MarkerClusterActivity"
-            android:label="标注聚合"
-            android:parentActivityName=".main.MarkerActivity"/>
-        <activity android:name=".marker.MarkerAnimation"
-            android:label="标注动画"
-            android:parentActivityName=".main.MarkerActivity"/>
-            <meta-data
-                android:name="@string/demo_type"
-                android:value="@string/demo_type_transformation" />
-        </activity>
         <activity
             android:name=".transaction.MoveCameraActivity"
             android:description="@string/demo_description_camera_change_listener"
@@ -255,7 +225,24 @@
                 android:value="@string/demo_type_transformation" />
         </activity>
 
+        <!-- 标注 -->
+        <activity
+            android:name=".marker.SimpleMarkerActivity"
+            android:description="@string/demo_description_simple_marker"
+            android:label="@string/demo_label_simple_marker">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_marker" />
+        </activity>
 
+        <activity
+            android:name=".marker.MarkerOptionsActivity"
+            android:description="@string/demo_description_marker_options"
+            android:label="@string/demo_label_marker_options">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_marker" />
+        </activity>
         <activity
             android:name=".marker.MarkerClickActivity"
             android:description="@string/demo_description_marker_click_listener"

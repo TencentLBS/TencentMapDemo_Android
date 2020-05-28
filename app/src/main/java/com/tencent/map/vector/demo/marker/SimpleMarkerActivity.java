@@ -1,12 +1,13 @@
-package com.example.tencentmap.tencentmapdemo.marker;
+package com.tencent.map.vector.demo.marker;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.tencentmap.tencentmapdemo.AbsMapActivity;
-import com.example.tencentmap.tencentmapdemo.R;
+import androidx.annotation.Nullable;
+
+import com.tencent.map.vector.demo.AbsMapActivity;
+import com.tencent.map.vector.demo.R;
 import com.tencent.tencentmap.mapsdk.maps.CameraUpdateFactory;
 import com.tencent.tencentmap.mapsdk.maps.TencentMap;
 import com.tencent.tencentmap.mapsdk.maps.model.AlphaAnimation;
