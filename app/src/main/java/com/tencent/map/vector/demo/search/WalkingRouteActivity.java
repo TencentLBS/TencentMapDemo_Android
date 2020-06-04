@@ -1,70 +1,77 @@
 package com.tencent.map.vector.demo.search;
 
 import android.os.Bundle;
-import android.widget.Toast;
+import android.util.Log;
 
+import com.tencent.lbssearch.object.result.RoutePlanningObject;
 import com.tencent.map.vector.demo.basic.SupportMapFragmentActivity;
-import com.google.gson.Gson;
 import com.tencent.lbssearch.TencentSearch;
 import com.tencent.lbssearch.httpresponse.HttpResponseListener;
-import com.tencent.lbssearch.object.param.RoutePlanningParam;
 import com.tencent.lbssearch.object.param.WalkingParam;
 import com.tencent.lbssearch.object.result.WalkingResultObject;
+import com.tencent.tencentmap.mapsdk.maps.CameraUpdateFactory;
 import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
+import com.tencent.tencentmap.mapsdk.maps.model.LatLngBounds;
 import com.tencent.tencentmap.mapsdk.maps.model.PolylineOptions;
 
 import java.util.List;
 
 public class WalkingRouteActivity extends SupportMapFragmentActivity {
+
+    private LatLng fromPoint = new LatLng(39.843, 116.343); // 起点坐标
+    private LatLng toPoint = new LatLng(39.232,116.323); //终点坐标
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWalkingRoute();
     }
 
-    private LatLng fromPoint = new LatLng(39.843, 116.343); // 起点坐标
-    private LatLng toPoint = new LatLng(39.232,116.323); //终点坐标
-
     /**
      * 获取步行导航规划
      */
     private void getWalkingRoute(){
-        RoutePlanningParam param = new WalkingParam(); //创建导航参数
-        param = param.from(fromPoint).to(toPoint); //写入起终点
+        WalkingParam walkingParam = new WalkingParam();
+        walkingParam.from(fromPoint);
+        walkingParam.to(toPoint);
         TencentSearch tencentSearch = new TencentSearch(getApplicationContext());
-        tencentSearch.getRoutePlan(param, new HttpResponseListener() {
-
-            /**
-             * 获取回调
-             * @param i
-             * @param o
-             */
+        Log.i("TAG", "checkParams:" + walkingParam.checkParams());
+        tencentSearch.getRoutePlan(walkingParam, new HttpResponseListener<WalkingResultObject>() {
             @Override
-            public void onSuccess(int i, Object o) {
-
-
-                String json = new Gson().toJson(o);
-                Toast.makeText(getApplicationContext(), json,Toast.LENGTH_LONG).show();
-
-                //根据返回结果解析
-
-                WalkingResultObject walkingResultObject = new Gson().fromJson(json,WalkingResultObject.class);
-
-                if (walkingResultObject == null || walkingResultObject.result == null || walkingResultObject.result.routes==null)
+            public void onSuccess(int statusCode, WalkingResultObject object) {
+                if (object == null) {
+                    Log.i("TAG", "baseObject为空");
                     return;
-
-                // 显示其中一条步行路线
-                for (WalkingResultObject.Route route : walkingResultObject.result.routes){
-                    List<LatLng> points = route.polyline;
-                    tencentMap.addPolyline(new PolylineOptions().addAll(points));
-                    break;
                 }
+                showWalkingRoute(object);
+                Log.i("TAG", "message:" + object.message);
             }
 
             @Override
-            public void onFailure(int i, String s, Throwable throwable) {
-                Toast.makeText(getApplicationContext(), s + new Gson().toJson(throwable),Toast.LENGTH_LONG).show();
+            public void onFailure(int statusCode, String responseString, Throwable throwable) {
+                Log.i("TAG:" ,statusCode + "  " + responseString);
             }
         });
+    }
+
+    private void showWalkingRoute(WalkingResultObject object) {
+        tencentMap.clearAllOverlays();
+        if (object.result != null && object.result.routes != null && object.result.routes.size() > 0) {
+            for (int i=0; i<object.result.routes.size(); i++) {
+                WalkingResultObject.Route result = object.result.routes.get(i);
+                tencentMap.addPolyline(new PolylineOptions().addAll(result.polyline).color(i+1).width(20));
+                Log.i("TAG", "distance:" + result.distance + " duration:" + result.duration
+                        + " mode:" + result.mode + " direction:" + result.direction);
+                for (RoutePlanningObject.Step step : result.steps) {
+                    Log.i("TAG", "step:" + step.road_name + " " + step.distance + " "
+                            + step.instruction +  " " + step.act_desc + " " + step.dir_desc);
+                }
+                tencentMap.moveCamera(CameraUpdateFactory.newLatLngBounds(LatLngBounds.builder()
+                        .include(result.polyline).build(), 100));
+            }
+
+        } else {
+            Log.i("TAG", "路线结果为空");
+        }
     }
 }

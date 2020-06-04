@@ -3,6 +3,7 @@ package com.tencent.map.vector.demo.basic;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.tencent.map.vector.demo.R;
 import com.tencent.tencentmap.mapsdk.maps.CameraUpdate;
 import com.tencent.tencentmap.mapsdk.maps.CameraUpdateFactory;
 import com.tencent.tencentmap.mapsdk.maps.TencentMap;
@@ -26,6 +27,8 @@ public class IndoorMapActivity extends SupportMapFragmentActivity implements Ten
                         0f,
                         0f));
         tencentMap.moveCamera(camera);
+        //设置室内蒙层颜色 sdk版本4.3.5新增接口
+        tencentMap.setIndoorMaskColor(R.color.color_C71585);
         //设置室内图状态变化监听
         tencentMap.setOnIndoorStateChangeListener(this);
     }

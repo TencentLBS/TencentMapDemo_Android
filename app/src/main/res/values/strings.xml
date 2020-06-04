@@ -10,6 +10,9 @@
     <string name="title_main_search">检索</string>
     <string name="title_main_special">特色</string>
     <string name="title_main_tools">工具</string>
+    <string name="normal">普通地图</string>
+    <string name="dark">暗色模式</string>
+    <string name="satellite">卫星图</string>
     <string name="menu_title_add">添加</string>
     <string name="menu_title_default">默认</string>
     <string name="menu_title_custom">自定义</string>

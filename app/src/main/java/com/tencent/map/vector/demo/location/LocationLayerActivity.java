@@ -6,7 +6,9 @@ import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.location.Location;
 import android.os.Looper;
+
 import androidx.annotation.NonNull;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -31,7 +33,7 @@ import java.util.List;
 
 import pub.devrel.easypermissions.EasyPermissions;
 
-public class LocationLayerActivity extends SupportMapFragmentActivity implements EasyPermissions.PermissionCallbacks,LocationSource,TencentLocationListener, TencentMap.OnMapLongClickListener,RadioGroup.OnCheckedChangeListener {
+public class LocationLayerActivity extends SupportMapFragmentActivity implements EasyPermissions.PermissionCallbacks, LocationSource, TencentLocationListener, TencentMap.OnMapLongClickListener, RadioGroup.OnCheckedChangeListener {
 
     private OnLocationChangedListener locationChangedListener;
 
@@ -68,12 +70,21 @@ public class LocationLayerActivity extends SupportMapFragmentActivity implements
 
         //建立定位
         initLocation();
+
+        //SDK版本4.3.5新增内置定位标点击回调监听
+        tencentMap.setMyLocationClickListener(new TencentMap.OnMyLocationClickListener() {
+            @Override
+            public boolean onMyLocationClicked(LatLng latLng) {
+                Toast.makeText(LocationLayerActivity.this, "内置定位标点击回调", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
     }
 
     /**
      * 定位的一些初始化设置
      */
-    private void initLocation(){
+    private void initLocation() {
         //用于访问腾讯定位服务的类, 周期性向客户端提供位置更新
         locationManager = TencentLocationManager.getInstance(this);
         //设置坐标系
@@ -89,14 +100,13 @@ public class LocationLayerActivity extends SupportMapFragmentActivity implements
         tencentMap.setMyLocationEnabled(true);
         //设置定位图标样式
         setLocMarkerStyle();
-//        locationStyle = locationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_LOCATION_ROTATE);
         tencentMap.setMyLocationStyle(locationStyle);
     }
 
     /**
      * 设置定位图标样式
      */
-    private void setLocMarkerStyle(){
+    private void setLocMarkerStyle() {
         locationStyle = new MyLocationStyle();
         //创建图标
         BitmapDescriptor bitmapDescriptor = BitmapDescriptorFactory.fromBitmap(getBitMap(R.drawable.location_icon));
@@ -105,26 +115,25 @@ public class LocationLayerActivity extends SupportMapFragmentActivity implements
         locationStyle.strokeWidth(3);
         //设置圆区域的颜色
         locationStyle.fillColor(R.color.style);
-
-        //tencentMap.setMyLocationStyle(locationStyle);
     }
 
-    private Bitmap getBitMap(int resourceId){
+    private Bitmap getBitMap(int resourceId) {
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), resourceId);
         int width = bitmap.getWidth();
         int height = bitmap.getHeight();
         int newWidth = 55;
         int newHeight = 55;
-        float widthScale = ((float)newWidth)/width;
-        float heightScale = ((float)newHeight)/height;
+        float widthScale = ((float) newWidth) / width;
+        float heightScale = ((float) newHeight) / height;
         Matrix matrix = new Matrix();
         matrix.postScale(widthScale, heightScale);
-        bitmap = Bitmap.createBitmap(bitmap,0,0,width,height,matrix,true);
+        bitmap = Bitmap.createBitmap(bitmap, 0, 0, width, height, matrix, true);
         return bitmap;
     }
 
     /**
      * 实现位置监听
+     *
      * @param tencentLocation
      * @param i
      * @param s
@@ -132,7 +141,7 @@ public class LocationLayerActivity extends SupportMapFragmentActivity implements
     @Override
     public void onLocationChanged(TencentLocation tencentLocation, int i, String s) {
 
-        if(i == TencentLocation.ERROR_OK && locationChangedListener != null){
+        if (i == TencentLocation.ERROR_OK && locationChangedListener != null) {
             Location location = new Location(tencentLocation.getProvider());
             //设置经纬度以及精度
             location.setLatitude(tencentLocation.getLatitude());
@@ -154,7 +163,7 @@ public class LocationLayerActivity extends SupportMapFragmentActivity implements
     @Override
     public void onStatusUpdate(String s, int i, String s1) {
         //GPS, WiFi, Radio 等状态发生变化
-        Log.v("State changed", s +"===" +  s1);
+        Log.v("State changed", s + "===" + s1);
     }
 
 
@@ -165,13 +174,13 @@ public class LocationLayerActivity extends SupportMapFragmentActivity implements
         int err = locationManager.requestLocationUpdates(locationRequest, this, Looper.myLooper());
         switch (err) {
             case 1:
-                Toast.makeText(this,"设备缺少使用腾讯定位服务需要的基本条件",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "设备缺少使用腾讯定位服务需要的基本条件", Toast.LENGTH_SHORT).show();
                 break;
             case 2:
-                Toast.makeText(this,"manifest 中配置的 key 不正确",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "manifest 中配置的 key 不正确", Toast.LENGTH_SHORT).show();
                 break;
             case 3:
-                Toast.makeText(this,"自动加载libtencentloc.so失败",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "自动加载libtencentloc.so失败", Toast.LENGTH_SHORT).show();
                 break;
 
             default:
@@ -184,17 +193,17 @@ public class LocationLayerActivity extends SupportMapFragmentActivity implements
         locationManager.removeUpdates(this);
         locationManager = null;
         locationRequest = null;
-        locationChangedListener=null;
+        locationChangedListener = null;
     }
 
     @Override
     public void onPermissionsGranted(int requestCode, @NonNull List<String> perms) {
-        Log.e("location quest: ","success");
+        Log.e("location quest: ", "success");
     }
 
     @Override
     public void onPermissionsDenied(int requestCode, @NonNull List<String> perms) {
-        Log.e("location quest: ","failed");
+        Log.e("location quest: ", "failed");
     }
 
     @Override
@@ -205,12 +214,11 @@ public class LocationLayerActivity extends SupportMapFragmentActivity implements
         location.setAccuracy(20);
         locationChangedListener.onLocationChanged(location);
         Log.i("long click", new Gson().toJson(latLng));
-//        Toast.makeText(getApplicationContext(), new Gson().toJson(latLng), Toast.LENGTH_LONG).show();
     }
 
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int i) {
-        switch (i){
+        switch (i) {
             //连续定位，但不会移动到地图中心点，并且会跟随设备移动
             case R.id.btn_follow_no_center:
 
