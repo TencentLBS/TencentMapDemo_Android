@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 
 import com.tencent.map.vector.demo.R;
+import com.tencent.map.vector.demo.basic.SupportMapFragmentActivity;
 import com.tencent.tencentmap.mapsdk.maps.CameraUpdate;
 import com.tencent.tencentmap.mapsdk.maps.CameraUpdateFactory;
 import com.tencent.tencentmap.mapsdk.maps.MapView;
@@ -15,7 +16,7 @@ import com.tencent.tencentmap.mapsdk.maps.TencentMap;
 import com.tencent.tencentmap.mapsdk.maps.model.CameraPosition;
 import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
 
-public class SnapshotActivity extends Activity{
+public class SnapshotActivity extends SupportMapFragmentActivity {
     public MapView mapview = null;
 
     public TencentMap tencentMap = null;

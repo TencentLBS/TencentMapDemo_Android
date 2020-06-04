@@ -13,6 +13,7 @@
         <item>@string/demo_type_search</item>
         <item>@string/demo_type_special</item>
         <item>@string/demo_type_tools</item>
+        <item>@string/demo_type_location</item>
     </string-array>
 
     <!--地图基础操作-->
@@ -24,7 +25,7 @@
     <string name="demo_label_map_type">地图类型</string>
     <string name="demo_description_map_type">.basic.SetMapTypeActivity\n展示地图支持的类型和样式</string>
 
-    <string name="demo_label_show_location">地图内置定位标</string>
+    <string name="demo_label_show_location">地图内置定位标及定位标点击</string>
     <string name="demo_description_show_location">.location.LocationLayerActivity\n展示地图内置定位标的使用</string>
 
     <string name="demo_label_change_location_style">自定义地图内置定位标</string>
@@ -41,6 +42,9 @@
 
     <string name="demo_label_style">多样式切换</string>
     <string name="demo_description_style">.basic.MapStyleDemoActivity\n多样式切换</string>
+
+    <string name="demo_label_offline_map">离线地图</string>
+    <string name="demo_description_offline_map">.basic.OfflineMapActivity\n展示离线地图</string>
 
     <!--地图交互-->
     <string name="demo_type_interactive">地图交互</string>
@@ -132,6 +136,15 @@
     <string name="demo_label_heat_map">热力图</string>
     <string name="demo_description_heat_map">.heatoverlay.DrawHeatOverlayActivity\n展示热力图</string>
 
+    <string name="demo_label_opengl">OpenGL</string>
+    <string name="demo_description_opengl">.marker.CustomRenderActivity\n展示3D图形绘制</string>
+
+    <string name="demo_label_ground_overlay">GroundOverlay</string>
+    <string name="demo_description_overlay">.marker.GroundOverlayActivity\n展示GroundOverlay</string>
+
+    <string name="demo_label_vectorheatmap">蜂窝热力图</string>
+    <string name="demo_description_vectorheatmap">.heatoverlay.VectorHeatMapActivity\n展示蜂窝热力图</string>
+
     <!--路线规划-->
     <string name="demo_type_route_plan">路线规划</string>
 
@@ -167,5 +180,10 @@
 
     <string name="demo_label_projection">坐标转换</string>
     <string name="demo_description_projection">.utils.CoordinateActivity\n展示屏幕和地理坐标的相互转换</string>
+
+    <!-- 定位-->
+    <string name="demo_type_location">定位</string>
+    <string name="demo_label_location_listener">定位标点击事件</string>
+    <string name="demo_description_location_listener">.location.LocationSourceDemoActivity\n展示内置定位图标点击事件</string>
 
 </resources>
