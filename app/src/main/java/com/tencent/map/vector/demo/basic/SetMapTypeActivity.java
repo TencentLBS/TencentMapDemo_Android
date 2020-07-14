@@ -14,7 +14,6 @@ public class SetMapTypeActivity extends SupportMapFragmentActivity implements Ra
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
-
     }
 
     private void initView(){
@@ -26,19 +25,14 @@ public class SetMapTypeActivity extends SupportMapFragmentActivity implements Ra
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int i) {
         switch (i){
-            case R.id.btn_normal:
-
-                tencentMap.setMapStyle(TencentMap.MAP_TYPE_NORMAL);
+            case R.id.btn_normal: //普通地图-默认地图类型
+                tencentMap.setMapType(TencentMap.MAP_TYPE_NORMAL);
                 break;
-            case R.id.btn_satellite:
-
-                tencentMap.setMapStyle(TencentMap.MAP_TYPE_SATELLITE);
+            case R.id.btn_satellite: //卫星地图
+                tencentMap.setMapType(TencentMap.MAP_TYPE_SATELLITE);
                 break;
-            case R.id.btn_navi:
-                tencentMap.setMapStyle(TencentMap.MAP_TYPE_NAVI);
-                break;
-            case R.id.btn_night:
-                tencentMap.setMapStyle(TencentMap.MAP_TYPE_NIGHT);
+            case R.id.btn_dark: //暗色地图
+                tencentMap.setMapType(TencentMap.MAP_TYPE_DARK);
                 break;
         }
     }

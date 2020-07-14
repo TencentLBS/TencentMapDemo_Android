@@ -18,7 +18,7 @@ public class IndoorMapActivity extends SupportMapFragmentActivity implements Ten
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        tencentMap.setIndoorEnabled(true);
+
         //欧美汇室内地图，需Key开通室内地图权限
         CameraUpdate camera =
                 CameraUpdateFactory.newCameraPosition(new CameraPosition(
@@ -31,6 +31,9 @@ public class IndoorMapActivity extends SupportMapFragmentActivity implements Ten
         tencentMap.setIndoorMaskColor(R.color.color_C71585);
         //设置室内图状态变化监听
         tencentMap.setOnIndoorStateChangeListener(this);
+        tencentMap.setIndoorEnabled(true);
+        tencentMap.setMapType(TencentMap.MAP_TYPE_DARK);
+
     }
 
     @Override

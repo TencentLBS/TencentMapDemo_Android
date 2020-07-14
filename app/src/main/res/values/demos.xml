@@ -145,6 +145,9 @@
     <string name="demo_label_vectorheatmap">蜂窝热力图</string>
     <string name="demo_description_vectorheatmap">.heatoverlay.VectorHeatMapActivity\n展示蜂窝热力图</string>
 
+    <string name="demo_label_aoi">AOI面</string>
+    <string name="demo_description_aoi">.marker.AoiLayerActivity\n展示AOI面</string>
+
     <!--路线规划-->
     <string name="demo_type_route_plan">路线规划</string>
 
