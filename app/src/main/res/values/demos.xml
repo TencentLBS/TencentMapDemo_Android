@@ -127,6 +127,9 @@
     <string name="demo_label_polyline">折线</string>
     <string name="demo_description_polyline">.polyline.DrawLineActivity\n展示绘制折线</string>
 
+    <string name="demo_label_mutable_polyline">动态修改折线</string>
+    <string name="demo_description_mutable_polyline">.polyline.MutablePolylineActivity\n展示折线支持可修改的效果</string>
+
     <string name="demo_label_polygon">多边形</string>
     <string name="demo_description_polygon">.polyline.DrawPolygonActivity\n展示绘制多边形</string>
 

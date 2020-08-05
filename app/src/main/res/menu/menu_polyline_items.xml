@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_add"
+        android:title="添加"
+        android:orderInCategory="100"
+        app:showAsAction="collapseActionView|ifRoom" />
+
+    <item
+        android:id="@+id/menu_add_anim"
+        android:title="动画"
+        android:orderInCategory="100"
+        app:showAsAction="collapseActionView|ifRoom" />
+
+    <item
+        android:id="@+id/menu_actions"
+        android:title="操作"
+        android:orderInCategory="200"
+        app:showAsAction="collapseActionView|ifRoom">
+        <menu></menu>
+    </item>
+</menu>

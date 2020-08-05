@@ -12,7 +12,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".basic.DownloadManageActivity" /> <!-- 如果您key确认无误，却依然授权没有通过，请检查您的key的白名单配置 -->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -269,6 +268,14 @@
                 android:value="@string/demo_type_draw" />
         </activity>
         <activity
+            android:name=".polyline.MutablePolylineActivity"
+            android:description="@string/demo_description_mutable_polyline"
+            android:label="@string/demo_label_mutable_polyline">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_draw" />
+        </activity>
+        <activity
             android:name=".polygon.DrawPolygonActivity"
             android:description="@string/demo_description_polygon"
             android:label="@string/demo_label_polygon">
@@ -398,6 +405,7 @@
                 android:value="@string/demo_type_basic" />
         </activity>
 
+        <!-- 如果您key确认无误，却依然授权没有通过，请检查您的key的白名单配置 -->
         <meta-data
             android:name="TencentMapSDK"
             android:value="您的key" />
