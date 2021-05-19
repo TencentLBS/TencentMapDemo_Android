@@ -8,7 +8,6 @@ import androidx.fragment.app.FragmentManager;
 import com.tencent.map.vector.demo.R;
 import com.tencent.tencentmap.mapsdk.maps.CameraUpdate;
 import com.tencent.tencentmap.mapsdk.maps.CameraUpdateFactory;
-import com.tencent.tencentmap.mapsdk.maps.SupportMapFragment;
 import com.tencent.tencentmap.mapsdk.maps.TencentMap;
 import com.tencent.tencentmap.mapsdk.maps.UiSettings;
 import com.tencent.tencentmap.mapsdk.maps.model.CameraPosition;
