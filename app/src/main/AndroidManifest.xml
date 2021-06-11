@@ -29,6 +29,14 @@
                 android:value="@string/demo_type_basic" />
         </activity>
         <activity
+            android:name=".basic.ExtSurfaceMapActivity"
+            android:description="@string/demo_description_ext_map"
+            android:label="@string/demo_label_ext_map">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_basic" />
+        </activity>
+        <activity
             android:name=".basic.SetMapTypeActivity"
             android:description="@string/demo_description_map_type"
             android:label="@string/demo_label_map_type">
@@ -409,7 +417,7 @@
         <!-- 如果您key确认无误，却依然授权没有通过，请检查您的key的白名单配置 -->
         <meta-data
             android:name="TencentMapSDK"
-            android:value="您的key" />
+            android:value="${TencentMapSDK_KEY}" />
     </application> <!-- 访问网络. 某些位置信息需要从网络服务器获取 -->
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 访问WiFi状态. 需要WiFi信息用于网络定位 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 修改WiFi状态. 发起WiFi扫描, 需要WiFi信息用于网络定位 -->
