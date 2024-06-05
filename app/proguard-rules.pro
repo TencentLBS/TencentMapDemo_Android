@@ -19,3 +19,23 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-dontwarn com.tencent.bugly.**
+-keep public class com.tencent.bugly.**{*;}
+
+-dontwarn com.tencent.tmsqmsp.**
+-keep public class com.tencent.tmsqmsp.**{*;}
+
+-dontwarn com.tencent.tmsbeacon.**
+-keep public class com.tencent.tmsbeacon.**{*;}
+
+-dontwarn com.tencent.map.**
+-keep public class com.tencent.map.** {*;}
+
+-dontwarn com.tencent.mapsdk.**
+-keep public class com.tencent.mapsdk.** {*;}
+
+-dontwarn com.tencent.tencentmap.**
+-keep public class com.tencent.tencentmap.** {*;}
+
+-dontwarn com.tencent.lbssearch.**
+-keep public class com.tencent.lbssearch.** {*;}

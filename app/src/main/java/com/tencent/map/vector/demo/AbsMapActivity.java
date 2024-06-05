@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.tencent.map.vector.demo.basic.SupportMapFragment;
+import com.tencent.tencentmap.mapsdk.maps.SupportMapFragment;
 import com.tencent.tencentmap.mapsdk.maps.TencentMap;
 
 public abstract class AbsMapActivity extends AbsActivity {

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/menu_add_marker"
+        android:title="@string/menu_title_add"
+        app:showAsAction="ifRoom">
+        <menu>
+            <item
+                android:id="@+id/menu_add_marker_rotate"
+                android:title="@string/menu_title_marker_rotate"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/menu_add_marker_scale"
+                android:title="@string/menu_title_marker_scale"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/menu_add_marker_alpha"
+                android:title="@string/menu_title_marker_alpha"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/menu_add_marker_translate"
+                android:title="@string/menu_title_marker_translate"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/menu_add_marker_set"
+                android:title="@string/menu_title_marker_set"
+                app:showAsAction="ifRoom" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/menu_delete_marker"
+        android:title="@string/menu_title_delete"
+        app:showAsAction="ifRoom" />
+</menu>

@@ -1,57 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/ll_offline"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".basic.OfflineMapActivity">
 
     <LinearLayout
+        android:id="@+id/ll_map_params"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        app:layout_constraintBottom_toTopOf="@id/map_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/btn_open_city"
+            android:id="@+id/btn_reboot_map"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:visibility="gone"
-            android:text="无更新打开离线" />
+            android:text="重启地图"
+            android:textSize="12sp" />
 
         <Button
-            android:id="@+id/btn_download_city"
+            android:id="@+id/btn_sync"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="下载离线包" />
+            android:text="同步服务器"
+            android:textSize="12sp" />
 
         <Button
-            android:id="@+id/btn_stop_city"
+            android:id="@+id/btn_refresh"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="停止下载"
-            android:visibility="gone" />
-
-        <Button
-            android:id="@+id/btn_delete_city"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="删除离线包"
-            android:visibility="gone" />
-
-        <TextView
-            android:id="@+id/tv_progress"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:visibility="gone" />
+            android:text="刷新列表"
+            android:textSize="12sp" />
 
     </LinearLayout>
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/tv_parmes"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:gravity="center"
+        android:text="刷新列表"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/ll_map_params" />
+
+    <com.tencent.tencentmap.mapsdk.maps.MapView
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/offline_item_list"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_parmes"
+        app:layout_constraintVertical_weight="1" />
+
+    <Button
+        android:id="@+id/btn_go_work"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="回公司"
+        app:layout_constraintBottom_toBottomOf="@id/map_view"
+        app:layout_constraintEnd_toEndOf="@id/map_view" />
+
+    <Button
+        android:id="@+id/btn_zoom_out"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="zoom out"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_go_work"
+        app:layout_constraintEnd_toEndOf="@id/map_view" />
+
+    <Button
+        android:id="@+id/btn_zoom_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="zoom in"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_zoom_out"
+        app:layout_constraintEnd_toEndOf="@id/map_view" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/offline_item_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/map_view"
+        app:layout_constraintVertical_weight="1" />
+</androidx.constraintlayout.widget.ConstraintLayout>

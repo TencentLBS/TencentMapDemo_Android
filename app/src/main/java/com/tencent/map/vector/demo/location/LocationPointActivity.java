@@ -27,7 +27,7 @@ import java.util.List;
 import pub.devrel.easypermissions.EasyPermissions;
 
 public class LocationPointActivity extends SupportMapFragmentActivity implements EasyPermissions.PermissionCallbacks,LocationSource, TencentLocationListener{
-    private LocationSource.OnLocationChangedListener locationChangedListener;
+    private OnLocationChangedListener locationChangedListener;
 
     private TencentLocationManager locationManager;
     private TencentLocationRequest locationRequest;
@@ -51,8 +51,7 @@ public class LocationPointActivity extends SupportMapFragmentActivity implements
             EasyPermissions.requestPermissions(this, "必要的权限", 0, perms);
         }
         //设置显示定位的图标
-        mapUiSettings.setMyLocationButtonEnabled(true);
-
+        TencentLocationManager.setUserAgreePrivacy(true);
         //建立定位
         initLocation();
     }

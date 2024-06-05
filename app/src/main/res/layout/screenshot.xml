@@ -3,8 +3,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.tencent.tencentmap.mapsdk.maps.MapView
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <com.tencent.tencentmap.mapsdk.maps.MapView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/map"
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -15,6 +14,5 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="5dp" />
-
 
 </LinearLayout>

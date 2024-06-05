@@ -9,8 +9,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent">
         <!--地图开关-->
@@ -263,7 +263,46 @@
                 android:checked="true"
                 android:text="倾斜手势" />
         </RadioGroup>
+        <!--地图类型切换-->
+        <RadioGroup
+            android:id="@+id/lay_map_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
 
+            <RadioButton
+                android:id="@+id/btn_normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="普通图" />
+
+            <RadioButton
+                android:id="@+id/btn_satellite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="卫星图" />
+
+            <RadioButton
+                android:id="@+id/btn_dark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="暗色图" />
+
+            <RadioButton
+                android:id="@+id/btn_traffic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="路况" />
+
+            <RadioButton
+                android:id="@+id/style_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="个性化" />
+        </RadioGroup>
         <!--地图适应显示-->
         <RadioGroup
             android:id="@+id/lay_map_bound"
@@ -293,7 +332,7 @@
             android:id="@+id/map_frag"
             class="com.tencent.tencentmap.mapsdk.maps.SupportMapFragment"
             android:layout_width="match_parent"
-            android:layout_height="550dp" />
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/tv_info"
@@ -335,40 +374,7 @@
                 android:layout_height="wrap_content"
                 android:text="箭头" />
         </RadioGroup>
-        <!--地图类型切换-->
-        <RadioGroup
-            android:id="@+id/lay_map_type"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@+id/map_frag">
 
-            <RadioButton
-                android:id="@+id/btn_normal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="普通图" />
-
-            <RadioButton
-                android:id="@+id/btn_satellite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="卫星图" />
-
-            <RadioButton
-                android:id="@+id/btn_dark"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="暗色图" />
-
-<!--            <RadioButton-->
-<!--                android:id="@+id/btn_night"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="夜间图" />-->
-        </RadioGroup>
 
         <!--定位点类型-->
         <RadioGroup
@@ -406,6 +412,63 @@
         </RadioGroup>
 
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_zoomout">
+
+        <ToggleButton
+            android:id="@+id/animate"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:checked="true"
+            android:textOff="关"
+            android:textOn="开" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/scroll_left"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="←" />
+
+            <Button
+                android:id="@+id/scroll_up"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@id/scroll_left"
+                android:text="↑" />
+
+            <Button
+                android:id="@+id/scroll_down"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:layout_below="@id/scroll_up"
+                android:layout_toRightOf="@id/scroll_left"
+                android:text="↓" />
+
+            <Button
+                android:id="@+id/scroll_right"
+                android:layout_width="40dip"
+                android:layout_height="40dip"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/scroll_down"
+                android:text="→" />
+        </RelativeLayout>
     </LinearLayout>
 
     <Button

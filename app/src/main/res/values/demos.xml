@@ -22,9 +22,6 @@
     <string name="demo_label_show_map">展示地图</string>
     <string name="demo_description_show_map">.basic.MapViewActivity\n在 Activity 中使用 MapView 展示地图</string>
 
-    <string name="demo_label_ext_map">扩展屏</string>
-    <string name="demo_description_ext_map">.basic.ExtSurfaceMapActivity\n支持在自定义的TextureView中展示地图</string>
-
     <string name="demo_label_map_type">地图类型</string>
     <string name="demo_description_map_type">.basic.SetMapTypeActivity\n展示地图支持的类型和样式</string>
 
@@ -48,6 +45,12 @@
 
     <string name="demo_label_offline_map">离线地图</string>
     <string name="demo_description_offline_map">.basic.OfflineMapActivity\n展示离线地图</string>
+
+    <string name="demo_label_show_mapRenderLayer">MapRenderLayer</string>
+    <string name="demo_description_show_mapRenderLayer">.basic.MapRenderLayerActivity\nMapRenderLayer基础使用</string>
+
+    <string name="demo_label_recycler_map">列表展示地图</string>
+    <string name="demo_description_recycler_map">.basic.RecyclerListActivity\n展示列表加载多个地图</string>
 
     <!--地图交互-->
     <string name="demo_type_interactive">地图交互</string>
@@ -105,6 +108,8 @@
 
     <string name="demo_label_simple_marker">添加一个标注</string>
     <string name="demo_description_simple_marker">.marker.SimpleMarkerActivity\n展示添加一个标注</string>
+    <string name="demo_label_collisions_marker">标记和POI碰撞</string>
+    <string name="demo_description_collisions_marker">.marker.MarkerCollisions\n展示点标记与地图POI元素的碰撞</string>
 
     <string name="demo_label_marker_options">标注配置</string>
     <string name="demo_description_marker_options">.marker.MarkerOptionsActivity\n通过 MarkerOptions 设置Marker</string>
@@ -138,21 +143,46 @@
 
     <string name="demo_label_circle">圆形</string>
     <string name="demo_description_circle">.polyline.DrawCircleActivity\n展示绘制圆形</string>
+    <string name="demo_label_arc">圆弧</string>
+    <string name="demo_description_arc">.polyline.ArcActivity\n展示绘制圆弧</string>
 
     <string name="demo_label_heat_map">热力图</string>
     <string name="demo_description_heat_map">.heatoverlay.DrawHeatOverlayActivity\n展示热力图</string>
+    <string name="demo_label_tileOverlay_map">自定义瓦片图</string>
+    <string name="demo_description_tileOverlay_map">.polygon.TileOverlayActivity\n展示瓦片图</string>
 
     <string name="demo_label_opengl">OpenGL</string>
     <string name="demo_description_opengl">.marker.CustomRenderActivity\n展示3D图形绘制</string>
 
+    <string name="demo_label_glModel">GLModel</string>
+    <string name="demo_description_glModel">.marker.CustomRenderActivity\n展示gltf三维模型</string>
+
     <string name="demo_label_ground_overlay">GroundOverlay</string>
     <string name="demo_description_overlay">.marker.GroundOverlayActivity\n展示GroundOverlay</string>
 
-    <string name="demo_label_vectorheatmap">蜂窝热力图</string>
+    <string name="demo_label_vectorheatmap">2D蜂窝热力图</string>
     <string name="demo_description_vectorheatmap">.heatoverlay.VectorHeatMapActivity\n展示蜂窝热力图</string>
 
     <string name="demo_label_aoi">AOI面</string>
     <string name="demo_description_aoi">.marker.AoiLayerActivity\n展示AOI面</string>
+
+    <string name="demo_label_smooth_move">小车移动</string>
+    <string name="demo_description_smooth_move">.smooth.SmoothMoveActivity\n展示小车移动</string>
+
+    <string name="demo_label_3d_heat_map">矢量热力图</string>
+    <string name="demo_description_3dheatmap">.heatoverlay.HeatMapVectorOverlayDesignActivity\n展示矢量热力图</string>
+
+    <string name="demo_label_3d_aggregationOverlay_map">3D蜂窝</string>
+    <string name="demo_description_AggregationOverlay">.heatoverlay.AggregationOverlayActivity\n展示3D蜂窝热力</string>
+
+    <string name="demo_label_3d_scatterplotoverlay_map">散点</string>
+    <string name="demo_description_ScatterPlotOverlay">.heatoverlay.ScatterPlotOverlayActivity\n展示3D散点</string>
+
+    <string name="demo_label_3d_railoverltay_map">轨迹图层</string>
+    <string name="demo_description_TrailOverlay">.heatoverlay.TrailOverlayActivity\n展示轨迹图层</string>
+
+    <string name="demo_label_arcline_map">弧线图</string>
+    <string name="demo_description_arcline">.heatoverlay.ArcLineLayerActivity\n展示弧线图</string>
 
     <!--路线规划-->
     <string name="demo_type_route_plan">路线规划</string>
@@ -162,6 +192,12 @@
 
     <string name="demo_label_driving_plan">驾车路线规划</string>
     <string name="demo_description_driving_plan">.search.DrivingRouteActivity\n展示驾车路线规划</string>
+
+    <string name="demo_label_transit_plan">公交路线规划</string>
+    <string name="demo_description_transit_plan">.search.TransitRouteActivity\n展示公交路线规划</string>
+    <string name="demo_label_truking_plan">货车路线规划</string>
+    <string name="demo_description_truking_plan">.search.TruckingRouteActivity\n展示货车路线规划</string>
+
 
     <!--地图数据检索-->
     <string name="demo_type_search">检索</string>

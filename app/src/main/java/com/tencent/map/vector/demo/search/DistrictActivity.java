@@ -1,12 +1,12 @@
 package com.tencent.map.vector.demo.search;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
-
 import com.tencent.map.vector.demo.R;
 import com.tencent.map.vector.demo.basic.SupportMapFragmentActivity;
 import com.tencent.lbssearch.TencentSearch;
@@ -14,7 +14,9 @@ import com.tencent.lbssearch.httpresponse.BaseObject;
 import com.tencent.lbssearch.httpresponse.HttpResponseListener;
 import com.tencent.lbssearch.object.param.DistrictChildrenParam;
 import com.tencent.lbssearch.object.result.DistrictResultObject;
-
+import com.tencent.tencentmap.mapsdk.maps.CameraUpdateFactory;
+import com.tencent.tencentmap.mapsdk.maps.model.CameraPosition;
+import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +25,7 @@ public class DistrictActivity extends SupportMapFragmentActivity {
     private Spinner spCity;
     private Spinner spDistrict;
     private TextView tvResult;
-
+    private List<LatLng> latLngs = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +33,8 @@ public class DistrictActivity extends SupportMapFragmentActivity {
         initView();
         initSpinner();
     }
-    protected void initView(){
+
+    protected void initView() {
         spProvince = (Spinner) findViewById(R.id.sp_province);
         spCity = (Spinner) findViewById(R.id.sp_city);
         spDistrict = (Spinner) findViewById(R.id.sp_district);
@@ -41,7 +44,8 @@ public class DistrictActivity extends SupportMapFragmentActivity {
         spDistrict.setVisibility(View.VISIBLE);
         tvResult.setVisibility(View.VISIBLE);
     }
-    protected void initSpinner(){
+
+    protected void initSpinner() {
 
         //初始化行政区划，像北京市等只有市和区两级的数据，可能会输出错误id
         getDistrict(0, R.id.sp_province);
@@ -53,13 +57,17 @@ public class DistrictActivity extends SupportMapFragmentActivity {
                 // TODO Auto-generated method stub
                 switch (parent.getId()) {
                     case R.id.sp_province:
-                        getDistrict(((List<Integer>)parent.getTag()).
+                        getDistrict(((List<Integer>) parent.getTag()).
                                 get(position).intValue(), R.id.sp_city);
                         break;
                     case R.id.sp_city:
-                        getDistrict(((List<Integer>)parent.getTag()).
+                        getDistrict(((List<Integer>) parent.getTag()).
                                 get(position).intValue(), R.id.sp_district);
-
+                        break;
+                    case R.id.sp_district:
+                        getDistrict(((List<Integer>) parent.getTag()).
+                                get(position).intValue(), R.id.sp_district);
+                        tencentMap.moveCamera(CameraUpdateFactory.newCameraPosition(new CameraPosition(latLngs.get(position), 15f, 0, 0)));
                     default:
                         break;
                 }
@@ -73,17 +81,24 @@ public class DistrictActivity extends SupportMapFragmentActivity {
         };
         spProvince.setOnItemSelectedListener(onItemSelectedListener);
         spCity.setOnItemSelectedListener(onItemSelectedListener);
+        spDistrict.setOnItemSelectedListener(onItemSelectedListener);
     }
+
     /**
      * 获取行政区划
      */
     protected void getDistrict(int pDistrict, final int spId) {
         TencentSearch tencentSearch = new TencentSearch(this);
         DistrictChildrenParam districtChildrenParam = new DistrictChildrenParam();
+        Log.d("eqrwqeqewr", "getDistrict: " + spId);
         //如果不设置id，则获取全部数据
-        if (spId != R.id.sp_province) {
+        if (spId != R.id.sp_province && spId == R.id.sp_city) {
             districtChildrenParam.id(pDistrict);
         }
+        if (spId != R.id.sp_province && spId != R.id.sp_city) {
+            districtChildrenParam.id(pDistrict);
+        }
+
         tencentSearch.getDistrictChildren(districtChildrenParam, new HttpResponseListener<BaseObject>() {
 
             @Override
@@ -112,29 +127,35 @@ public class DistrictActivity extends SupportMapFragmentActivity {
             @Override
             public void onFailure(int arg0, String arg1, Throwable arg2) {
                 // TODO Auto-generated method stub
-                printResult(arg1);
+                //   printResult(arg1);
             }
         });
     }
 
     /**
      * 设置行政区划的adapter
+     *
      * @param spinner 要设置adapter的spinner
-     * @param obj 用于填充adapter的数据源
+     * @param obj     用于填充adapter的数据源
      */
-    protected void setDistrictAdapter(Spinner spinner, DistrictResultObject obj) {
+    protected void setDistrictAdapter(Spinner spinner, final DistrictResultObject obj) {
         List<String> names = new ArrayList<String>();
         List<Integer> ids = new ArrayList<Integer>();
-        List<DistrictResultObject.DistrictResult> districtResults = obj.result.get(0);
-        for (DistrictResultObject.DistrictResult result : districtResults) {
+        latLngs.clear();
+        final List<DistrictResultObject.DistrictResult> districtResults = obj.result.get(0);
+        for (final DistrictResultObject.DistrictResult result : districtResults) {
             names.add(result.fullname);
             ids.add(result.id);
+            latLngs.add(result.latLng);
+            Log.d("位置", "setDistrictAdapter: " + result.fullname);
+
         }
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, names);
         spinner.setAdapter(adapter);
         //将行政区划编码附到spinner方便后续查询
         spinner.setTag(ids);
+
     }
 
 
@@ -148,5 +169,6 @@ public class DistrictActivity extends SupportMapFragmentActivity {
             }
         });
     }
+
 }
 

@@ -21,19 +21,23 @@ public class LineTextActivity extends SupportMapFragmentActivity {
     private static List<LatLng> mPoints = new ArrayList<>();
     private Switch switch_style;
     private Switch switch_off;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
         tencentMap.moveCamera(CameraUpdateFactory.zoomTo(16));
-        switch_style.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener(){
+        switch_style.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
-                if (polyline == null)
+                if (polyline == null) {
                     return;
+                }
+
                 PolylineOptions.Text text = polyline.getText();
-                if (checked){
+                removeText();
+                if (checked) {
                     //设置显示优先级，可选项有HIGH或NORMAL
                     text.setPriority(PolylineOptions.TextPriority.HIGH);
                     //设置字体大小
@@ -42,7 +46,7 @@ public class LineTextActivity extends SupportMapFragmentActivity {
                     text.setStrokeColor(Color.WHITE);
                     //设置文字颜色
                     text.setTextColor(Color.BLACK);
-                }else{
+                } else {
                     //设置显示优先级，可选项有HIGH或NORMAL
                     text.setPriority(PolylineOptions.TextPriority.NORMAL);
                     //设置字体大小
@@ -51,6 +55,7 @@ public class LineTextActivity extends SupportMapFragmentActivity {
                     text.setStrokeColor(Color.WHITE);
                     //设置文字颜色
                     text.setTextColor(Color.GRAY);
+
                 }
 
                 polyline.setText(text);
@@ -60,9 +65,9 @@ public class LineTextActivity extends SupportMapFragmentActivity {
         switch_off.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
-                if (checked){
+                if (checked) {
                     polyline = createLineWithText();
-                }else{
+                } else {
                     removeText();
                     polyline.remove();
                     polyline = null;
@@ -72,14 +77,15 @@ public class LineTextActivity extends SupportMapFragmentActivity {
     }
 
 
-
-    private void initView(){
-        switch_style = (Switch)findViewById(R.id.switch_style);
+    private void initView() {
+        //文字
+        switch_style = (Switch) findViewById(R.id.switch_style);
         switch_style.setVisibility(View.VISIBLE);
-        switch_off = (Switch)findViewById(R.id.switch_off);
+        switch_off = (Switch) findViewById(R.id.switch_off);
         switch_off.setVisibility(View.VISIBLE);
     }
-    public Polyline addLine(){
+
+    public Polyline addLine() {
         Polyline polyline = tencentMap.addPolyline(new PolylineOptions().addAll(mPoints).color(0x22ff0000));
 
         return polyline;
@@ -87,8 +93,8 @@ public class LineTextActivity extends SupportMapFragmentActivity {
 
 
     //生成坐标点路径
-    private List<LatLng> generateLatLngs(){
-        if(mPoints.size() != 0)
+    private List<LatLng> generateLatLngs() {
+        if (mPoints.size() != 0)
             mPoints = new ArrayList<>();
         //苏州街
         mPoints.add(new LatLng(39.982382, 116.305883));
@@ -101,24 +107,25 @@ public class LineTextActivity extends SupportMapFragmentActivity {
         return mPoints;
     }
 
-    private PolylineOptions.Text generateText(){
+    private PolylineOptions.Text generateText() {
         List<PolylineOptions.SegmentText> segmentTexts = new ArrayList<>();
         //参数分别表示坐标路径数组起点index，终点index，动态路名文字
         segmentTexts.add(new PolylineOptions.SegmentText(0, 1, "苏州街"));
         segmentTexts.add(new PolylineOptions.SegmentText(1, 2, "北四环西路辅路"));
         segmentTexts.add(new PolylineOptions.SegmentText(2, 4, "彩和坊路"));
+
         return new PolylineOptions.Text.Builder(segmentTexts).build();
     }
 
 
-    private Polyline createLineWithText(){
-        Polyline polyline = tencentMap.addPolyline(new PolylineOptions().addAll(generateLatLngs()).color(0x22ff0000).text(generateText()));
-
+    private Polyline createLineWithText() {
+        Polyline polyline = tencentMap.addPolyline(new PolylineOptions().addAll(generateLatLngs()).text(generateText()));
+        PolylineOptions.Text text = polyline.getText();
         return polyline;
     }
 
 
-    private void removeText(){
+    private void removeText() {
         polyline.setText(null);
     }
 

@@ -30,5 +30,14 @@
     <string name="menu_title_line_dash">虚线</string>
     <string name="menu_title_line_segment">分段线</string>
     <string name="menu_title_line_texture">纹理线</string>
+    <string name="menu_title_line_gradient">渐变色</string>
+    <string name="menu_title_marker_rotate">旋转</string>
+    <string name="menu_title_marker_scale">缩放</string>
+    <string name="menu_title_marker_alpha">渐变</string>
+    <string name="menu_title_marker_translate">平移</string>
+    <string name="menu_title_marker_set">组合动画</string>
+    <string name="menu_title_marker_general">普通点聚合</string>
+    <string name="menu_title_marker_massive">海量点聚合</string>
+    <string name="menu_title_marker_custom">自定义点聚合</string>
 
 </resources>

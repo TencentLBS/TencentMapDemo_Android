@@ -3,6 +3,7 @@ package com.tencent.map.vector.demo.gesture;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.tencent.map.vector.demo.R;
 import com.tencent.map.vector.demo.basic.SupportMapFragmentActivity;
@@ -22,7 +23,8 @@ public class MapListenActivity extends SupportMapFragmentActivity implements Ten
 
     @Override
     public void onMapClick(LatLng latLng) {
-        String info = "经纬度："+latLng.latitude+","+latLng.longitude;
+        String info = "经纬度：" + latLng.latitude + "," + latLng.longitude;
+        Toast.makeText(MapListenActivity.this, info, Toast.LENGTH_SHORT).show();
         textView.setText(info);
     }
 }

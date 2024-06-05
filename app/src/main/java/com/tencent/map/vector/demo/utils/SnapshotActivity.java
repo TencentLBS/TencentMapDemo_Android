@@ -23,10 +23,11 @@ public class SnapshotActivity extends SupportMapFragmentActivity {
 
     private ImageView imgView = null;
 
-    public TencentMap.SnapshotReadyCallback snapshotReadyCallback = new TencentMap.SnapshotReadyCallback(){
+    public TencentMap.SnapshotReadyCallback snapshotReadyCallback = new TencentMap.SnapshotReadyCallback() {
         @Override
         public void onSnapshotReady(Bitmap snapshot) {
             imgView.setImageBitmap(snapshot);
+            // Log.d("线程", "run: "+Thread.currentThread().getName());
         }
     };
 
@@ -64,7 +65,7 @@ public class SnapshotActivity extends SupportMapFragmentActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.screenshot);
-        mapview = (MapView)findViewById(R.id.map);
+        mapview = (MapView) findViewById(R.id.map);
 
         tencentMap = mapview.getMap();
 
@@ -73,7 +74,7 @@ public class SnapshotActivity extends SupportMapFragmentActivity {
         tencentMap.setIndoorEnabled(true);
         handScreen.postDelayed(runScreenShot, 2000);
         //runOnUiThread(runScreenShot);
-        imgView = (ImageView)this.findViewById(R.id.imgview);
+        imgView = (ImageView) this.findViewById(R.id.imgview);
         imgView.setScaleType(ImageView.ScaleType.CENTER);
     }
 

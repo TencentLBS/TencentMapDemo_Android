@@ -76,7 +76,7 @@ public class DrawHeatOverlayActivity extends SupportMapFragmentActivity implemen
     }
     private void setUpMap() {
         tencentMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
-                new com.tencent.tencentmap.mapsdk.maps.model.LatLng(39.917128, 116.399266),
+                new LatLng(39.917128, 116.399266),
                 7.946870f));
         initHeatMap();
     }

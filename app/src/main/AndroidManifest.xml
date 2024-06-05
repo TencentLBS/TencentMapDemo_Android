@@ -2,7 +2,23 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.tencent.map.vector.demo">
-    <!-- 通过网络得到粗略位置 -->
+    <!-- 访问网络. 某些位置信息需要从网络服务器获取 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 访问WiFi状态. 需要WiFi信息用于网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 修改WiFi状态. 发起WiFi扫描, 需要WiFi信息用于网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 访问网络状态, 检测网络的可用性. 需要网络运营商相关信息用于网络定位 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 访问网络的变化, 需要某些信息用于网络定位 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 访问手机当前状态, 需要device id用于网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -29,17 +45,17 @@
                 android:value="@string/demo_type_basic" />
         </activity>
         <activity
-            android:name=".basic.ExtSurfaceMapActivity"
-            android:description="@string/demo_description_ext_map"
-            android:label="@string/demo_label_ext_map">
+            android:name=".basic.SetMapTypeActivity"
+            android:description="@string/demo_description_map_type"
+            android:label="@string/demo_label_map_type">
             <meta-data
                 android:name="@string/demo_type"
                 android:value="@string/demo_type_basic" />
         </activity>
         <activity
-            android:name=".basic.SetMapTypeActivity"
-            android:description="@string/demo_description_map_type"
-            android:label="@string/demo_label_map_type">
+            android:name=".basic.MapRenderLayerActivity"
+            android:description="@string/demo_description_show_mapRenderLayer"
+            android:label="@string/demo_label_show_mapRenderLayer">
             <meta-data
                 android:name="@string/demo_type"
                 android:value="@string/demo_type_basic" />
@@ -72,14 +88,6 @@
             android:name=".basic.OverseaMapActivity"
             android:description="@string/demo_description_oversea"
             android:label="@string/demo_label_oversea">
-            <meta-data
-                android:name="@string/demo_type"
-                android:value="@string/demo_type_basic" />
-        </activity>
-        <activity
-            android:name=".basic.TrafficMapActivity"
-            android:description="@string/demo_description_traffic"
-            android:label="@string/demo_label_traffic">
             <meta-data
                 android:name="@string/demo_type"
                 android:value="@string/demo_type_basic" />
@@ -213,6 +221,14 @@
                 android:value="@string/demo_type_marker" />
         </activity>
         <activity
+            android:name=".marker.MarkerCollisions"
+            android:description="@string/demo_description_collisions_marker"
+            android:label="@string/demo_label_collisions_marker">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_marker" />
+        </activity>
+        <activity
             android:name=".marker.MarkerOptionsActivity"
             android:description="@string/demo_description_marker_options"
             android:label="@string/demo_label_marker_options">
@@ -269,6 +285,14 @@
                 android:value="@string/demo_type_draw" />
         </activity>
         <activity
+            android:name=".polygon.TileOverlayActivity"
+            android:description="@string/demo_description_tileOverlay_map"
+            android:label="@string/demo_label_tileOverlay_map">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_draw" />
+        </activity>
+        <activity
             android:name=".polyline.DrawLineActivity"
             android:description="@string/demo_description_polyline"
             android:label="@string/demo_label_polyline">
@@ -301,6 +325,14 @@
                 android:value="@string/demo_type_draw" />
         </activity>
         <activity
+            android:name=".circle.ArcActivity"
+            android:description="@string/demo_description_arc"
+            android:label="@string/demo_label_arc">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_draw" />
+        </activity>
+        <activity
             android:name=".search.WalkingRouteActivity"
             android:description="@string/demo_description_walking_plan"
             android:label="@string/demo_label_walking_plan">
@@ -312,6 +344,22 @@
             android:name=".search.DrivingRouteActivity"
             android:description="@string/demo_description_driving_plan"
             android:label="@string/demo_label_driving_plan">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_route_plan" />
+        </activity>
+        <activity
+            android:name=".search.TransitRouteActivity"
+            android:description="@string/demo_description_transit_plan"
+            android:label="@string/demo_label_transit_plan">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_route_plan" />
+        </activity>
+        <activity
+            android:name=".search.TruckingRouteActivity"
+            android:description="@string/demo_description_truking_plan"
+            android:label="@string/demo_label_truking_plan">
             <meta-data
                 android:name="@string/demo_type"
                 android:value="@string/demo_type_route_plan" />
@@ -390,7 +438,8 @@
                 android:name="@string/demo_type"
                 android:value="@string/demo_type_draw" />
         </activity>
-        <activity android:name=".marker.AoiLayerActivity"
+        <activity
+            android:name=".marker.AoiLayerActivity"
             android:description="@string/demo_description_aoi"
             android:label="@string/demo_label_aoi">
             <meta-data
@@ -406,6 +455,54 @@
                 android:value="@string/demo_type_draw" />
         </activity>
         <activity
+            android:name=".heatoverlay.ArcLineLayerActivity"
+            android:description="@string/demo_description_arcline"
+            android:label="@string/demo_label_arcline_map">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_draw" />
+        </activity>
+        <activity
+            android:name=".heatoverlay.HeatMapVectorOverlayActivity"
+            android:description="@string/demo_description_3dheatmap"
+            android:label="@string/demo_label_3d_heat_map">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_draw" />
+        </activity>
+        <activity
+            android:name=".heatoverlay.AggregationOverlayActivity"
+            android:description="@string/demo_description_AggregationOverlay"
+            android:label="@string/demo_label_3d_aggregationOverlay_map">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_draw" />
+        </activity>
+        <activity
+            android:name=".heatoverlay.ScatterPlotOverlayActivity"
+            android:description="@string/demo_description_ScatterPlotOverlay"
+            android:label="@string/demo_label_3d_scatterplotoverlay_map">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_draw" />
+        </activity>
+        <activity
+            android:name=".heatoverlay.TrailOverlayActivity"
+            android:description="@string/demo_description_TrailOverlay"
+            android:label="@string/demo_label_3d_railoverltay_map">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_draw" />
+        </activity>
+        <activity
+            android:name=".heatoverlay.GLModelActivity"
+            android:description="@string/demo_description_glModel"
+            android:label="@string/demo_label_glModel">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_draw" />
+        </activity>
+        <activity
             android:name=".basic.OfflineMapActivity"
             android:description="@string/demo_description_offline_map"
             android:label="@string/demo_label_offline_map">
@@ -413,26 +510,25 @@
                 android:name="@string/demo_type"
                 android:value="@string/demo_type_basic" />
         </activity>
-
-        <!-- 如果您key确认无误，却依然授权没有通过，请检查您的key的白名单配置 -->
+        <activity
+            android:name=".basic.RecyclerListActivity"
+            android:description="@string/demo_description_recycler_map"
+            android:label="@string/demo_label_recycler_map">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_basic" />
+        </activity>
+        <activity
+            android:name=".smooth.SmoothMoveActivity"
+            android:description="@string/demo_description_smooth_move"
+            android:label="@string/demo_label_smooth_move">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_draw" />
+        </activity> <!-- 如果您key确认无误，却依然授权没有通过，请检查您的key的白名单配置 -->
         <meta-data
             android:name="TencentMapSDK"
-            android:value="${TencentMapSDK_KEY}" />
-    </application> <!-- 访问网络. 某些位置信息需要从网络服务器获取 -->
-    <uses-permission android:name="android.permission.INTERNET" /> <!-- 访问WiFi状态. 需要WiFi信息用于网络定位 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 修改WiFi状态. 发起WiFi扫描, 需要WiFi信息用于网络定位 -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 访问网络状态, 检测网络的可用性. 需要网络运营商相关信息用于网络定位 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 访问网络的变化, 需要某些信息用于网络定位 -->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> <!-- 访问手机当前状态, 需要device id用于网络定位 -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+            android:value="您的KEY" />
+    </application>
 
 </manifest>

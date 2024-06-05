@@ -70,7 +70,6 @@ public class LocationLayerActivity extends SupportMapFragmentActivity implements
 
         //建立定位
         initLocation();
-
         //SDK版本4.3.5新增内置定位标点击回调监听
         tencentMap.setMyLocationClickListener(new TencentMap.OnMyLocationClickListener() {
             @Override

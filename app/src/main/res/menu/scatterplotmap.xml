@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_adddotscatterplot"
+        android:title="添加点散点"
+        app:showAsAction="ifRoom">
+
+    </item>
+    <item
+        android:id="@+id/menu_deldotscatterplot"
+        android:title="移除点散点"
+        app:showAsAction="ifRoom">
+
+    </item>
+    <item
+        android:id="@+id/menu_addbitmapscatterplot"
+        android:title="添加贴图散点"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_delbitmapscatterplot"
+        android:title="移除贴图散点"
+        app:showAsAction="ifRoom" />
+</menu>

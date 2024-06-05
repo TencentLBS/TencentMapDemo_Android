@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="6dp">
+
+    <TextView
+        android:id="@+id/tv_offline_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="北京市离线地图信息"
+        app:layout_constraintBottom_toTopOf="@id/btn_switch_offline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_switch_offline"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:text="关闭"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/btn_download_offline"
+        app:layout_constraintTop_toBottomOf="@id/tv_offline_title" />
+
+    <Button
+        android:id="@+id/btn_download_offline"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:text="下载"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/btn_switch_offline"
+        app:layout_constraintRight_toLeftOf="@id/btn_delete_offline"
+        app:layout_constraintTop_toBottomOf="@id/tv_offline_title" />
+
+    <Button
+        android:id="@+id/btn_delete_offline"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:text="删除"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@id/btn_download_offline"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_offline_title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

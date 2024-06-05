@@ -24,6 +24,7 @@ public class DrawLineActivity extends AbsMapActivity {
     private int typeImage = 1;
     private int typeColor = 2;
     private int typeArrow = 3;
+    private int typeGradient = 4;
 
     private TencentMap mTencentMap;
     private boolean mHasAdded;
@@ -69,9 +70,9 @@ public class DrawLineActivity extends AbsMapActivity {
             case R.id.menu_add_line_segment:
                 mTencentMap.clear();
                 polyline = mTencentMap.addPolyline(setLineStyle(typeColor));
-                int[] color = {0,1,2,3,4};
-                int[] index = {0,1,2,3,4,5};
-                polyline.setColors(color,index);
+                int[] color = {0, 1, 2, 3, 4};
+                int[] index = {0, 1, 2, 3, 4, 5};
+                polyline.setColors(color, index);
                 mHasAdded = true;
                 break;
             case R.id.menu_add_line_texture:
@@ -79,9 +80,24 @@ public class DrawLineActivity extends AbsMapActivity {
                 polyline = mTencentMap.addPolyline(setLineStyle((typeArrow)));
                 mHasAdded = true;
                 break;
+            case R.id.menu_add_line_gradient:
+                mTencentMap.clear();
+                polyline = mTencentMap.addPolyline(setLineStyle((typeGradient)));
+                int[] indexes = {0, 1, 2, 3, 4};
+// 设置每段索引之间的颜色，这个颜色同样支持纹理颜色，即 PolylineOptions.Colors 中定义的 [0, 10] 值
+                int[] colors = {
+                        0xff00ff00, // 线上点 [0, 1] 之间为绿色
+                        0xffffff00, // 线上点 [1, 2] 之间为黄色
+                        0xffff0000, // 线上点 [2, 3] 之间为红色
+                        0xff131313, // 线上点 [3, 4] 之间为黄色
+                        0xff1033f6  // 线上点 [4, 最后一个点] 之间为绿色
+                };
+                polyline.setColors(colors, indexes);
+                mHasAdded = true;
+                break;
             case R.id.menu_text:
                 mHasEnableText = !mHasEnableText;
-                if (mHasEnableText){
+                if (mHasEnableText) {
                     if (mPolylineText == null) {
                         mPolylineText = generateText();
                         //设置显示优先级，可选项有HIGH或NORMAL
@@ -100,21 +116,23 @@ public class DrawLineActivity extends AbsMapActivity {
                 }
 
                 break;
+
             case R.id.menu_delete:
                 if (polyline != null) {
                     polyline.remove();
                     polyline = null;
                     mHasAdded = false;
                     mHasEnableText = false;
+
                 }
                 break;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    private PolylineOptions setLineStyle(int type){
+    private PolylineOptions setLineStyle(int type) {
         PolylineOptions polylineOptions = new PolylineOptions().addAll(getLatlons()).lineCap(true);
-        switch (type){
+        switch (type) {
             case 0:
                 //设置折线颜色、宽度
                 polylineOptions
@@ -143,6 +161,12 @@ public class DrawLineActivity extends AbsMapActivity {
                         .arrowSpacing(30)
                         .arrowTexture(BitmapDescriptorFactory.fromAsset("color_arrow_texture.png"));
                 break;
+            case 4:
+                polylineOptions
+                        .gradient(true)
+                        .lineType(PolylineOptions.LineType.LINE_TYPE_MULTICOLORLINE)
+                        .width(20);
+                break;
 
         }
         return polylineOptions;
@@ -157,14 +181,14 @@ public class DrawLineActivity extends AbsMapActivity {
         return new PolylineOptions.Text.Builder(segmentTexts).build();
     }
 
-    private List<LatLng> getLatlons(){
+    private List<LatLng> getLatlons() {
         List<LatLng> latLngs = new ArrayList<LatLng>();
-        latLngs.add(new LatLng(39.984864,116.305756));
-        latLngs.add(new LatLng(39.983618,116.305848));
-        latLngs.add(new LatLng(39.982347,116.305966));
-        latLngs.add(new LatLng(39.982412,116.308111));
-        latLngs.add(new LatLng(39.984122,116.308224));
-        latLngs.add(new LatLng(39.984955,116.308099));
+        latLngs.add(new LatLng(39.984864, 116.305756));
+        latLngs.add(new LatLng(39.983618, 116.305848));
+        latLngs.add(new LatLng(39.982347, 116.305966));
+        latLngs.add(new LatLng(39.982412, 116.308111));
+        latLngs.add(new LatLng(39.984122, 116.308224));
+        latLngs.add(new LatLng(39.984955, 116.308099));
         return latLngs;
     }
 }

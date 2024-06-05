@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import com.tencent.map.vector.demo.R;
 import com.tencent.map.vector.demo.basic.SupportMapFragmentActivity;
+import com.tencent.tencentmap.mapsdk.maps.TencentMap;
 import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
 import com.tencent.tencentmap.mapsdk.maps.model.Polygon;
 import com.tencent.tencentmap.mapsdk.maps.model.PolygonOptions;
@@ -27,5 +28,11 @@ public class DrawPolygonActivity extends SupportMapFragmentActivity {
                 fillColor(getResources().getColor(R.color.style)).
                 strokeColor(getResources().getColor(R.color.colorPrimary)).
                 strokeWidth(1));
+        tencentMap.setOnPolygonClickListener(new TencentMap.OnPolygonClickListener() {
+            @Override
+            public void onPolygonClick(Polygon polygon, LatLng latLng) {
+
+            }
+        });
     }
 }

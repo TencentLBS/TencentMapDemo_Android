@@ -3,6 +3,7 @@ package com.tencent.map.vector.demo.camera;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.tencent.map.vector.demo.R;
 import com.tencent.map.vector.demo.basic.SupportMapFragmentActivity;
@@ -41,6 +42,7 @@ public class MapCameraCenterActivity extends SupportMapFragmentActivity implemen
     public void onCameraChangeFinished(CameraPosition cameraPosition) {
         //获取当前地图视图信息
         info = "经纬度："+cameraPosition.target.latitude+","+cameraPosition.target.longitude+";zoom："+cameraPosition.zoom;
+        Toast.makeText(MapCameraCenterActivity.this,info,Toast.LENGTH_SHORT).show();
         textView.setText(info);
 
     }
