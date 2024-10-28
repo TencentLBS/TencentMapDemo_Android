@@ -61,12 +61,12 @@ public class PolylonOptionsActivity extends SupportMapFragmentActivity {
 
     private PolygonOptions polygonOptions = new PolygonOptions().
             add(latLngs). // 添加图形坐标点
-            fillColor(0x56643313). //填充颜色
-            strokeColor(0xfa349012). //描边颜色
-            strokeWidth(1). //描边宽度
-            visible(true). //是否可见
-            zIndex(0). //堆叠顺序，越大优先级越高
-            clickable(true); // 是否可点击
+                    fillColor(0x56643313). //填充颜色
+                    strokeColor(0xfa349012). //描边颜色
+                    strokeWidth(1). //描边宽度
+                    visible(true). //是否可见
+                    zIndex(0). //堆叠顺序，越大优先级越高
+                    clickable(true); // 是否可点击
 
     private PolygonOptions newPolygonOptions = new PolygonOptions().
             addAll(transferArrayToList(newLatLngs)); //设置批量添加顶点

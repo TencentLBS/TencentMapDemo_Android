@@ -63,20 +63,20 @@ public class PolylineOptionsActivity extends SupportMapFragmentActivity {
     };
     private PolylineOptions polylineOptions = new PolylineOptions().
             addAll(transferArrayToList(latLngs)). //添加顶点
-            alpha(0.5f). //设置透明度
-            arrow(true). //导航用 接口
-            arrowSpacing(110). // 设置方向箭头间距
-            arrowTexture(BitmapDescriptorFactory.fromAsset("color_arrow_texture.png")). // 设置箭头纹理
-            borderColor(0xaa323456). //设置描边颜色
-            borderWidth(1f). //设置描边宽度
-            clickable(true). //可点击
-            color(PolylineOptions.Colors.LIGHT_BLUE). //线的颜色
-            colorTexture(BitmapDescriptorFactory.fromAsset("color_texture.png")). //颜色纹理
-            lineCap(true). //路线是否显示半圆端点
-            lineType(PolylineOptions.LineType.LINE_TYPE_MULTICOLORLINE). //设置线的类型
-            visible(true). //设置折线可见性
-            width(10f). //设置线的宽度
-            zIndex(0); //堆叠顺序，越大优先级越高
+                    alpha(0.5f). //设置透明度
+                    arrow(true). //导航用 接口
+                    arrowSpacing(110). // 设置方向箭头间距
+                    arrowTexture(BitmapDescriptorFactory.fromAsset("color_arrow_texture.png")). // 设置箭头纹理
+                    borderColor(0xaa323456). //设置描边颜色
+                    borderWidth(1f). //设置描边宽度
+                    clickable(true). //可点击
+                    color(PolylineOptions.Colors.LIGHT_BLUE). //线的颜色
+                    colorTexture(BitmapDescriptorFactory.fromAsset("color_texture.png")). //颜色纹理
+                    lineCap(true). //路线是否显示半圆端点
+                    lineType(PolylineOptions.LineType.LINE_TYPE_MULTICOLORLINE). //设置线的类型
+                    visible(true). //设置折线可见性
+                    width(10f). //设置线的宽度
+                    zIndex(0); //堆叠顺序，越大优先级越高
 
 
     private PolylineOptions newPolylineOptions = new PolylineOptions().add(newLatLngs).

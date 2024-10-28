@@ -114,10 +114,10 @@ public class IndoorFloorView extends ScrollView {
                         onSeletedCallBack();
                     } else {
                         if (remainder > itemHeight / 2) {
-                          IndoorFloorView.this.post(new Runnable() {
+                            IndoorFloorView.this.post(new Runnable() {
                                 @Override
                                 public void run() {
-                                 IndoorFloorView.this.smoothScrollTo(
+                                    IndoorFloorView.this.smoothScrollTo(
                                             0, initialY - remainder
                                                     + itemHeight);
                                     selectedIndex = divided + offset + 1;

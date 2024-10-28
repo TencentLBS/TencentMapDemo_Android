@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import com.tencent.map.vector.demo.R;
 import com.tencent.map.vector.demo.basic.SupportMapFragmentActivity;
+import com.tencent.tencentmap.mapsdk.maps.model.CameraPosition;
 import com.tencent.tencentmap.mapsdk.maps.model.TencentMapGestureListener;
 
 public class MapGestureListenActivity extends SupportMapFragmentActivity implements TencentMapGestureListener {
@@ -59,6 +60,12 @@ public class MapGestureListenActivity extends SupportMapFragmentActivity impleme
     public boolean onUp(float v, float v1) {
         textView.setText("单指抬起");
         return true;
+    }
+
+    @Override
+    public boolean onTwoFingerMoveAgainst(TwoFingerMoveAgainstStatus twoFingerMoveAgainstStatus, CameraPosition cameraPosition) {
+        textView.setText("双指捏合");
+        return false;
     }
 
     @Override

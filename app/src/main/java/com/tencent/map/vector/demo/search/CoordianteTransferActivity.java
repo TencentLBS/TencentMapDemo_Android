@@ -1,4 +1,4 @@
-package com.tencent.map.vector.demo.search;//package com.tencent.map.vector.demo.search;
+//package com.tencent.map.vector.demo.search;
 //
 //import android.content.Context;
 //import android.os.Bundle;

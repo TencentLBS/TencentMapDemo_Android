@@ -57,7 +57,7 @@ public class LocationPointActivity extends SupportMapFragmentActivity implements
     }
 
 
-        /**
+    /**
      * 设置定位图标样式
      */
     private void setLocMarkerStyle(){

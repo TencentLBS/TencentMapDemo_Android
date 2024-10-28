@@ -22,7 +22,7 @@ public class DrawPolygonActivity extends SupportMapFragmentActivity {
                 new LatLng(39.984122, 116.308224),
                 new LatLng(39.984955, 116.308099),
                 new LatLng(39.984864, 116.305756)
-                };
+        };
         Polygon polygon = tencentMap.addPolygon(new PolygonOptions().
                 add(latLngs).
                 fillColor(getResources().getColor(R.color.style)).
