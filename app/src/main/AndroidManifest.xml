@@ -502,14 +502,14 @@
                 android:name="@string/demo_type"
                 android:value="@string/demo_type_draw" />
         </activity>
-        <activity
-            android:name=".basic.OfflineMapActivity"
-            android:description="@string/demo_description_offline_map"
-            android:label="@string/demo_label_offline_map">
-            <meta-data
-                android:name="@string/demo_type"
-                android:value="@string/demo_type_basic" />
-        </activity>
+<!--        <activity-->
+<!--            android:name=".basic.OfflineMapActivity"-->
+<!--            android:description="@string/demo_description_offline_map"-->
+<!--            android:label="@string/demo_label_offline_map">-->
+<!--            <meta-data-->
+<!--                android:name="@string/demo_type"-->
+<!--                android:value="@string/demo_type_basic" />-->
+<!--        </activity>-->
         <activity
             android:name=".basic.RecyclerListActivity"
             android:description="@string/demo_description_recycler_map"

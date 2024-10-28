@@ -73,4 +73,10 @@ public class MapGestureListenActivity extends SupportMapFragmentActivity impleme
         textView.setText("地图稳定");
         return;
     }
+
+    @Override
+    public void onMapStableBy(CameraPosition.Trigger trigger) {
+        textView.setText("地图稳定 by " + trigger.name());
+        return;
+    }
 }
