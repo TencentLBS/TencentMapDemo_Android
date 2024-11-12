@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="demo_type">TYPE</string>
+    <string name="demo_type">demo_type_draw</string>
 
     <string-array name="demo_types">
         <item>@string/demo_type_basic</item>

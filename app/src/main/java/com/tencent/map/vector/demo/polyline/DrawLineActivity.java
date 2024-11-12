@@ -25,6 +25,7 @@ public class DrawLineActivity extends AbsMapActivity {
     private int typeColor = 2;
     private int typeArrow = 3;
     private int typeGradient = 4;
+    private int typeArrowGradientColor = 5;
 
     private TencentMap mTencentMap;
     private boolean mHasAdded;
@@ -89,10 +90,25 @@ public class DrawLineActivity extends AbsMapActivity {
                         0xff00ff00, // 线上点 [0, 1] 之间为绿色
                         0xffffff00, // 线上点 [1, 2] 之间为黄色
                         0xffff0000, // 线上点 [2, 3] 之间为红色
-                        0xff131313, // 线上点 [3, 4] 之间为黄色
-                        0xff1033f6  // 线上点 [4, 最后一个点] 之间为绿色
+                        0xff131313, // 线上点 [3, 4] 之间为暗黑色
+                        0xff1033f6  // 线上点 [4, 最后一个点] 之间为蓝色
                 };
                 polyline.setColors(colors, indexes);
+                mHasAdded = true;
+                break;
+            case R.id.menu_add_line_arrow_gradient_color:
+                mTencentMap.clear();
+                polyline = mTencentMap.addPolyline(setLineStyle((typeArrowGradientColor)));
+                int[] indexes1 = {0, 1, 2, 3, 4};
+// 设置每段索引之间的颜色，这个颜色同样支持纹理颜色，即 PolylineOptions.Colors 中定义的 [0, 10] 值
+                int[] colors1 = {
+                        0xff00ff00, // 线上点 [0, 1] 之间为绿色
+                        0xffffff00, // 线上点 [1, 2] 之间为黄色
+                        0xffff0000, // 线上点 [2, 3] 之间为红色
+                        0xff131313, // 线上点 [3, 4] 之间为暗黑色
+                        0xff1033f6  // 线上点 [4, 最后一个点] 之间为蓝色
+                };
+                polyline.setColors(colors1, indexes1);
                 mHasAdded = true;
                 break;
             case R.id.menu_text:
@@ -167,7 +183,15 @@ public class DrawLineActivity extends AbsMapActivity {
                         .lineType(PolylineOptions.LineType.LINE_TYPE_MULTICOLORLINE)
                         .width(20);
                 break;
-
+            case 5:
+                polylineOptions
+                        .arrow(true)
+                        .arrowSpacing(150)
+                        .width(32f)
+                        .arrowTexture(BitmapDescriptorFactory.fromAsset("color_arrow_texture.png"))
+                        .gradient(true)
+                        .lineType(PolylineOptions.LineType.LINE_TYPE_MULTICOLORLINE);
+                break;
         }
         return polylineOptions;
     }

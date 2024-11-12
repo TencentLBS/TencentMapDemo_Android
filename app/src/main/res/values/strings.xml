@@ -31,6 +31,7 @@
     <string name="menu_title_line_segment">分段线</string>
     <string name="menu_title_line_texture">纹理线</string>
     <string name="menu_title_line_gradient">渐变色</string>
+    <string name="menu_title_line_arrow_gradient_color">渐变分段带箭头线</string>
     <string name="menu_title_marker_rotate">旋转</string>
     <string name="menu_title_marker_scale">缩放</string>
     <string name="menu_title_marker_alpha">渐变</string>
