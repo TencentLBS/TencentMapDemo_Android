@@ -45,6 +45,14 @@
                 android:value="@string/demo_type_basic" />
         </activity>
         <activity
+            android:name=".basic.BasicMapViewActivity"
+            android:description="@string/demo_description_show_map_dynamic"
+            android:label="@string/demo_label_show_map_dynamic">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_basic" />
+        </activity>
+        <activity
             android:name=".basic.SetMapTypeActivity"
             android:description="@string/demo_description_map_type"
             android:label="@string/demo_label_map_type">
