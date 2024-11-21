@@ -421,6 +421,13 @@
                 android:name="@string/demo_type"
                 android:value="@string/demo_type_tools" />
         </activity>
+        <activity android:name=".utils.SnapshotOffScreenActivity"
+            android:description="@string/demo_description_map_snapshot_off_screen"
+            android:label="@string/demo_label_map_snapshot_off_screen">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_tools" />
+        </activity>
         <activity
             android:name=".utils.CoordinateActivity"
             android:description="@string/demo_description_projection"
