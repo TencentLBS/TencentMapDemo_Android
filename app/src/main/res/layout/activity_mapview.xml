@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/map_frag"
+        android:name="com.tencent.map.vector.demo.basic.FragmentMapActivity$MyMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Button android:id="@+id/btn_change"
+        android:text="销毁当前，切换下一个Fragment"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+</FrameLayout>

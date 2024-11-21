@@ -22,6 +22,9 @@
     <string name="demo_label_show_map">展示地图</string>
     <string name="demo_description_show_map">.basic.MapViewActivity\n在 Activity 中使用 MapView 展示地图</string>
 
+    <string name="demo_label_create_map">创建地图</string>
+    <string name="demo_description_create_map">.basic.FragmentMapActivity\n在 Activity 中使用 SupportMapFragment 创建地图</string>
+
     <string name="demo_label_map_type">地图类型</string>
     <string name="demo_description_map_type">.basic.SetMapTypeActivity\n展示地图支持的类型和样式</string>
 

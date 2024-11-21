@@ -29,7 +29,8 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
         tools:targetApi="p">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -44,6 +45,16 @@
                 android:name="@string/demo_type"
                 android:value="@string/demo_type_basic" />
         </activity>
+
+        <activity
+            android:name=".basic.FragmentMapActivity"
+            android:description="@string/demo_description_create_map"
+            android:label="@string/demo_label_create_map">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_basic" />
+        </activity>
+
         <activity
             android:name=".basic.SetMapTypeActivity"
             android:description="@string/demo_description_map_type"
