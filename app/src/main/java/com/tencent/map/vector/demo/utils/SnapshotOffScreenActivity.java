@@ -3,6 +3,7 @@ package com.tencent.map.vector.demo.utils;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -37,6 +38,7 @@ public class SnapshotOffScreenActivity extends Activity {
     public void shotMap(View view) {
         if (mMapView == null) {
 
+            Log.d("SnapshotTest", "new map view: " + System.currentTimeMillis());
             mMapView = new MapView(this);
             RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
@@ -50,9 +52,11 @@ public class SnapshotOffScreenActivity extends Activity {
             mTencentMap.addOnMapLoadedCallback(new TencentMap.OnMapLoadedCallback() {
                 @Override
                 public void onMapLoaded() {
+                    Log.d("SnapshotTest", "onMapLoaded: " + System.currentTimeMillis());
                     mTencentMap.snapshot(new TencentMap.SnapshotReadyCallback() {
                         @Override
                         public void onSnapshotReady(Bitmap snapshot) {
+                            Log.d("SnapshotTest", "onSnapshotReady: " + System.currentTimeMillis());
                             mIvShot.setImageBitmap(snapshot);
 
                             mRlContainer.removeView(mMapView);
