@@ -26,6 +26,7 @@ public class DrawLineActivity extends AbsMapActivity {
     private int typeArrow = 3;
     private int typeGradient = 4;
     private int typeArrowGradientColor = 5;
+    private int typeRepeatTexture = 6;
 
     private TencentMap mTencentMap;
     private boolean mHasAdded;
@@ -111,6 +112,11 @@ public class DrawLineActivity extends AbsMapActivity {
                 polyline.setColors(colors1, indexes1);
                 mHasAdded = true;
                 break;
+            case R.id.menu_add_line_repeat_texture:
+                mTencentMap.clear();
+                polyline = mTencentMap.addPolyline(setLineStyle((typeRepeatTexture)));
+                mHasAdded = true;
+                break;
             case R.id.menu_text:
                 mHasEnableText = !mHasEnableText;
                 if (mHasEnableText) {
@@ -191,6 +197,12 @@ public class DrawLineActivity extends AbsMapActivity {
                         .arrowTexture(BitmapDescriptorFactory.fromAsset("color_arrow_texture.png"))
                         .gradient(true)
                         .lineType(PolylineOptions.LineType.LINE_TYPE_MULTICOLORLINE);
+                break;
+            case 6:
+                polylineOptions
+                        .width(50f)
+                        .colorTexture(BitmapDescriptorFactory.fromAsset("red_map_polyline_texture_green_arrow.png"))
+                        .lineType(PolylineOptions.LineType.LINE_TYPE_IMAGEINARYLINE);
                 break;
         }
         return polylineOptions;
