@@ -28,6 +28,14 @@
                 android:id="@+id/menu_add_line_gradient"
                 android:title="@string/menu_title_line_gradient"
                 app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/menu_add_line_arrow_gradient_color"
+                android:title="@string/menu_title_line_arrow_gradient_color"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/menu_add_line_repeat_texture"
+                android:title="@string/menu_title_line_repeat_texture"
+                app:showAsAction="ifRoom" />
         </menu>
     </item>
 

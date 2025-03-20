@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import com.tencent.tencentmap.mapsdk.maps.CameraUpdate;
 import com.tencent.tencentmap.mapsdk.maps.CameraUpdateFactory;
+import com.tencent.tencentmap.mapsdk.maps.TencentMapContext;
 import com.tencent.tencentmap.mapsdk.maps.model.CameraPosition;
 import com.tencent.tencentmap.mapsdk.maps.model.Language;
 import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
@@ -31,7 +32,7 @@ public class OverseaMapActivity extends SupportMapFragmentActivity {
         //移动地图
         tencentMap.moveCamera(cameraSigma);
         //设置自定义海外图源
-        tencentMap.setOverSeaTileProvider(new CustomOverSeaTileProvider());
+        tencentMap.setOverSeaTileProvider(new CustomOverSeaTileProvider(tencentMap.getMapContext()));
     }
 
     class CustomOverSeaTileProvider extends OverSeaTileProvider {
@@ -41,9 +42,9 @@ public class OverseaMapActivity extends SupportMapFragmentActivity {
         /**
          * 创建海外图源供应
          */
-        public CustomOverSeaTileProvider() {
+        public CustomOverSeaTileProvider(TencentMapContext context) {
             //设置名称和版本号
-            super("custom", 1);
+            super("custom", 1, context);
         }
 
         @Override

@@ -18,7 +18,8 @@ public abstract class AbsListActivity extends AbsActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
-        TencentMapInitializer.setAgreePrivacy(true);
+        TencentMapInitializer.setAgreePrivacy(this.getApplicationContext(), true);
+        TencentMapInitializer.start(this.getApplicationContext());
         TencentLocationManager.setUserAgreePrivacy(true);
         final String PRIVACY_URL = "https://privacy.qq.com/document/preview/a10a8634f237464da9a95f4f07e73e40";
         findViewById(R.id.tv_user).setOnClickListener(new View.OnClickListener() {

@@ -17,15 +17,5 @@ QQ群号: 42043129
 
 更多功能请查阅[接入文档](https://tencentlbs.github.io/TencentMapDemo_Android/)
 
-# DEMO key 配置#
+# DEMO key 配置
 用户可以在 demo 中的 AndroidManifest.xml 文件中设置腾讯地图开发者 key, 也可以在项目根目录的 local.properties 中添加 mapsdk.key=腾讯地图开发者 key
-
-# 2023/8/11地图SDK5.2.1更新如下#
-新增功能：
-1.新增LandMark白天、黑夜地标的图面效果
-2.暗色模式支持黑夜天空盒
-3.优化包体积
-4.viewInfoWindow支持按照Marker的zIndex调整对应addView的index顺序
-
-问题修复：
-1.修复多处地图运行过程中的稳定性问题

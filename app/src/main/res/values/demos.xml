@@ -25,6 +25,9 @@
     <string name="demo_label_create_map">创建地图</string>
     <string name="demo_description_create_map">.basic.FragmentMapActivity\n在 Activity 中使用 SupportMapFragment 创建地图</string>
 
+    <string name="demo_label_show_map_dynamic">动态添加地图</string>
+    <string name="demo_description_show_map_dynamic">.basic.BasicMapViewActivity\n在 Activity 中使用 MapView 动态展示地图</string>
+
     <string name="demo_label_map_type">地图类型</string>
     <string name="demo_description_map_type">.basic.SetMapTypeActivity\n展示地图支持的类型和样式</string>
 
@@ -75,6 +78,9 @@
 
     <string name="demo_label_map_snapshot">地图截屏</string>
     <string name="demo_description_map_snapshot">.utils.SnapshotActivity\n展示截取当前地图屏幕的方法</string>
+
+    <string name="demo_label_map_snapshot_off_screen">地图离屏截屏</string>
+    <string name="demo_description_map_snapshot_off_screen">.utils.SnapshotOffScreenActivity\n展示截取离屏地图的方法</string>
 
     <string name="demo_label_click_poi">POI点击</string>
     <string name="demo_description_click_poi">.poi.PoiClickActivity\n展示地图 POI 点击事件</string>

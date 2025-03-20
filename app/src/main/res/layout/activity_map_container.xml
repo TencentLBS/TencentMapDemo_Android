@@ -4,9 +4,30 @@
     android:layout_height="match_parent">
 
     <fragment
+        android:id="@+id/fragment_map"
         android:name="com.tencent.tencentmap.mapsdk.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/fragment_map" />
+        android:layout_height="match_parent" />
 
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/view_left_opt"
+            android:background="#22000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:orientation="vertical" />
+    </ScrollView>
+
+
+    <FrameLayout
+        android:id="@+id/view_bottom_opt"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_gravity="bottom"
+        android:visibility="gone"
+        />
 </FrameLayout>
