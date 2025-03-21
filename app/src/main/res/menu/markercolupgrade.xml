@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_open_collisionsmap"
+        android:title="添加"
+        app:showAsAction="ifRoom">
+
+        <menu>
+            <item
+                android:id="@+id/menu_add_marker_default"
+                android:title="@string/menu_title_marker_collision_default"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/menu_add_marker_sub_alone"
+                android:title="@string/menu_title_marker_collision_sub_marker_alone"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/menu_add_marker_sub_together"
+                android:title="@string/menu_title_marker_collision_sub_marker_together"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/menu_add_marker_infowindow_poi"
+                android:title="@string/menu_title_marker_collision_info_window_poi"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/menu_add_marker_infowindow_alone"
+                android:title="@string/menu_title_marker_collision_info_window_alone"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/menu_add_marker_infowindow_together"
+                android:title="@string/menu_title_marker_collision_info_window_together"
+                app:showAsAction="ifRoom" />
+        </menu>
+
+    </item>
+
+    <item
+        android:id="@+id/menu_close_collisionsmap"
+        android:title="移除"
+        app:showAsAction="ifRoom" />
+</menu>

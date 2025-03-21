@@ -117,8 +117,12 @@
 
     <string name="demo_label_simple_marker">添加一个标注</string>
     <string name="demo_description_simple_marker">.marker.SimpleMarkerActivity\n展示添加一个标注</string>
+
     <string name="demo_label_collisions_marker">标记和POI碰撞</string>
     <string name="demo_description_collisions_marker">.marker.MarkerCollisions\n展示点标记与地图POI元素的碰撞</string>
+
+    <string name="demo_label_collisions_marker_upgraded">标记和标记碰撞</string>
+    <string name="demo_description_collisions_marker_upgraded">.marker.MarkerUpgradedCollisions\n展示点标记与点标记的碰撞</string>
 
     <string name="demo_label_marker_options">标注配置</string>
     <string name="demo_description_marker_options">.marker.MarkerOptionsActivity\n通过 MarkerOptions 设置Marker</string>

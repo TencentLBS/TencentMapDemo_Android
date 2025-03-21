@@ -27,6 +27,7 @@ import com.tencent.tencentmap.mapsdk.maps.TencentMap;
 import com.tencent.tencentmap.mapsdk.maps.model.BitmapDescriptor;
 import com.tencent.tencentmap.mapsdk.maps.model.BitmapDescriptorFactory;
 import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
+import com.tencent.tencentmap.mapsdk.maps.model.MyLocationConfig;
 import com.tencent.tencentmap.mapsdk.maps.model.MyLocationStyle;
 
 import java.util.List;
@@ -70,14 +71,13 @@ public class LocationLayerActivity extends SupportMapFragmentActivity implements
 
         //建立定位
         initLocation();
-        //SDK版本4.3.5新增内置定位标点击回调监听
-        tencentMap.setMyLocationClickListener(new TencentMap.OnMyLocationClickListener() {
+        tencentMap.setMyLocationConfig(MyLocationConfig.newBuilder(tencentMap.getMyLocationConfig()).setMyLocationClickListener(new TencentMap.OnMyLocationClickListener() {
             @Override
             public boolean onMyLocationClicked(LatLng latLng) {
                 Toast.makeText(LocationLayerActivity.this, "内置定位标点击回调", Toast.LENGTH_SHORT).show();
                 return true;
             }
-        });
+        }).build());
     }
 
     /**
@@ -94,12 +94,12 @@ public class LocationLayerActivity extends SupportMapFragmentActivity implements
         locationRequest.setInterval(3000);
 
         //地图上设置定位数据源
-        tencentMap.setLocationSource(this);
+        tencentMap.setMyLocationConfig(MyLocationConfig.newBuilder().setLocationSource(this).build());
         //设置当前位置可见
-        tencentMap.setMyLocationEnabled(true);
+        tencentMap.setMyLocationConfig(MyLocationConfig.newBuilder(tencentMap.getMyLocationConfig()).setMyLocationEnabled(true).build());
         //设置定位图标样式
         setLocMarkerStyle();
-        tencentMap.setMyLocationStyle(locationStyle);
+        tencentMap.setMyLocationConfig(MyLocationConfig.newBuilder(tencentMap.getMyLocationConfig()).setMyLocationStyle(locationStyle).build());
     }
 
     /**
@@ -220,31 +220,25 @@ public class LocationLayerActivity extends SupportMapFragmentActivity implements
         switch (i) {
             //连续定位，但不会移动到地图中心点，并且会跟随设备移动
             case R.id.btn_follow_no_center:
-
-                initLocation();
                 locationStyle = locationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_FOLLOW_NO_CENTER);
-                tencentMap.setMyLocationStyle(locationStyle);
+                tencentMap.setMyLocationConfig(MyLocationConfig.newBuilder(tencentMap.getMyLocationConfig()).setMyLocationStyle(locationStyle).build());
                 break;
             //连续定位，且将视角移动到地图中心，定位点依照设备方向旋转，并且会跟随设备移动,默认是此种类型
             case R.id.btn_location_rotate:
-
-                initLocation();
                 locationStyle = locationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_LOCATION_ROTATE);
-                tencentMap.setMyLocationStyle(locationStyle);
+                tencentMap.setMyLocationConfig(MyLocationConfig.newBuilder(tencentMap.getMyLocationConfig()).setMyLocationStyle(locationStyle).build());
                 break;
             //连续定位，但不会移动到地图中心点，定位点依照设备方向旋转，并且跟随设备移动
             case R.id.btn_location_rotate_no_center:
-
-                initLocation();
                 locationStyle = locationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_LOCATION_ROTATE_NO_CENTER);
-                tencentMap.setMyLocationStyle(locationStyle);
+                tencentMap.setMyLocationConfig(MyLocationConfig.newBuilder(tencentMap.getMyLocationConfig()).setMyLocationStyle(locationStyle).build());
                 break;
             //连续定位，但不会移动到地图中心点，地图依照设备方向旋转，并且会跟随设备移动
             case R.id.btn_map_rotate_no_center:
-
-                initLocation();
                 locationStyle = locationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_MAP_ROTATE_NO_CENTER);
-                tencentMap.setMyLocationStyle(locationStyle);
+                tencentMap.setMyLocationConfig(MyLocationConfig.newBuilder(tencentMap.getMyLocationConfig()).setMyLocationStyle(locationStyle).build());
+                break;
+            default:
                 break;
         }
     }

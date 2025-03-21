@@ -3,6 +3,7 @@ package com.tencent.map.vector.demo.location;
 import android.Manifest;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.Matrix;
 import android.location.Location;
 import android.os.Bundle;
@@ -20,6 +21,10 @@ import com.tencent.map.geolocation.TencentLocationRequest;
 import com.tencent.tencentmap.mapsdk.maps.LocationSource;
 import com.tencent.tencentmap.mapsdk.maps.model.BitmapDescriptor;
 import com.tencent.tencentmap.mapsdk.maps.model.BitmapDescriptorFactory;
+import com.tencent.tencentmap.mapsdk.maps.model.LatLng;
+import com.tencent.tencentmap.mapsdk.maps.model.LocationCompass;
+import com.tencent.tencentmap.mapsdk.maps.model.LocationNavigationGravityline;
+import com.tencent.tencentmap.mapsdk.maps.model.MyLocationConfig;
 import com.tencent.tencentmap.mapsdk.maps.model.MyLocationStyle;
 
 import java.util.List;
@@ -69,8 +74,18 @@ public class LocationPointActivity extends SupportMapFragmentActivity implements
         locationStyle.strokeWidth(3);
         //设置圆区域的颜色
         locationStyle.fillColor(R.color.style);
-
-        tencentMap.setMyLocationStyle(locationStyle);
+        BitmapDescriptor[] icons = {
+                BitmapDescriptorFactory.fromAsset("locationcompass/day_compass_direction_east@2x.png"),
+                BitmapDescriptorFactory.fromAsset("locationcompass/day_compass_direction_south@2x.png"),
+                BitmapDescriptorFactory.fromAsset("locationcompass/day_compass_direction_west@2x.png"),
+                BitmapDescriptorFactory.fromAsset("locationcompass/day_compass_direction_north@2x.png")
+        };
+        LocationCompass compass = new LocationCompass(BitmapDescriptorFactory.fromAsset("locationcompass/day_compass_direction_compass@2x.png"), icons);
+        LocationNavigationGravityline line = new LocationNavigationGravityline(15f, Color.argb(100, 255, 0, 0), new LatLng(39.984066, 116.307548));
+        // 设置定位罗盘
+        locationStyle.setLocationCompass(compass);
+        // 设置导航引导线
+        locationStyle.setLocationNavigationGravityline(line);
     }
 
 
@@ -105,13 +120,12 @@ public class LocationPointActivity extends SupportMapFragmentActivity implements
         locationRequest.setInterval(3000);
 
         //地图上设置定位数据源
-        tencentMap.setLocationSource(this);
+        tencentMap.setMyLocationConfig(MyLocationConfig.newBuilder().setLocationSource(this).build());
         //设置当前位置可见
-        tencentMap.setMyLocationEnabled(true);
+        tencentMap.setMyLocationConfig(MyLocationConfig.newBuilder(tencentMap.getMyLocationConfig()).setMyLocationEnabled(true).build());
         //设置定位图标样式
         setLocMarkerStyle();
-//        locationStyle = locationStyle.myLocationType(MyLocationStyle.LOCATION_TYPE_LOCATION_ROTATE);
-        tencentMap.setMyLocationStyle(locationStyle);
+        tencentMap.setMyLocationConfig(MyLocationConfig.newBuilder(tencentMap.getMyLocationConfig()).setMyLocationStyle(locationStyle).build());
     }
     /**
      * 实现位置监听

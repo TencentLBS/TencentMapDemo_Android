@@ -248,6 +248,14 @@
                 android:value="@string/demo_type_marker" />
         </activity>
         <activity
+            android:name=".marker.MarkerUpgradedCollisions"
+            android:description="@string/demo_description_collisions_marker_upgraded"
+            android:label="@string/demo_label_collisions_marker_upgraded">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_marker" />
+        </activity>
+        <activity
             android:name=".marker.MarkerOptionsActivity"
             android:description="@string/demo_description_marker_options"
             android:label="@string/demo_label_marker_options">

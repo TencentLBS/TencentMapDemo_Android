@@ -35,6 +35,9 @@ public class SetMapTypeActivity extends SupportMapFragmentActivity implements Ra
             case R.id.btn_dark: //暗色地图
                 tencentMap.setMapType(TencentMap.MAP_TYPE_DARK);
                 break;
+            case R.id.btn_immerse: //沉浸地图
+                tencentMap.setMapType(TencentMap.MAP_TYPE_NEW_3D_IMMERSIVE);
+                break;
             case R.id.btn_traffic:
                 tencentMap.setTrafficEnabled(true);
                 break;

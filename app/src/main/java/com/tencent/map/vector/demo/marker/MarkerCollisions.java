@@ -21,6 +21,7 @@ import com.tencent.tencentmap.mapsdk.maps.model.MapPoi;
 import com.tencent.tencentmap.mapsdk.maps.model.Marker;
 import com.tencent.tencentmap.mapsdk.maps.model.MarkerCollisionItem;
 import com.tencent.tencentmap.mapsdk.maps.model.MarkerOptions;
+import com.tencent.tencentmap.mapsdk.maps.model.OverlayLevel;
 
 public class MarkerCollisions extends AppCompatActivity {
 
@@ -68,7 +69,9 @@ public class MarkerCollisions extends AppCompatActivity {
             case R.id.menu_open_collisionsmap:
                 mMarkerAdded = true;
                 BitmapDescriptor custom = BitmapDescriptorFactory.fromResource(R.drawable.marker);
-                MarkerOptions options = new MarkerOptions().position(new LatLng(39.984066, 116.307548));
+                MarkerOptions options = new MarkerOptions(new LatLng(39.984066, 116.307548))
+                        // level设置为OverlayLevelAboveLabels，碰撞才会生效，默认是OverlayLevelAboveLabels
+                        .level(OverlayLevel.OverlayLevelAboveLabels);
                 options.icon(custom);
                 mMarker = tencentMap.addMarker(options);
                 mMarker.setCollisions(MarkerCollisionItem.POI);

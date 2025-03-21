@@ -13,6 +13,7 @@
     <string name="normal">普通地图</string>
     <string name="dark">暗色模式</string>
     <string name="satellite">卫星图</string>
+    <string name="immerse">3D沉浸图</string>
     <string name="menu_title_add">添加</string>
     <string name="menu_title_default">默认</string>
     <string name="menu_title_custom">自定义</string>
@@ -41,5 +42,11 @@
     <string name="menu_title_marker_general">普通点聚合</string>
     <string name="menu_title_marker_massive">海量点聚合</string>
     <string name="menu_title_marker_custom">自定义点聚合</string>
+    <string name="menu_title_marker_collision_default">默认Marker碰撞</string>
+    <string name="menu_title_marker_collision_sub_marker_alone">子Marker独立碰撞</string>
+    <string name="menu_title_marker_collision_sub_marker_together">子Marker一起碰撞</string>
+    <string name="menu_title_marker_collision_info_window_poi">Infowindow碰掉POI</string>
+    <string name="menu_title_marker_collision_info_window_alone">Infowindow独立碰撞</string>
+    <string name="menu_title_marker_collision_info_window_together">Infowindow一起碰撞</string>
 
 </resources>

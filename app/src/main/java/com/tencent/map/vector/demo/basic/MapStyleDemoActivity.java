@@ -132,6 +132,13 @@ public class MapStyleDemoActivity extends FragmentActivity implements TencentMap
                             mTencentMap.setMapType(TencentMap.MAP_TYPE_SATELLITE);
                         }
                         break;
+                    case R.id.rb_3D_immerse_type:
+                        if (mTencentMap != null) {
+                            mTencentMap.setMapType(TencentMap.MAP_TYPE_NEW_3D_IMMERSIVE);
+                        }
+                        break;
+                    default:
+                        break;
                 }
             }
         });
@@ -142,9 +149,9 @@ public class MapStyleDemoActivity extends FragmentActivity implements TencentMap
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 PorterDuff.Mode buttonTintMode = compoundButton.getButtonTintMode();
                 if(b){
-                    mTencentMap.setBuildingEnable(true);
+                    mTencentMap.setBuilding3dEffectEnable(true);
                 }else{
-                    mTencentMap.setBuildingEnable(false);
+                    mTencentMap.setBuilding3dEffectEnable(false);
                 }
             }
         });

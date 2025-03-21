@@ -196,6 +196,11 @@ public class SmoothMoveActivity extends AppCompatActivity implements View.OnClic
                                 mCarMarker.setTitle("到达目的地");
                             }
                         }
+
+                        @Override
+                        public void onInterpolateRotation(float v, AnimationStatus animationStatus) {
+
+                        }
                     });
 
 

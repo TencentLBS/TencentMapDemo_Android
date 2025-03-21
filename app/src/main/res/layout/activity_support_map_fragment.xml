@@ -291,6 +291,12 @@
                 android:text="暗色图" />
 
             <RadioButton
+                android:id="@+id/btn_immerse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="新3D沉浸图" />
+
+            <RadioButton
                 android:id="@+id/btn_traffic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -327,12 +333,6 @@
 
 
         </RadioGroup>
-        <!--MapFragment-->
-        <fragment
-            android:id="@+id/map_frag"
-            class="com.tencent.tencentmap.mapsdk.maps.SupportMapFragment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/tv_info"
@@ -341,6 +341,50 @@
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/padding"
             android:visibility="gone" />
+
+        <!--定位点类型-->
+        <RadioGroup
+            android:id="@+id/location_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/map_frag">
+
+            <RadioButton
+                android:id="@+id/btn_follow_no_center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="默认" />
+
+            <RadioButton
+                android:id="@+id/btn_location_rotate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="固定中心点" />
+
+            <RadioButton
+                android:id="@+id/btn_location_rotate_no_center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="定位点旋转" />
+
+            <RadioButton
+                android:id="@+id/btn_map_rotate_no_center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="地图旋转" />
+        </RadioGroup>
+
+        <!--MapFragment-->
+        <fragment
+            android:id="@+id/map_frag"
+            class="com.tencent.tencentmap.mapsdk.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
         <!--线的类型-->
         <RadioGroup
             android:id="@+id/lay_line"
@@ -373,42 +417,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="箭头" />
-        </RadioGroup>
-
-
-        <!--定位点类型-->
-        <RadioGroup
-            android:id="@+id/location_type"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:visibility="gone"
-            app:layout_constraintBottom_toBottomOf="@+id/map_frag">
-
-            <RadioButton
-                android:id="@+id/btn_follow_no_center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="默认" />
-
-            <RadioButton
-                android:id="@+id/btn_location_rotate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="固定中心点" />
-
-            <RadioButton
-                android:id="@+id/btn_location_rotate_no_center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="定位点旋转" />
-
-            <RadioButton
-                android:id="@+id/btn_map_rotate_no_center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="地图旋转" />
         </RadioGroup>
 
 
