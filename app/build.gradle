@@ -13,8 +13,8 @@ android {
     compileSdkVersion 34
     defaultConfig {
         applicationId "com.tencent.map.vector.demo"
-        minSdkVersion 22
-        targetSdkVersion 34
+        minSdkVersion 21
+        targetSdkVersion 35
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -40,9 +40,9 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'pub.devrel:easypermissions:3.0.0'
     // 地图
-    implementation 'com.tencent.map:tencent-map-vector-sdk:6.4.0.250610.3d76dfd6.160361269'
+    implementation 'com.tencent.map:tencent-map-vector-sdk:6.5.0.250804.8f933104.169941867'
     // 基础库
-    implementation 'com.tencent.openmap:foundation:0.6.0.0454c7c'
+    implementation 'com.tencent.openmap:foundation:0.7.0.92a115a'
     // 地图组件库
     implementation 'com.tencent.map:sdk-utilities:1.0.10'
     implementation 'com.tencent.map.geolocation:TencentLocationSdk-openplatform:7.5.4.3'
