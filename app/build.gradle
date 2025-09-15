@@ -40,7 +40,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'pub.devrel:easypermissions:3.0.0'
     // 地图
-    implementation 'com.tencent.map:tencent-map-vector-sdk:6.5.0.250804.8f933104.169941867'
+    implementation 'com.tencent.map:tencent-map-vector-sdk:6.6.1.250911.cd32746f.176437250'
     // 基础库
     implementation 'com.tencent.openmap:foundation:0.7.0.92a115a'
     // 地图组件库

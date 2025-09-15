@@ -101,6 +101,11 @@ public class GLModelActivity extends AppCompatActivity {
                             public void onAnimatorEnd() {
                                 Log.i("TransformActivity", "onAnimatorEnd");
                             }
+
+                            @Override
+                            public void onAnimatorUpdate(int i, LatLng latLng) {
+
+                            }
                         });
                         break;
                     //停止骨骼动画

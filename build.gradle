@@ -16,6 +16,18 @@ buildscript {
 allprojects {
     repositories {
         maven {
+            url "https://repo1.maven.org/maven2"
+        }
+        maven {
+            url "https://oss.sonatype.org/content/groups/public"
+        }
+        maven {
+            url "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+        maven {
+            url "https://oss.sonatype.org/content/repositories/staging/"
+        }
+        maven {
             url "https://mirrors.tencent.com/repository/maven/tencent_public/"
         }
         maven {
