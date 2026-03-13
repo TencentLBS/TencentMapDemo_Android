@@ -40,11 +40,11 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'pub.devrel:easypermissions:3.0.0'
     // 地图
-    implementation 'com.tencent.map:tencent-map-vector-sdk:6.8.0.260113.4a5abb2f.191549524'
+    implementation 'com.tencent.map:tencent-map-vector-sdk:6.9.0.260312.237cbc9d.205120930'
     // 基础库
-    implementation 'com.tencent.openmap:foundation:0.8.0.07a0862'
+    implementation 'com.tencent.openmap:foundation:0.9.0.e5ea763'
     // 地图组件库
-    implementation 'com.tencent.map:sdk-utilities:1.0.10'
+    implementation 'com.tencent.map:sdk-utilities:1.0.12'
     implementation 'com.tencent.map.geolocation:TencentLocationSdk-openplatform:7.5.4.3'
     implementation 'com.google.code.gson:gson:2.10.1'
     implementation 'com.squareup.leakcanary:leakcanary-android:3.0-alpha-4'
