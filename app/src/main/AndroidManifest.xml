@@ -392,6 +392,30 @@
                 android:value="@string/demo_type_route_plan" />
         </activity>
         <activity
+            android:name=".search.EBicyclingRouteActivity"
+            android:description="@string/demo_description_ebicycling_plan"
+            android:label="@string/demo_label_ebicycling_plan">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_route_plan" />
+        </activity>
+        <activity
+            android:name=".search.EBicyclingMatrixActivity"
+            android:description="@string/demo_description_ebicycling_matrix"
+            android:label="@string/demo_label_ebicycling_matrix">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_route_plan" />
+        </activity>
+        <activity
+            android:name=".search.MotorcyclingRouteActivity"
+            android:description="@string/demo_description_motorcycling_plan"
+            android:label="@string/demo_label_motorcycling_plan">
+            <meta-data
+                android:name="@string/demo_type"
+                android:value="@string/demo_type_route_plan" />
+        </activity>
+        <activity
             android:name=".search.SearchBasicActivity"
             android:description="@string/demo_description_basic_search"
             android:label="@string/demo_label_basic_search">

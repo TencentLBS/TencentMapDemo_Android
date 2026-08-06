@@ -211,6 +211,13 @@
     <string name="demo_label_truking_plan">货车路线规划</string>
     <string name="demo_description_truking_plan">.search.TruckingRouteActivity\n展示货车路线规划</string>
 
+    <string name="demo_label_ebicycling_plan">电动自行车路线规划</string>
+    <string name="demo_description_ebicycling_plan">.search.EBicyclingRouteActivity\n展示电动自行车路线规划（6.13.0 新增）</string>
+    <string name="demo_label_ebicycling_matrix">电动自行车距离矩阵</string>
+    <string name="demo_description_ebicycling_matrix">.search.EBicyclingMatrixActivity\n展示电动自行车距离矩阵服务（6.13.0 新增）</string>
+    <string name="demo_label_motorcycling_plan">摩托车路线规划</string>
+    <string name="demo_description_motorcycling_plan">.search.MotorcyclingRouteActivity\n展示摩托车路线规划（6.13.0 新增）</string>
+
 
     <!--地图数据检索-->
     <string name="demo_type_search">检索</string>
